@@ -1,17 +1,18 @@
 # Fdb version 4
-["bibtex ifes8-tcc"] 1793545915.0527 "ifes8-tcc.aux" "ifes8-tcc.bbl" "ifes8-tcc" 1793545917.13002 0
-  "./referencias.bib" 1790457967 20151 d7fa6cca5cdf26ca8938c6d40b045b14 ""
+["bibtex ifes8-tcc"] 1793548416.14796 "ifes8-tcc.aux" "ifes8-tcc.bbl" "ifes8-tcc" 1793548418.23369 0
+  "./referencias.bib" 1793547579 551 033f5ed75352efc862b782dd49ca26cf ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/bibtex/bib/abntex2/abntex2-options.bib" 1543103229 5396 4eb260dac60f150ae608d45252853090 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/bibtex/bst/abntex2/abntex2-alf.bst" 1543103230 60064 0819ac8568f9a482510a46e3a8a6f605 ""
-  "ifes8-tcc.aux" 1793545916 10377 5dc4302796b3994f76d8b5d7ae7a0d63 "pdflatex"
+  "ifes8-tcc.aux" 1793548417 15358 9a2166f9d15383043dab4955ef322d5e "pdflatex"
   (generated)
   "ifes8-tcc.bbl"
   "ifes8-tcc.blg"
   (rewritten before read)
-["pdflatex"] 1793545915.27952 "c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex" "ifes8-tcc.pdf" "ifes8-tcc" 1793545917.13074 0
+["pdflatex"] 1793548416.34892 "c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex" "ifes8-tcc.pdf" "ifes8-tcc" 1793548418.23431 0
   "C:/Users/Usuario/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1790514096 81107 70b8516c68c2e617189c5e44bfd16b96 ""
   "C:/Users/Usuario/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1791239507 13374037 163eb37a9695bdd1ef8ec714132270f0 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
+  "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc" 1256929440 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc" 1256929440 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc" 1256929440 2840 216e6e45ad352e2456e1149f28885bee ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc" 1256929440 2327 9d6df24f9c4f7368395224341a95523a ""
@@ -37,9 +38,13 @@
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ts1-lmr12.tfm" 1256929440 1596 1d4548788e389ded56d0b01b28377882 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmb10.pfb" 1256929440 123030 912fb98db98ec261bbe321b3e37da726 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb" 1256929440 116908 9a7a12d1e4df280ea0ab4aad83cdef88 ""
+  "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb" 1256929440 23055 2e5b42921de910eaa97b85df04ca4891 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb" 1256929440 30696 3da7e46ecf5615eedebd9f27dab4d9d7 ""
+  "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb" 1256929440 30635 833ec815d446ec453a4913fc26d24cbc ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb" 1256929440 119235 05e5c8d6d60439433e50047898c2c0e0 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb" 1256929440 113634 9384aebdf26f9881e046a4b5574566db ""
+  "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb" 1256929440 123394 992f5e87d698d9e94717394c62580ea6 ""
+  "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb" 1256929440 122174 a2d5e73f396ddbeb3bdf5c79aea0993d ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb" 1256929440 109265 e6c7d377db6dfccd4a123fb26da8cffb ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb" 1256929440 27863 09ce3735688ffde955e72da27c95b61a ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -217,12 +222,12 @@
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
-  "c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex" 1793545912 24247 a8fb500312c60a59e16b8129e9fe70a5 ""
+  "c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex" 1793548413 42829 78db9e2a426d82cec7cf586ebfae75ce ""
   "configlistings.tex" 1790457967 1830 5494d1df46a936de8c2ed960edc9815e ""
-  "ifes8-tcc.aux" 1793545916 10377 5dc4302796b3994f76d8b5d7ae7a0d63 "pdflatex"
-  "ifes8-tcc.bbl" 1793545915 451 a9af29314cc2bee5830daf56ca9e0086 "bibtex ifes8-tcc"
-  "ifes8-tcc.tex" 1793545912 24247 a8fb500312c60a59e16b8129e9fe70a5 ""
-  "ifes8-tcc.toc" 1793545916 3397 e1b1aef37be62229e02adf12d541fbac "pdflatex"
+  "ifes8-tcc.aux" 1793548417 15358 9a2166f9d15383043dab4955ef322d5e "pdflatex"
+  "ifes8-tcc.bbl" 1793548416 663 88542639b3b0ff64c1aece2334f245d1 "bibtex ifes8-tcc"
+  "ifes8-tcc.tex" 1793548413 42829 78db9e2a426d82cec7cf586ebfae75ce ""
+  "ifes8-tcc.toc" 1793548417 3893 3d561e5a6c1d236a69b6722e89dc1707 "pdflatex"
   "ifes8.cls" 1790457967 21013 1a3bd060baa2c85ed394421d47b1578b ""
   "pics/normas-ifes-apendice-d.png" 1790457967 84581 0ab3db894c190c03823a85aee405775e ""
   (generated)
