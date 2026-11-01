@@ -5,6 +5,16 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
+\bibitem[Ag{\^e}ncia Nacional do Petr{\'o}leo, G{\'a}s Natural e
+  Biocombust{\'i}veis 2023]{ANP2023}
+\abntrefinfo{ANP}{ANP}{2023}
+{AG{\^E}NCIA NACIONAL DO PETR{\'O}LEO, G{\'A}S NATURAL E BIOCOMBUST{\'I}VEIS.
+  \emph{Gerenciamento de Segurança Operacional ({SGSO})}. Brasília, DF, 2023.
+Publicado em 13 jul. 2020. Atualizado em 8 ago. 2023.
+Dispon{\'\i}vel em:
+  \url{https://www.gov.br/anp/pt-br/assuntos/exploracao-e-producao-de-oleo-e-gas/seguranca-operacional/gerenciamento-de-seguranca-operacional-sgso}.
+  Acesso em: 31 out. 2026.}
+
 \bibitem[Araujo 2012]{araujo2012}
 \abntrefinfo{Araujo}{ARAUJO}{2012}
 {ARAUJO, Lauro~C{\'e}sar.
@@ -133,6 +143,13 @@ Dispon{\'\i}vel em:
 [S.l.], 2008. Dispon{\'\i}vel em:
   \url{http://mirrors.ctan.org/info/babel/babel.pdf}. Acesso em: 17 fev. 2013.}
 
+\bibitem[Caire 2011]{Caire2011}
+\abntrefinfo{Caire}{CAIRE}{2011}
+{CAIRE, Marcelo.
+\emph{Modelo de comportamento viscoelástico de enrijecedores à flexão}.
+Tese (Doutorado em Engenharia Oceânica) --- Universidade Federal do Rio de
+  Janeiro, COPPE, Rio de Janeiro, 2011.}
+
 \bibitem[Damato, Jtwdog e Neidhardt 2016]{Wikibook-LaTeX}
 \abntrefinfo{Damato, Jtwdog e Neidhardt}{DAMATO; JTWDOG; NEIDHARDT}{2016}
 {DAMATO, Alessio; JTWDOG; NEIDHARDT, Pierre. Latex.
@@ -189,6 +206,14 @@ Dispon{\'\i}vel em: \url{http://www.texample.net/tikz/examples/venn/}.}
 \abntrefinfo{L\'evy}{L\'EVY}{1999}
 {L\'EVY, Pierre. \emph{Cibercultura}. S\~{a}o Paulo -- SP: Editora 34, 1999.}
 
+\bibitem[Lopes 2025]{Lopes2025}
+\abntrefinfo{Lopes}{LOPES}{2025}
+{LOPES, Renzo~Mendes.
+\emph{Aplicação do método de {Runge-Kutta} de 4ª ordem e do método de
+  diferenças finitas no projeto de um enrijecedor de curvatura}.
+Monografia (Bacharelado em Engenharia Mecânica) --- Instituto Federal do
+  Espírito Santo, Vitória, 2025.}
+
 \bibitem[Macedo 2005]{macedo2005}
 \abntrefinfo{Macedo}{MACEDO}{2005}
 {MACEDO, Fl{\'a}via~L.
@@ -204,6 +229,20 @@ Disserta\c{c}\~{a}o (Disserta{\c c}{\~a}o de Mestrado) --- Universidade de
   Principles of Knowledge Representation and Reasoning (KR 2010)}. AAAI Press,
   2010. p. 258--268. Dispon{\'\i}vel em:
   \url{http://wiki.loa-cnr.it/Papers/kr10v0.7.pdf}. Acesso em: 2 jan. 2012.}
+
+\bibitem[Pagliosa 2004]{Pagliosa2004}
+\abntrefinfo{Pagliosa}{PAGLIOSA}{2004}
+{PAGLIOSA, Cleber.
+\emph{Determinação experimental de propriedades viscoelásticas de material
+  polimérico}.
+Disserta\c{c}\~{a}o (Mestrado em Engenharia Mecânica) --- Universidade Federal
+  de Santa Catarina, Florianópolis, 2004.}
+
+\bibitem[Petrobras 2024]{Petrobras2024}
+\abntrefinfo{Petrobras}{PETROBRAS}{2024}
+{PETROBRAS. \emph{Load-effect analysis of subsea umbilicals}.
+[S.l.], 2024. Especificação técnica I-ET-3000.00-1519-29B-PZ9-004. Revisão
+  C, de 6 fev. 2024.}
 
 \bibitem[Quintin 2012]{Quintin2012}
 \abntrefinfo{Quintin}{QUINTIN}{2012}

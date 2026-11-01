@@ -364,64 +364,168 @@
 \label{cha:introducao}
 
 % Introduz o contexto.
-A produção de petróleo e gás natural em alto-mar faz parte de cadeias ligadas ao fornecimento de energia e 
-matérias-primas utilizadas em diversos setores da economia mundial. Para que essa produção ocorra com
-segurança e confiabilidade, o projeto de sistemas e equipamentos submarinos devem atender exigências 
-relacionadas às condições extremas de instalação e operação.
+A produção de petróleo e gás em alto-mar integra cadeias de fornecimento de energia e de matérias-primas 
+utilizadas em diferentes setores da economia. A continuidade dessas atividades depende de uma infraestrutura
+capaz de operar sob condições ambientais exigentes. Nesse contexto, a confiabilidade dos equipamentos submarinos
+não se restringe ao desempenho da produção, mas também está relacionada à segurança e à prevenção de falhas com
+possíveis consequências ambientais \cite{ANP2023}.
 
-% Relaciona com linhas flexíveis e explica os diferentes trechos.
-Nesse contexto, a comunicação entre as plataformas que operam longe da costa (\emph{offshore}) e os sistemas
-submarinos que realizam as operações no leito marinho é um objeto de estudo relevante para a engenharia. As 
-unidades flutuantes de operação e armazenamento (\emph{FPSO -- Floating Production Storage and Offloading})
-são conectadas por meio de linhas flexíveis que permitem o transporte de petróleo e gás natural diretamente 
-da extração por meio de dutos flexíveis, e existem também cabos desenvolvidos para a transmissão de sinais, 
-dados e energia entre as plataformas e os sistemas submarinos, denominados cabos umbilicais. O trecho suspenso
-que em mar que vai do ponto de conexão da plataforma até a zona de contato com o leito marinho é comumente 
-atribuído pelo nome de \emph{riser} e é caracterizado pela forte resposta dinâmica, enquanto o trecho estático
-é o restante da linha flexível que permanece em contato com o leito marinho e é chamado de \emph{flowline}.
+% % Relaciona com linhas flexíveis e explica os diferentes trechos.
+% Nesse contexto, a comunicação entre as plataformas que operam longe da costa (\emph{offshore}) e os sistemas
+% submarinos que realizam as operações no leito marinho é um objeto de estudo relevante para a engenharia. As 
+% unidades flutuantes de operação e armazenamento (\emph{FPSO -- Floating Production Storage and Offloading})
+% são conectadas por meio de linhas flexíveis que permitem o transporte de petróleo e gás natural diretamente 
+% da extração por meio de dutos flexíveis, e existem também cabos desenvolvidos para a transmissão de sinais, 
+% dados e energia entre as plataformas e os sistemas submarinos, denominados cabos umbilicais. O trecho suspenso
+% que em mar que vai do ponto de conexão da plataforma até a zona de contato com o leito marinho é comumente 
+% atribuído pelo nome de \emph{riser} e é caracterizado pela forte resposta dinâmica, enquanto o trecho estático
+% é o restante da linha flexível que permanece em contato com o leito marinho e é chamado de \emph{flowline}.
 
-% Destaca a severidade do ambiente offshore.
-O trecho dinâmico das linhas flexíveis está sempre sujeito à ação de forças hidrodinâmicas relacionadas à 
-corrente marítima e à incidência de ondas, cargas provenientes da movimentação da plataforma e que podem ser
-agravadas por condições ambientais adversas e também por variações na operação da plataforma, como cargas 
-acidentais (e.g. perda de linhas de ancoragem, inundação de compartimentos da plataforma). Dessa forma, 
-apesar das linhas flexíveis serem projetadas para suportar condições de elevada tração e curvatura, o projeto
-desse tipo de produto não funcionaria sem o uso de acessórios específicos que possam contribuir para sua 
-operação, considerando a severidade do ambiente \emph{offshore}. 
+% Apresenta os risers flexíveis e a função dos enrijecedores à flexão.
+Entre os componentes dessa infraestrutura estão os \emph{risers} flexíveis, que conectam as instalações 
+submarinas às unidades de produção, como as FPSO -- \emph{Floating Production Storage and Offloading} e 
+FPU -- \emph{Floating Production Unit}. Sua flexibilidade permite acomodar movimentos da unidade flutuante, mas
+a conexão com estruturas mais rígidas constitui regiões mais críticas, sujeitas a maiores concentrações de 
+esforços e deformações. Para controlar a curvatura nessa transição, empregam-se enrijecedores à flexão, cuja 
+geometria cônica proporciona uma variação gradual de rigidez do conjunto linha flexível-enrijecedor 
+\cite{Caire2011,Lopes2025}. Uma visualização do enrijecedor instalado juntamente com a linha flexível que 
+adentra o mar é apresentada na Figura \ref{fig:enrijecedor_flexao}.
 
-% Relaciona linhas flexíveis com a necessidade de enrijecedores à flexão.
-De modo geral, na região de conexão do umbilical com a plataforma (região de topo), a flexão sempre é elevada,
-podendo ultrapassar o valor de máxima curvatura permitida no projeto definido pela análise local na linha flexível.
-Para evitar que o limite de curvatura seja excedido, utilizam-se de um equipamento capaz de suavizar os ângulos
-gerados na região de topo a partir do aumento de rigidez com uma redução gradual ao longo do comprimento
-da linha. Esses acessórios são chamados de enrijecedores à flexão e possuem um formato cônico com a base maior 
-próxima do ponto de conexão e envolvem o cabo submarino, de modo que o atravessa o centro do enrijecedor. 
+% % Destaca a severidade do ambiente offshore.
+% O trecho dinâmico das linhas flexíveis está sempre sujeito à ação de forças hidrodinâmicas relacionadas à 
+% corrente marítima e à incidência de ondas, cargas provenientes da movimentação da plataforma e que podem ser
+% agravadas por condições ambientais adversas e também por variações na operação da plataforma, como cargas 
+% acidentais (e.g. perda de linhas de ancoragem, inundação de compartimentos da plataforma). Dessa forma, 
+% apesar das linhas flexíveis serem projetadas para suportar condições de elevada tração e curvatura, o projeto
+% desse tipo de produto não funcionaria sem o uso de acessórios específicos que possam contribuir para sua 
+% operação, considerando a severidade do ambiente \emph{offshore}. 
 
-% Importancia do dimensionamento do enrijecedor.
-Dada a função de suavização da curvatura na região de topo, o enrijecedor à flexão desempenha um papel crucial 
-para a segurança estrutural da linha flexível, sendo bastante presente em projetos que envolvam cabos submarinos.
-Ademais, por se tratar de um componente que dependendo das condições de operação pode ser bem exigente e específico,
-seu custo é bem elevado e pode representar um custo determinante para a execução ou não de um projeto. Portanto, 
-o dimensionamento correto dos enrijecedores é apreciado tanto do ponto de vista da engenharia, por conta de sua 
-relevância estrutural, quanto do ponto de vista econômico, devido a sua relevância e criticidade.
+% % Relaciona linhas flexíveis com a necessidade de enrijecedores à flexão.
+% De modo geral, na região de conexão da linha com a plataforma (região de topo), a curvadura pode ser concentrada,
+% permitindo que o valor de máxima curvatura permitida no projeto seja ultrapassado com maior facilidade.
+% Para evitar que o limite de curvatura seja excedido, utilizam-se de um equipamento capaz de suavizar os ângulos
+% gerados na região de topo a partir do aumento de rigidez com uma redução gradual ao longo do comprimento
+% da linha. Esses acessórios são chamados de enrijecedores à flexão e possuem um formato cônico com a base maior 
+% próxima do ponto de conexão e envolvem o cabo submarino, de modo que o atravessa o centro do enrijecedor. 
 
-% Características do enrijecedor.
-Justificada a importância dos enrijecedores, ainda se faz necessário compreender como suas propriedades mecânicas 
-devem atender os requisitos funcionais do sistema enrijecedor e linha flexível. São feitos de poliuretano -- um 
-material polimérico de elevada resistência mecânica, resistência abrasiva e capacidade de absorvação de impactos 
-\cite{Balmoral?} --, possuem um inserto metálico no seu interior para permitir a união com outros acessórios importantes do 
-sistema de fixação da linha flexível e são usinados para adquirir a forma cônica adequada.
+% % Importancia do dimensionamento do enrijecedor.
+% Dada a função de suavização da curvatura na região de topo, o enrijecedor à flexão desempenha um papel crucial 
+% para a segurança estrutural da linha flexível, sendo bastante presente em projetos que envolvam cabos submarinos. 
+% Portanto, o dimensionamento correto dos enrijecedores é apreciado do ponto de vista da engenharia, por conta 
+% de sua relevância estrutural devido a sua relevância e criticidade.
 
-% A importância de simular o comportamento estrutural do enrijecedor à flexão.
+% % Características do enrijecedor. (ACHAR UMA CITAÇÃO PARA ISSO)
+% Dada a importância dos enrijecedores, ainda se faz necessário compreender como suas propriedades mecânicas 
+% devem atender aos requisitos funcionais do sistema enrijecedor e dalinha flexível. São feitos de poliuretano -- um 
+% material polimérico de elevada resistência mecânica, resistência abrasiva e capacidade de absorvação de impactos 
+% \cite{Balmoral?} -- e possuem um inserto metálico no seu interior para permitir a união com outros acessórios 
+% importantes do sistema de fixação da linha flexível.
 
-% Problemas de uma abordagem elástica.
+%%%% https://expo.windjournal.jp/booth/haradacorp/
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{pics/Bend stiffener, installation expo_windjounal_haracop.jpeg}
+\caption{Enrijecedor à flexão.}
+\label{fig:enrijecedor_flexao}
+\end{figure}
 
-% Vantagens de uma abordagem viscoelástica.
+% % Mais detalhes sobre o poliuretano para entrar no tema de viscoelasticidade.
+% O poliuretano é um material polimérico que apresenta comportamento viscoelástico em temperatura ambiente, 
+% os efeitos desse tipo de material se manifestam principalmente pela fluência de deformação e pela relaxação 
+% de tensão \cite{Pagliosa2004}. Essa característica não pode ser negligênciada no dimensionamento de componentes 
+% estruturais sujeitos a carregamentos de longo prazo, como é o caso de enrijecedores à flexão.
+
+% Análise global e local.
+A análise desses sistemas pode ser desenvolvida em diferentes escalas. Na análise global, avalia-se a resposta da linha 
+às ações ambientais e aos movimentos da unidade flutuante, obtendo-se informações dos carregamentos na região de conexão
+(região de topo). Essas informações podem ser utilizadas em um modelo local do conjunto \emph{riser}-enrijecedor, 
+permitindo a determinação das curvaturas e deformações nessa região. Essa separação é o que permite investigar aspectos
+específicos do componente sem adentrar toda a complexidade de uma única vez. O presente trabalho, portanto, é focado no 
+desenvolvimento de uma análise local.
+
+% Importância de considerar a viscoelasticidade no dimensionamento de enrijecedores à flexão.
+Sob este prisma, o dimensionamento de enrijecedores à flexão não envolve apenas a definição da geometria, mas também a descrição
+do comportamento mecânico do poliuretano empregado em sua fabricação e a caracterização das cargas de ambiente. Uma 
+idealização elástica permite simplificar a análise, porém não representa os fenômenoos dependentes do tempo, como a fluência 
+de deformações e a relaxação de tensões \cite{Pagliosa2004}. Nos enrijecedores submetidos a carregamentos periódicos, também
+importa considerar a influência da frequência e da dissipação de energia na resposta do sistema \cite{Caire2011}. 
+
+% Caracterização experimental - modelo constitutivo
+A inclusão desses efeitos exige a identificação de parâmetros capazes de representar a resposta do material nas condições
+de interesse. Como discute \citeonline{Pagliosa2004}, propriedades obtidas em ensaios convencionais de tração não são suficientes
+para a descrição do comportamento de longo prazo de materiais poliméricos, como é o caso do poliuretano. Ensaios de 
+relaxação e de fluência fornecem informações para a construção de modelos constitutivos dependentes do tempo, permitindo
+relacionar a caracterização experimental à análise estrutural. O comportamento desse tipo de material é típicamente 
+representado por modelos constitutivos e suas devidas funções constitutivas dependentes do tempo, como as Séries de Prony,
+que permitem descrever a evolução da resposta mecânica do material ao longo do tempo.
 
 % Necessidade de métodos numéricos
+A aplicação desses modelos ao conjunto \emph{riser}-enrijecedor requer procedimentos numéricos para determinar sua resposta
+estrutural. \citeonline{Lopes2025} investiga essa abordagem considerando o material elástico e aponta a implmentação de um modelo 
+que considere a viscoelasticidade do material como uma possibilidade de continuidade. \citeonline{Caire2011}, por sua vez, apresenta
+formulações viscoelásticas para a análise específica de enrijecedores à flexão submetidos a carregamentos dependentes do 
+tempo. A partir dessas contribuições, este trabalho busca integrar a identificação de parâmetros do poliuretano à 
+implementação e à validação de uma metodologia numérica de análise sob carregamento harmônico simples.
+
+% Desafios na integração da caracterização experimental e análise numérica
+A disponibilidade de formulações viscoelásticas, entretanto, não dispensa a necessidade da implementação de um processo de 
+identificação adequada dos parâmetros do material nem a verificação de sua implementação numérica. O desafio consiste em 
+integrar essas etapas de maneira consistente, para que os dados de caracterização sejam utilizados na previsão de curvaturas
+e deformações relevantes ao dimensionamento do enrijecedor.
 
 % Noções importantes (que vão ser abordadas para justificar as considerações)
 
+% Idealização do carregamento harmônico simples.
+A representação simplificada das solicitações ambientais também encontra aplicação nas análises globais de carregamento
+extremo. A especificação técnica da \citeonline[apêndice B, seção B.2.1]{Petrobras2024} admite, como alternativa à análise
+com ondas irregulares, o procedimento de máxima resposta com ondas regulares. A partir do espectro de ondas e dos
+operadores de amplitude de resposta (RAOs) da unidade flutuante no ponto de conexão do umbilical, esse procedimento
+estabelece uma representação regular destinada a reproduzir os máximos de movimento angular e de aceleração vertical
+estimados para uma tempestade de três horas. A especificação exige, entretanto, a verificação dos casos mais críticos
+por análises com ondas irregulares \cite[apêndice B, seção B.1]{Petrobras2024}.
+
+Essa possibilidade de representação regular oferece contexto para o uso de solicitações periódicas em modelos
+simplificados, mas não implica que os carregamentos locais sejam necessariamente harmônicos. Neste trabalho, o
+carregamento harmônico simples é adotado como uma idealização controlada para investigar a resposta viscoelástica do
+conjunto \emph{riser}-enrijecedor, sem reproduzir toda a complexidade das solicitações reais nem pressupor equivalência
+automática com os carregamentos obtidos pelo procedimento de máxima resposta.
+
+% Representação simplificada do sistema linha flexível-enrijecedor. (importante para vigas)
+Em uma representação simplificada, o sistema linha flexível-enrijecedor pode ser tratado como uma estrutura submetida à 
+flexão e à tração, cuja rigidez flexional varia ao longo do comprimento. A geometria do enrijecedor contribui para essa 
+variação, enquanto o comportamento do poliuretano introduz uma dependência temporal na resposta. A modelagem procura, 
+portanto, combinar a descrição geométrica do conjunto com uma relação constitutiva adequada ao material.
+
+
+\section{Objetivo Geral}
+\label{sec:objetivo-geral}
+
+O objetivo geral deste trabalho é aplicar e validar uma metodologia numérica
+para caracterização viscoelástica de poliuretanos e análise de enrijecedores à
+flexão para \emph{risers} flexíveis, empregando modelos constitutivos identificados a 
+partir de ensaios de relaxação, implementação computacional da formulação de análise e 
+proposição de critérios para dimensionamento de  enrijecedores à flexão para um 
+carregamento harmônico simples.
+
+\section{Objetivos Específicos}
+\label{sec:objetivos-especificos}
+
+O trabalho tem como objetivos específicos:
+
+\begin{enumerate}
+  \item Realizar revisão bibliográfica sobre: viscoelasticidade, poliuretanos, 
+enrijecedores à flexão, modelos físicos e séries de Prony.
+  \item Implementar procedimentos para identificação de parâmetros de modelos 
+viscoelásticos a partir de dados de ensaios de relaxação.
+  \item Implementar numericamente a formulação viscoelástica para enrijecedores à flexão, 
+  considerando os efeitos viscoelásticos do poliuretano e carregamento harmônico simples.
+  \item Avaliar e validar a resposta estrutural do enrijecedor e comparar com os resultados 
+  esperados pela bibliografia.
+  \item Realizar um estudo de caso.
+  \item Analisar os resultados obtidos no estudo de caso e discutir sobre as limitações 
+  envolvendo a metodologia.
+
+\end{enumerate}
 
 
 % \begin{itemize}
@@ -472,60 +576,6 @@ sistema de fixação da linha flexível e são usinados para adquirir a forma c�
 % \item Quarto item.
 % \end{itemize}
 
-% ----------------------------------------------------------------------
-% Pedro
-\chapter{Objetivo Geral}
-\label{cha:objetivo-geral}
-
-O objetivo geral deste trabalho é aplicar e validar uma metodologia numérica
-para caracterização viscoelástica de poliuretanos e análise de enrijecedores à
-flexão para \emph{risers} flexíveis, empregando modelos constitutivos identificados a 
-partir de ensaios de relaxação e fluência (\emph{creep}), implementação computacional
-da formulação de análise e proposição de critérios para dimensionamento de 
-enrijecedores à flexão para um carregamento harmônico simples.
-
-\section{Objetivos Específicos}
-\label{sec:objetivos-especificos}
-
-O trabalho tem como objetivos específicos:
-
-\begin{enumerate}
-  \item Realizar revisão bibliográfica sobre: viscoelasticidade, poliuretanos, 
-enrijecedores à flexão, modelos físicos e séries de Prony.
-  \item Implementar procedimentos para identificação de parâmetros de modelos 
-viscoelásticos a partir de dados de ensaios de relaxação.
-  \item Implementar numericamente a formulação viscoelástica para enrijecedores à flexão, 
-  considerando os efeitos viscoelásticos do poliuretano e carregamento harmônico simples.
-  \item Avaliar e validar a resposta estrutural do enrijecedor e comparar com os resultados 
-  esperados pela bibliografia.
-  \item Realizar um estudo de caso.
-  \item Analisar os resultados obtidos no estudo de caso e discutir sobre as limitações 
-  envolvendo a metodologia.
-
-\end{enumerate}
-
-\section{Premissas Adotadas} % Mover para metodologia
-
-As premissas adotadas para a realização do modelo matemático de enrijecedor e tubo flexível
-desenvolvido neste trabalho incluem: 
-\begin{itemize}
-  \item A Teoria de Euler-Bernoulli para vigas e a consideração de um engaste fixo na 
-  extremidade do enrijecedor e da linha flexível.
-  \item A deformação axial é desprezada, de modo que a linha flexível e o enrijecedor se deformam apenas por flexão.
-  \item A linha flexível que reside no interior do enrijecedor é considerada como parte integrante do sistema, sem descontinuidade de deslocamentos.
-  \item O comportamento em tração e compressão é considerado o mesmo, tanto para a linha flexível
-  quanto para o enrijecedor.
-  \item A força e o ângulo de topo são modelados como funções harmônicas devido à natureza do ambiente
-  a qual o sistema está inserido, isto é, de carregamentos induzidos por ondas.
-  \item O comportamento de tração e compressão são considerados os mesmos.
-  \item O efeito da temperatura sobre as propriedades do poliuretano é desprezado.
-\end{itemize}
-
-Embora as simplificações negligenciem alguns dos efeitos termofísicos importantes, como a redução 
-de capacidade (\emph{derating}) associado à variação de temperatura e a anisotropia do poliuretano,
-essas simplificações permitem uma análise consistente do comportamento viscoelástico do sistema como descrito
-por Caire \cite{caire}.
-
 % ---------------------------------------------------------------------
 % Alexandre
 \chapter{Referencial Teórico}
@@ -558,6 +608,29 @@ com ênfase em poliuretanos.
 % Pedro
 \chapter{Metodologia}
 
+%% Desenvolver mais coisa.
+
+\section{Premissas Adotadas} % Mover para metodologia
+
+As premissas adotadas para a realização do modelo matemático de enrijecedor e tubo flexível
+desenvolvido neste trabalho incluem: 
+\begin{itemize}
+  \item A Teoria de Euler-Bernoulli para vigas e a consideração de um engaste fixo na 
+  extremidade do enrijecedor e da linha flexível.
+  \item A deformação axial é desprezada, de modo que a linha flexível e o enrijecedor se deformam apenas por flexão.
+  \item A linha flexível que reside no interior do enrijecedor é considerada como parte integrante do sistema, sem descontinuidade de deslocamentos.
+  \item O comportamento em tração e compressão é considerado o mesmo, tanto para a linha flexível
+  quanto para o enrijecedor.
+  \item A força e o ângulo de topo são modelados como funções harmônicas devido à natureza do ambiente
+  a qual o sistema está inserido, isto é, de carregamentos induzidos por ondas.
+  \item O comportamento de tração e compressão são considerados os mesmos.
+  \item O efeito da temperatura sobre as propriedades do poliuretano é desprezado.
+\end{itemize}
+
+Embora as simplificações negligenciem alguns dos efeitos termofísicos importantes, como a redução 
+de capacidade (\emph{derating}) associado à variação de temperatura e a anisotropia do poliuretano,
+essas simplificações permitem uma análise consistente do comportamento viscoelástico do sistema como descrito
+por \citeonline{Caire2011}.
 
 % ----------------------------------------------------------------------
 \chapter{Formatação de Elementos Pré-textuais}

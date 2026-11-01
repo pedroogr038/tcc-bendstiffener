@@ -1,6 +1,6 @@
 PWD C:\Pedro\GitHub\tcc-bendstiffener\latex\ifes8\tcc
 INPUT C:\Users\pedro\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT C:\Pedro\GitHub\tcc-bendstiffener\latex\ifes8\tcc\ifes8-tcc.tex
+INPUT ifes8-tcc.tex
 OUTPUT ifes8-tcc.log
 INPUT .\ifes8.cls
 INPUT ifes8.cls
@@ -389,6 +389,13 @@ INPUT .\ifes8-tcc.toc
 INPUT .\ifes8-tcc.toc
 INPUT ifes8-tcc.toc
 INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbo10.tfm
+INPUT .\pics\Bend stiffener, installation expo_windjounal_haracop.jpeg
+INPUT .\pics\Bend stiffener, installation expo_windjounal_haracop.jpeg
+INPUT .\pics\Bend stiffener, installation expo_windjounal_haracop.jpeg
+INPUT .\pics\Bend stiffener, installation expo_windjounal_haracop.jpeg
+INPUT .\pics\Bend stiffener, installation expo_windjounal_haracop.jpeg
+INPUT .\pics\Bend stiffener, installation expo_windjounal_haracop.jpeg
+INPUT .\pics\Bend stiffener, installation expo_windjounal_haracop.jpeg
 INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\lm\ts1lmr.fd
 INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\lm\ts1lmr.fd
 INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\lm\ts1lmr.fd
@@ -398,37 +405,6 @@ INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
 INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
 INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
 INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtt12.tfm
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
-INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr9.tfm
 INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmr10.tfm
 INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmr7.tfm
 INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmr5.tfm
@@ -450,10 +426,12 @@ INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmcsc1
 INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr9.tfm
 INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ts1-lmr10.tfm
 INPUT .\ifes8-tcc.bbl
 INPUT .\ifes8-tcc.bbl
 INPUT ifes8-tcc.bbl
+INPUT C:\Users\pedro\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ts1-lmri12.tfm
 INPUT .\pics\normas-ifes-apendice-d.png
 INPUT .\pics\normas-ifes-apendice-d.png
 INPUT .\pics\normas-ifes-apendice-d.png
