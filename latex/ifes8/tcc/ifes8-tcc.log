@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.24)  2 NOV 2026 15:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.24)  2 NOV 2026 16:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1555,7 +1555,7 @@ fes8-tcc.toc) [8
 
 ]
 Cap\'{\i }tulo 1.
-<pics/Bend stiffener, installation expo_windjounal_haracop.jpeg, id=141, 1638.1
+<pics/Bend stiffener, installation expo_windjounal_haracop.jpeg, id=145, 1638.1
 2pt x 1228.59pt>
 File: pics/Bend stiffener, installation expo_windjounal_haracop.jpeg Graphic fi
 le (type jpg)
@@ -1586,34 +1586,40 @@ Cap\'{\i }tulo 3.
 [21
 
 ]
+Overfull \hbox (10.63947pt too wide) in paragraph at lines 1014--1016
+[]\T1/lmr/m/n/12 (-20) As res-pos-tas cons-ti-tu-ti-vas em tra-ção e com-pres-s
+ão são con-si-de-ra-das si-mé-tri-cas, preservando-
+ []
+
+[22] [23]
 Cap\'{\i }tulo 4.
-[22
+[24
 
 ]
 Cap\'{\i }tulo 5.
-(ifes8-tcc.bbl [23
+(ifes8-tcc.bbl [25
 
 ]
 bibitemlist
-) [24
-
-] [25
-
-]
-AP\^ENDICE A.
-[26
+) [26
 
 ] [27
 
 ]
+AP\^ENDICE A.
+[28
+
+] [29
+
+]
 ANEXO A.
-<pics/normas-ifes-apendice-d.png, id=372, 544.0325pt x 770.88pt>
+<pics/normas-ifes-apendice-d.png, id=397, 544.0325pt x 770.88pt>
 File: pics/normas-ifes-apendice-d.png Graphic file (type png)
 <use pics/normas-ifes-apendice-d.png>
-Package pdftex.def Info: pics/normas-ifes-apendice-d.png  used on input line 98
-8.
+Package pdftex.def Info: pics/normas-ifes-apendice-d.png  used on input line 10
+72.
 (pdftex.def)             Requested size: 435.2266pt x 616.70485pt.
-[28
+[30
 
  <./pics/normas-ifes-apendice-d.png>]
 \tf@toc=\write5
@@ -1629,11 +1635,11 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 33280 strings out of 467871
- 605663 string characters out of 5418375
- 1064927 words of memory out of 5000000
- 61362 multiletter control sequences out of 15000+600000
- 664002 words of font info for 132 fonts, out of 8000000 for 9000
+ 33292 strings out of 467871
+ 605811 string characters out of 5418375
+ 1064110 words of memory out of 5000000
+ 61365 multiletter control sequences out of 15000+600000
+ 663873 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,13n,121p,1008b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmb10.pfb
@@ -1647,9 +1653,9 @@ C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C
 Users/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Us
 ers/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Us
 ers/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-Output written on ifes8-tcc.pdf (31 pages, 899858 bytes).
+Output written on ifes8-tcc.pdf (33 pages, 908454 bytes).
 PDF statistics:
- 515 PDF objects out of 1000 (max. 8388607)
- 118 named destinations out of 1000 (max. 500000)
+ 541 PDF objects out of 1000 (max. 8388607)
+ 129 named destinations out of 1000 (max. 500000)
  20639 words of extra memory for PDF output out of 20736 (max. 10000000)
 

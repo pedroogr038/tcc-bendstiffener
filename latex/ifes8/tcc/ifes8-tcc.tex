@@ -854,6 +854,17 @@ ou superior a 10; abaixo desse valor, a análise deve considerar ambas as tensõ
 \subsection{Deflexão em Vigas}
 \label{sub:deflexao-vigas}
 
+A teoria de Euler-Bernoulli considera que as seções transversais permanecem planas e
+perpendiculares ao eixo deformado da viga. Isso significa desprezar a parcela da deflexão
+causada pela deformação por cisalhamento, mas não a força cortante que participa do equilíbrio.
+Quando essa parcela é relevante, uma teoria que a inclua, como a de Timoshenko, permite
+considerar separadamente a rotação da seção e a inclinação do eixo. A escolha depende da
+geometria e das rigidezes à flexão e ao cisalhamento, não apenas da comparação entre tensões.
+Para o conjunto linha flexível-enrijecedor, \citeonline[p.~85--86]{Caire2011} discute avaliações
+nas quais a inclusão do cisalhamento teve pouca influência na distribuição de curvatura.
+Além disso, a hipótese de Euler-Bernoulli não deve ser confundida com a aproximação de
+pequenas rotações utilizada na equação de deflexão apresentada a seguir.
+
 Além das tensões, o projetista deve considerar a deflexão, pois, mesmo com tensões
 bem abaixo dos níveis de falha do material, as deflexões elásticas podem causar
 interferências e desalinhamentos em um sistema \cite[p.~162]{Norton2013}. A deflexão
@@ -919,27 +930,100 @@ Seção~\ref{sec:viscoelasticidade} e na Subseção~\ref{sub:rigidez}.
 \chapter{Metodologia}
 \label{sec:metodologia}
 
-\section{Premissas Adotadas} % Mover para metodologia
+\section{Premissas Adotadas}
+\label{sec:premissas-adotadas}
 
-As premissas adotadas para a realização do modelo matemático de enrijecedor e tubo flexível
-desenvolvido neste trabalho incluem: 
-\begin{itemize}
-  \item A Teoria de Euler-Bernoulli para vigas e a consideração de um engaste fixo na 
-  extremidade do enrijecedor e da linha flexível.
-  \item A deformação axial é desprezada, de modo que a linha flexível e o enrijecedor se deformam apenas por flexão.
-  \item A linha flexível que reside no interior do enrijecedor é considerada como parte integrante do sistema, sem descontinuidade de deslocamentos.
-  \item O comportamento em tração e compressão é considerado o mesmo, tanto para a linha flexível
-  quanto para o enrijecedor.
-  \item A força e o ângulo de topo são modelados como funções harmônicas devido à natureza do ambiente
-  a qual o sistema está inserido, isto é, de carregamentos induzidos por ondas.
-  \item O comportamento de tração e compressão são considerados os mesmos.
-  \item O efeito da temperatura sobre as propriedades do poliuretano é desprezado.
-\end{itemize}
+% Premissas adotadas para o modelo local
+O modelo local busca determinar as curvaturas e deformações do conjunto linha flexível-enrijecedor,
+considerando o comportamento viscoelástico do poliuretano. Para isso, adotam-se simplificações
+que permitem estudar a flexão sem representar todos os detalhes da estrutura real. As premissas
+tomam como base a formulação de \citeonline[seção 3.1, p.~85--87]{Caire2011}, com a delimitação
+adicional de manter constante a temperatura do material.
 
-Embora as simplificações negligenciem alguns dos efeitos termofísicos importantes, como a redução 
-de capacidade (\emph{derating}) associado à variação de temperatura e a anisotropia do poliuretano,
-essas simplificações permitem uma análise consistente do comportamento viscoelástico do sistema como descrito
-por \citeonline{Caire2011}.
+% Aproximação de Euler-Bernoulli para a flexão do conjunto linha flexível-enrijecedor
+O conjunto é representado pela teoria de vigas de Euler-Bernoulli, desprezando-se a deformação
+por cisalhamento para concentrar a análise na deformação por flexão. Essa aproximação tem
+apoio nas avaliações discutidas no referencial teórico, em~\ref{sub:deflexao-vigas},
+mas deve ser aplicada a geometrias nas quais a contribuição do cisalhamento seja pequena.
+
+% Representação da fixação do conjunto linha flexível-enrijecedor
+Na região de topo, acessórios como o \emph{hang-off} sustentam a linha e transferem seus
+esforços à estrutura da unidade de produção. Quando o conjunto de fixação possui elevada
+rigidez e restringe tanto os deslocamentos quanto as rotações, sua ligação pode ser
+representada por um engaste. Neste trabalho, considera-se essa condição para a linha
+flexível e o enrijecedor, na mesma extremidade de referência. A presença do acessório, por
+si só, não garante essa condição: conexões que permitem rotação ou possuem pontos de fixação
+afastados precisam ser representadas de outra forma.
+
+% Justificando o desprezo do alongamento axial.
+A linha flexível pode se curvar sem apresentar um aumento significativo de comprimento,
+pois possui elevada rigidez axial, ou seja, oferece grande oposição ao alongamento. Por isso, considera-se que o comprimento
+medido ao longo do eixo do conjunto permanece constante durante a flexão. A mesma aproximação
+é adotada para o enrijecedor, deixando o cálculo de seu alongamento fora do escopo do modelo.
+Isso não significa retirar a força de tração da análise: ela continua atuando e influencia
+a forma assumida pelo conjunto. Também não impede que, ao se curvar, as fibras de um lado
+se alonguem e as do lado oposto se encurtem. O que se despreza é o aumento do comprimento
+do eixo, e essa aproximação é adequada quando tal aumento é pequeno nas condições estudadas.
+
+% Justificando o desprezo da folga radial.
+Entre a superfície externa da linha flexível e a superfície interna do enrijecedor pode existir
+uma pequena folga. Antes de encostar no enrijecedor, a linha pode se mover dentro desse espaço.
+Para simplificar a análise, despreza-se essa folga e considera-se que os dois componentes
+acompanham a mesma deflexão. Essa aproximação é adequada quando a folga pouco altera a forma
+deformada do conjunto. Não se considera que os materiais estejam colados, e o modelo não
+descreve as pressões de contato nem o desgaste entre suas superfícies.
+
+% Justificando a simetria da seção e a escolha do eixo neutro.
+Materiais poliméricos podem apresentar respostas diferentes quando tracionados e comprimidos.
+Essa diferença é relevante na flexão, pois uma parte da seção trabalha em tração e outra em
+compressão, podendo alterar a posição do eixo neutro e a relação entre momento e curvatura
+\cite[p.~86--87]{Caire2011}. Neste trabalho, essa diferença é desprezada: os mesmos parâmetros
+são utilizados para representar os dois comportamentos. Trata-se de uma hipótese simplificadora
+para estudar os efeitos da viscoelasticidade, e não de uma afirmação de que o poliuretano
+responde igualmente à tração e à compressão. Assim, os resultados não incluem os efeitos
+dessa assimetria.
+
+% Justificando a escolha do carregamento harmônico.
+A força aplicada e o ângulo de topo são representados por funções harmônicas, com valores
+médios, amplitudes, frequência e fase relativa definidos. Isso permite estudar como a rapidez
+com que a carga se repete influencia a resposta do poliuretano e a energia dissipada a cada
+ciclo. É uma condição controlada de análise, que não representa toda a irregularidade do
+carregamento real nem garante, por si só, resultados conservadores. Mesmo com uma entrada
+harmônica, a resposta do conjunto pode não ser uma senoide pura, devido à não linearidade
+geométrica.
+
+% Justificando a condição isotérmica de referência.
+A temperatura também pode alterar a resposta do poliuretano. Além das condições do ambiente,
+o próprio carregamento cíclico pode aquecer o material pela dissipação de energia. Neste
+trabalho, esses efeitos são desprezados e considera-se uma temperatura constante, correspondente
+à utilizada na caracterização do material (24°C). Dessa forma, a análise fica restrita à resposta
+mecânica, sem calcular o aquecimento ou a mudança das propriedades com a temperatura.
+Essa simplificação não significa que os efeitos térmicos sejam irrelevantes em serviço;
+situações com variações importantes de temperatura exigem uma avaliação específica.
+
+Com base nessas considerações, as premissas são sintetizadas a seguir:
+\begin{enumerate}
+  \item O conjunto é representado pela teoria de vigas de Euler-Bernoulli, desprezando-se
+  a deformação por cisalhamento.
+  \item A linha flexível e o enrijecedor são considerados engastados na mesma extremidade
+  de referência.
+  \item O alongamento axial da linha de referência das duas estruturas é desprezado,
+  mantendo-se a força de tração no equilíbrio.
+  \item O espaçamento radial entre a linha flexível e o enrijecedor é desprezado,
+  adotando-se a mesma deflexão para ambos.
+  \item As respostas constitutivas em tração e compressão são consideradas simétricas,
+  preservando-se o comportamento viscoelástico do poliuretano.
+  \item A força aplicada e o ângulo de topo são representados por funções harmônicas.
+  \item Os parâmetros constitutivos correspondem a uma condição de temperatura de referência,
+  sem considerar variações térmicas ou acoplamento termomecânico.
+\end{enumerate}
+
+\section{Caracterização do Material}
+\label{sec:caracterizacao-do-material}
+
+\section{Equacionamento do Sistema Linha Flexível-Enrijecedor}
+\label{sec:equacionamento-do-sistema}
+
 
 % ----------------------------------------------------------------------
 \chapter{Resultados e Discussão}
