@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.24)  2 NOV 2026 16:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.24)  2 NOV 2026 16:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1613,7 +1613,7 @@ AP\^ENDICE A.
 
 ]
 ANEXO A.
-<pics/normas-ifes-apendice-d.png, id=397, 544.0325pt x 770.88pt>
+<pics/normas-ifes-apendice-d.png, id=401, 544.0325pt x 770.88pt>
 File: pics/normas-ifes-apendice-d.png Graphic file (type png)
 <use pics/normas-ifes-apendice-d.png>
 Package pdftex.def Info: pics/normas-ifes-apendice-d.png  used on input line 10
@@ -1635,11 +1635,11 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 33292 strings out of 467871
- 605811 string characters out of 5418375
- 1064110 words of memory out of 5000000
- 61365 multiletter control sequences out of 15000+600000
- 663873 words of font info for 131 fonts, out of 8000000 for 9000
+ 33302 strings out of 467871
+ 605971 string characters out of 5418375
+ 1064287 words of memory out of 5000000
+ 61370 multiletter control sequences out of 15000+600000
+ 664076 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,13n,121p,1008b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmb10.pfb
@@ -1653,9 +1653,9 @@ C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C
 Users/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Us
 ers/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Us
 ers/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-Output written on ifes8-tcc.pdf (33 pages, 908454 bytes).
+Output written on ifes8-tcc.pdf (33 pages, 910928 bytes).
 PDF statistics:
- 541 PDF objects out of 1000 (max. 8388607)
- 129 named destinations out of 1000 (max. 500000)
+ 545 PDF objects out of 1000 (max. 8388607)
+ 130 named destinations out of 1000 (max. 500000)
  20639 words of extra memory for PDF output out of 20736 (max. 10000000)
 
