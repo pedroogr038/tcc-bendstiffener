@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.5)  2 NOV 2026 18:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.5)  2 NOV 2026 21:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1275,7 +1275,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 179--184
 
 ]
 Cap\'{\i }tulo 1.
-<pics/Bend stiffener, installation expo_windjounal_haracop.jpeg, id=144, 1638.12pt x 1228.59pt>
+<pics/Bend stiffener, installation expo_windjounal_haracop.jpeg, id=160, 1638.12pt x 1228.59pt>
 File: pics/Bend stiffener, installation expo_windjounal_haracop.jpeg Graphic file (type jpg)
 <use pics/Bend stiffener, installation expo_windjounal_haracop.jpeg>
 Package pdftex.def Info: pics/Bend stiffener, installation expo_windjounal_haracop.jpeg  used on input line 387.
@@ -1285,7 +1285,7 @@ Package pdftex.def Info: pics/Bend stiffener, installation expo_windjounal_harac
 
  <./pics/Bend stiffener, installation expo_windjounal_haracop.jpeg>] [10] [11] [12]
 Cap\'{\i }tulo 2.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 539.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 541.
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1294,43 +1294,43 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [13
 
-{C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}] [14{C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [15] [16] [17] [18] [19] [20]
+{C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}] [14{C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29]
 Cap\'{\i }tulo 3.
-[21
+[30
 
 ]
-Overfull \hbox (10.63947pt too wide) in paragraph at lines 1014--1016
+Overfull \hbox (10.63947pt too wide) in paragraph at lines 1574--1576
 []\T1/lmr/m/n/12 (-20) As res-pos-tas cons-ti-tu-ti-vas em tra-ção e com-pres-são são con-si-de-ra-das si-mé-tri-cas, preservando-
  []
 
-[22] [23]
+[31] [32]
 Cap\'{\i }tulo 4.
-[24
+[33
 
 ]
 Cap\'{\i }tulo 5.
-(ifes8-tcc.bbl [25
+(ifes8-tcc.bbl [34
 
 ]
 bibitemlist
-) [26
+) [35
 
-] [27
+] [36
 
 ]
 AP\^ENDICE A.
-[28
+[37
 
-] [29
+] [38
 
 ]
 ANEXO A.
-<pics/normas-ifes-apendice-d.png, id=400, 544.0325pt x 770.88pt>
+<pics/normas-ifes-apendice-d.png, id=487, 544.0325pt x 770.88pt>
 File: pics/normas-ifes-apendice-d.png Graphic file (type png)
 <use pics/normas-ifes-apendice-d.png>
-Package pdftex.def Info: pics/normas-ifes-apendice-d.png  used on input line 1072.
+Package pdftex.def Info: pics/normas-ifes-apendice-d.png  used on input line 1632.
 (pdftex.def)             Requested size: 435.2266pt x 616.70485pt.
-[30
+[39
 
  <./pics/normas-ifes-apendice-d.png>]
 \tf@toc=\write5
@@ -1345,17 +1345,17 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 33730 strings out of 467441
- 621292 string characters out of 5406619
- 1078784 words of memory out of 5000000
- 62226 multiletter control sequences out of 15000+600000
- 663979 words of font info for 132 fonts, out of 8000000 for 9000
+ 33844 strings out of 467441
+ 622948 string characters out of 5406619
+ 1082180 words of memory out of 5000000
+ 62261 multiletter control sequences out of 15000+600000
+ 674184 words of font info for 150 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,13n,121p,1078b,808s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmb10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-Output written on ifes8-tcc.pdf (33 pages, 910578 bytes).
+<C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmb10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
+Output written on ifes8-tcc.pdf (42 pages, 972579 bytes).
 PDF statistics:
- 544 PDF objects out of 1000 (max. 8388607)
- 130 named destinations out of 1000 (max. 500000)
- 20639 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 652 PDF objects out of 1000 (max. 8388607)
+ 176 named destinations out of 1000 (max. 500000)
+ 26783 words of extra memory for PDF output out of 29859 (max. 10000000)
 

@@ -515,6 +515,8 @@ modelos constitutivos utilizados na solução destas. Por fim, são discutidos o
 séries de Prony e sua aplicação na caracterização viscoelástica de materiais poliméricos, 
 com ênfase em poliuretanos.
 
+% ---------------------------------------------------------------------
+
 \section{Flexão}
 \label{sec:flexao}
 
@@ -910,20 +912,578 @@ comportamento viscoelástico do poliuretano, o módulo de elasticidade $E$ deixa
 uma constante e passa a depender do tempo, conforme discutido na
 Seção~\ref{sec:viscoelasticidade} e na Subseção~\ref{sub:rigidez}.
 
+% ---------------------------------------------------------------------
+
 \section{Viscoelasticidade}
 \label{sec:viscoelasticidade}
 
 \subsection{Rigidez}
 \label{sub:rigidez}
 
+% ---------------------------------------------------------------------
+
 \section{Equações Diferenciais}
 \label{sec:equacoes-diferenciais}
+
+% ---------------------------------------------------------------------
 
 \section{Métodos Numéricos}
 \label{sec:metodos-numericos}
 
-\section{Séries de Prony}
-\label{sec:series-de-prony}
+A solução do problema proposto requer a aplicação combinada de
+diferentes métodos numéricos, uma vez que o modelo matemático envolve
+comportamento viscoelástico, equações diferenciais ordinárias,
+condições de contorno e dependência da resposta em relação ao histórico
+de carregamento. Conforme apresentado por Chapra e Canale (2011), os
+métodos numéricos permitem transformar problemas matemáticos de maior
+complexidade em procedimentos computacionais baseados em operações
+aritméticas, possibilitando a obtenção de soluções aproximadas quando
+uma solução analítica não está disponível ou apresenta limitações
+práticas.
+
+Neste trabalho, são empregados métodos de aproximação por séries,
+integração numérica de equações diferenciais ordinárias, localização
+de raízes e solução de problemas de valor de contorno. A implementação
+é dividida em duas abordagens complementares: uma formulação no
+domínio da frequência, baseada em uma expansão perturbativa em
+harmônicos, e uma formulação no domínio do tempo, na qual a memória
+viscoelástica é representada por variáveis internas.
+
+\subsection{Representação viscoelástica por série de Prony}
+\label{subsec:serie-prony}
+
+O comportamento viscoelástico do material é representado por meio de
+uma série de Prony, que permite descrever a relaxação do módulo de
+cisalhamento como uma soma de contribuições exponenciais. Essa
+representação é expressa por
+
+\begin{equation}
+  G(t) = G_{\infty} +
+  \sum_{m=1}^{N} G_m \exp\left(-\frac{t}{\tau_m}\right),
+  \label{eq:prony-relaxacao}
+\end{equation}
+
+em que $G(t)$ é o módulo de relaxação ao longo do tempo, $G_{\infty}$
+é o módulo de cisalhamento em regime de longo prazo, $G_m$ representa
+a contribuição de cada termo da série, $\tau_m$ é o respectivo tempo
+de relaxação e $N$ corresponde ao número de termos utilizados na
+aproximação.
+
+A representação por uma soma de exponenciais permite descrever
+diferentes escalas temporais de relaxação do material. Cada termo
+contribui de maneira distinta para a evolução da resposta mecânica,
+sendo que contribuições associadas a menores tempos de relaxação
+decrescem mais rapidamente.
+
+Para a formulação no domínio da frequência, utiliza-se o módulo
+complexo de cisalhamento, definido por
+
+\begin{equation}
+  G^*(\omega) = G'(\omega) + iG''(\omega),
+  \label{eq:modulo-complexo}
+\end{equation}
+
+em que $\omega$ é a frequência angular, $G'(\omega)$ é o módulo de
+armazenamento, $G''(\omega)$ é o módulo de perda e $i$ representa a
+unidade imaginária. Considerando a convenção harmônica
+$\exp(i\omega t)$, os módulos são calculados por
+
+\begin{equation}
+  G'(\omega) =
+  G_{\infty} +
+  \sum_{m=1}^{N}
+  G_m
+  \frac{(\omega\tau_m)^2}
+  {1+(\omega\tau_m)^2},
+  \label{eq:modulo-armazenamento}
+\end{equation}
+
+\begin{equation}
+  G''(\omega) =
+  \sum_{m=1}^{N}
+  G_m
+  \frac{\omega\tau_m}
+  {1+(\omega\tau_m)^2}.
+  \label{eq:modulo-perda}
+\end{equation}
+
+O módulo de armazenamento está associado à parcela elástica da
+resposta, enquanto o módulo de perda representa a parcela relacionada
+à dissipação de energia durante o carregamento cíclico. Dessa forma,
+a utilização do módulo complexo permite incorporar os efeitos
+viscoelásticos na formulação harmônica, a partir dos parâmetros
+obtidos pela série de Prony.
+
+Os módulos dinâmicos calculados são utilizados na determinação dos
+coeficientes flexurais empregados nas equações governantes do modelo.
+Assim, a dependência da resposta em relação à frequência é incorporada
+à formulação mecânica sem a necessidade de representar diretamente
+todo o histórico temporal nessa etapa da solução.
+
+\subsection{Expansão perturbativa em harmônicos}
+\label{subsec:expansao-perturbativa}
+
+A formulação do problema utiliza uma expansão perturbativa para
+representar a resposta mecânica em diferentes ordens de aproximação.
+Essa abordagem permite decompor a solução em contribuições associadas
+a parâmetros de perturbação, reduzindo a complexidade da resolução
+direta das equações governantes.
+
+De maneira geral, uma variável dependente $u$ pode ser representada
+por uma expansão da forma
+
+\begin{equation}
+  u(s,t) =
+  u_0(s,t) +
+  \varepsilon u_1(s,t) +
+  \varepsilon^2 u_2(s,t) + \cdots,
+  \label{eq:expansao-perturbativa}
+\end{equation}
+
+em que $\varepsilon$ representa um parâmetro de perturbação e os
+termos $u_j$ correspondem às diferentes ordens da aproximação.
+
+No modelo implementado, a formulação também considera o parâmetro
+$\alpha$, de modo que os coeficientes de curvatura e de ângulo são
+organizados conforme as ordens perturbativas associadas a esses
+parâmetros. A dependência temporal periódica é representada por
+componentes harmônicas, permitindo expressar as variáveis como
+combinações de funções senoidais e cossenoidais.
+
+Uma representação geral dessa decomposição é
+
+\begin{equation}
+  u(s,t) =
+  a_0(s) +
+  \sum_{n=1}^{N_h}
+  \left[
+    a_n(s)\cos(n\omega t) +
+    b_n(s)\sin(n\omega t)
+  \right],
+  \label{eq:expansao-harmonica}
+\end{equation}
+
+em que $N_h$ representa o número de harmônicos considerados e
+$a_n(s)$ e $b_n(s)$ são coeficientes dependentes da coordenada
+espacial.
+
+Na implementação, são considerados os três primeiros harmônicos,
+correspondentes às frequências $\omega$, $2\omega$ e $3\omega$.
+A substituição das expansões nas relações constitutivas e nas
+equações governantes permite agrupar os termos de mesma ordem
+perturbativa e mesma frequência, originando um sistema algébrico
+para a determinação dos coeficientes harmônicos.
+
+Essa organização resulta em um sistema composto por 30 coeficientes,
+que representam as contribuições necessárias para reconstruir a
+resposta do sistema. A utilização dessa abordagem reduz o problema
+original a um conjunto finito de equações diferenciais e relações
+algébricas, tornando sua solução computacional mais viável.
+
+A decomposição em harmônicos também permite avaliar separadamente
+as contribuições de cada frequência para a resposta global, além de
+possibilitar a reconstrução da solução em diferentes instantes do
+ciclo de carregamento.
+
+\subsection{Formulação das equações diferenciais ordinárias}
+\label{subsec:formulacao-edo}
+
+Após a determinação das relações entre os coeficientes harmônicos,
+o problema é organizado como um sistema de equações diferenciais
+ordinárias ao longo da coordenada espacial $s$, que representa a
+posição ao longo do comprimento do \textit{stiffener}.
+
+O vetor de estado é constituído pelos coeficientes de curvatura
+$k_i(s)$ e de ângulo $\phi_i(s)$, de modo que o sistema pode ser
+representado genericamente por
+
+\begin{equation}
+  \frac{d\mathbf{y}}{ds}
+  =
+  \mathbf{f}(s,\mathbf{y}),
+  \label{eq:sistema-edo}
+\end{equation}
+
+em que $\mathbf{y}$ reúne as variáveis de estado e
+$\mathbf{f}$ representa as funções obtidas a partir das equações
+governantes.
+
+As equações são construídas a partir dos coeficientes flexurais
+$C_0$, $C_1$ e $C_2$, de suas derivadas e das contribuições
+associadas às forças de cisalhamento. Dessa maneira, as relações
+constitutivas e os esforços atuantes são incorporados ao sistema
+diferencial que descreve a evolução espacial da curvatura e do
+ângulo.
+
+Como as condições do problema são especificadas em diferentes
+extremidades do domínio, a solução do sistema não pode ser obtida
+simplesmente pela definição de todas as condições iniciais em
+$s=0$. Torna-se necessário utilizar um procedimento numérico
+específico para satisfazer simultaneamente as condições de contorno.
+
+\subsection{Método do tiro}
+\label{subsec:metodo-tiro}
+
+O problema formulado corresponde a um problema de valor de contorno,
+no qual são impostas condições em diferentes posições do domínio
+espacial. Para sua resolução, utiliza-se o método do tiro
+(\textit{shooting method}), que transforma o problema de contorno
+em um problema de valor inicial, cuja solução pode ser obtida
+mediante integração numérica das equações diferenciais.
+
+O procedimento consiste em estimar inicialmente os valores das
+variáveis desconhecidas na extremidade $s=0$. A partir dessas
+estimativas, o sistema de equações diferenciais é integrado até
+$s=L$, obtendo-se os valores calculados na extremidade final.
+Em seguida, esses valores são comparados com as condições de
+contorno prescritas, produzindo um vetor de resíduos.
+
+De maneira geral, define-se o vetor de resíduos como
+
+\begin{equation}
+  \mathbf{R}(\mathbf{p}) =
+  \mathbf{y}_{\mathrm{calc}}(L;\mathbf{p}) -
+  \mathbf{y}_{\mathrm{contorno}},
+  \label{eq:residuo-tiro}
+\end{equation}
+
+em que $\mathbf{p}$ representa o conjunto de valores iniciais
+desconhecidos, $\mathbf{y}_{\mathrm{calc}}$ corresponde à solução
+obtida pela integração e $\mathbf{y}_{\mathrm{contorno}}$
+representa os valores exigidos na extremidade final.
+
+O objetivo do método é determinar um conjunto de valores iniciais
+que torne o resíduo suficientemente pequeno, isto é,
+
+\begin{equation}
+  \left\|\mathbf{R}(\mathbf{p})\right\| \leq \mathrm{tol},
+  \label{eq:criterio-tiro}
+\end{equation}
+
+em que $\mathrm{tol}$ representa a tolerância numérica estabelecida
+para a convergência.
+
+A correção das estimativas iniciais é realizada pelo método de
+Newton aplicado ao sistema não linear de resíduos. A atualização
+do vetor de parâmetros é dada por
+
+\begin{equation}
+  \mathbf{p}^{(j+1)}
+  =
+  \mathbf{p}^{(j)}
+  -
+  \mathbf{J}^{-1}
+  \left(\mathbf{p}^{(j)}\right)
+  \mathbf{R}\left(\mathbf{p}^{(j)}\right),
+  \label{eq:newton-sistema}
+\end{equation}
+
+em que $j$ representa a iteração e $\mathbf{J}$ é a matriz
+Jacobiana do vetor de resíduos, definida por
+
+\begin{equation}
+  J_{ij} =
+  \frac{\partial R_i}{\partial p_j}.
+  \label{eq:jacobiana}
+\end{equation}
+
+Como a obtenção analítica das derivadas pode ser complexa, a matriz
+Jacobiana é aproximada numericamente por diferenças finitas. Para
+uma perturbação $\delta_j$ no parâmetro $p_j$, utiliza-se a
+aproximação
+
+\begin{equation}
+  J_{ij}
+  \approx
+  \frac{
+    R_i(\mathbf{p}+\delta_j\mathbf{e}_j)
+    -
+    R_i(\mathbf{p})
+  }{\delta_j},
+  \label{eq:jacobiana-diferencas}
+\end{equation}
+
+em que $\mathbf{e}_j$ é o vetor unitário associado à variável
+perturbada.
+
+Para aumentar a estabilidade do procedimento iterativo, a
+implementação utiliza amortecimento da correção e busca linear.
+Assim, em vez de aplicar integralmente a atualização de Newton,
+pode-se utilizar
+
+\begin{equation}
+  \mathbf{p}^{(j+1)}
+  =
+  \mathbf{p}^{(j)}
+  -
+  \lambda
+  \mathbf{J}^{-1}
+  \mathbf{R}\left(\mathbf{p}^{(j)}\right),
+  \label{eq:newton-amortecido}
+\end{equation}
+
+em que $0 < \lambda \leq 1$ é o fator de amortecimento. Seu valor
+é ajustado de modo a favorecer a redução do resíduo entre
+iterações, evitando correções excessivamente grandes que possam
+comprometer a convergência.
+
+O método do tiro, portanto, permite determinar as condições
+iniciais necessárias para que a solução integrada satisfaça as
+condições de contorno do problema original.
+
+\subsection{Integração das equações diferenciais pelo método de
+Runge-Kutta de quarta ordem}
+\label{subsec:runge-kutta}
+
+A integração espacial do sistema de equações diferenciais é
+realizada pelo método explícito de Runge-Kutta de quarta ordem
+(RK4). Conforme apresentado por Chapra e Canale (2011), os métodos
+de Runge-Kutta utilizam avaliações sucessivas da função
+diferencial dentro de cada intervalo de integração, permitindo
+obter aproximações de ordem superior sem a necessidade de calcular
+derivadas de ordem elevada.
+
+Considerando o problema geral
+
+\begin{equation}
+  \frac{dy}{ds}=f(s,y),
+  \label{eq:edo-escalar-rk}
+\end{equation}
+
+a atualização pelo método RK4 é expressa por
+
+\begin{equation}
+  y_{n+1}
+  =
+  y_n +
+  \frac{h}{6}
+  \left(k_1+2k_2+2k_3+k_4\right),
+  \label{eq:rk4-atualizacao}
+\end{equation}
+
+em que $h$ representa o passo de integração e os coeficientes
+intermediários são definidos por
+
+\begin{align}
+  k_1 &= f(s_n,y_n), \\
+  k_2 &= f\left(s_n+\frac{h}{2},
+                y_n+\frac{h}{2}k_1\right), \\
+  k_3 &= f\left(s_n+\frac{h}{2},
+                y_n+\frac{h}{2}k_2\right), \\
+  k_4 &= f(s_n+h,y_n+hk_3).
+\end{align}
+
+Para sistemas de equações diferenciais, o mesmo procedimento é
+aplicado ao vetor de estado, realizando-se as avaliações de
+$\mathbf{f}$ em cada estágio da integração.
+
+O método utiliza quatro avaliações da função diferencial por
+passo, combinadas por uma média ponderada. Sua precisão global é
+de quarta ordem, desde que a solução apresente regularidade
+suficiente e que o erro de arredondamento não domine o erro de
+discretização.
+
+No presente trabalho, o RK4 é empregado na integração das equações
+governantes ao longo do comprimento do \textit{stiffener}, tanto
+durante as iterações do método do tiro quanto na obtenção da
+solução espacial correspondente aos parâmetros iniciais
+determinados.
+
+\subsection{Localização de raízes pelo método de Newton e pelo
+método de Illinois}
+\label{subsec:busca-raizes}
+
+A determinação de parâmetros que satisfaçam determinadas condições
+de contorno exige, em algumas etapas, a resolução de equações não
+lineares. Esse procedimento consiste em encontrar o valor de uma
+variável $x$ que satisfaça
+
+\begin{equation}
+  f(x)=0.
+  \label{eq:equacao-raiz}
+\end{equation}
+
+Segundo Chapra e Canale (2011), os métodos de localização de raízes
+podem ser divididos, de maneira geral, em métodos que isolam a raiz
+em um intervalo e métodos abertos, que utilizam estimativas
+iniciais para produzir aproximações sucessivas.
+
+No procedimento de solução do problema de contorno, o método de
+Newton é empregado na correção simultânea de múltiplas condições
+iniciais, conforme apresentado anteriormente. Já na formulação
+no domínio do tempo, a condição de contorno final é imposta por
+meio da determinação do momento inicial $M(0)$.
+
+Nesse segundo caso, define-se uma função residual escalar que
+representa a diferença entre o ângulo calculado na extremidade
+final e o ângulo prescrito:
+
+\begin{equation}
+  F(M_0)=\phi(L;M_0)-\phi_L,
+  \label{eq:residuo-momento}
+\end{equation}
+
+em que $M_0$ é o momento inicial desconhecido, $\phi(L;M_0)$ é
+o ângulo calculado na extremidade $s=L$ e $\phi_L$ é o valor
+imposto como condição de contorno.
+
+A solução consiste em encontrar $M_0$ tal que
+
+\begin{equation}
+  F(M_0)=0.
+  \label{eq:condicao-momento}
+\end{equation}
+
+Inicialmente, realiza-se o isolamento de um intervalo
+$[M_a,M_b]$ que contenha uma raiz, buscando-se valores para os
+quais a função residual apresente sinais opostos:
+
+\begin{equation}
+  F(M_a)F(M_b)<0.
+  \label{eq:intervalo-raiz}
+\end{equation}
+
+Após o isolamento do intervalo, aplica-se o método da falsa
+posição modificado, conhecido como método de Illinois. A
+aproximação inicial da raiz é obtida pela interpolação linear
+entre os extremos do intervalo:
+
+\begin{equation}
+  M_r =
+  M_b -
+  \frac{F(M_b)(M_a-M_b)}
+  {F(M_a)-F(M_b)}.
+  \label{eq:falsa-posicao}
+\end{equation}
+
+A cada iteração, avalia-se o sinal de $F(M_r)$ e atualiza-se
+o intervalo que contém a raiz. No método de Illinois, quando
+um dos extremos permanece inalterado em iterações sucessivas,
+o valor da função associado a esse extremo é reduzido pela
+metade para a próxima interpolação. Essa modificação procura
+evitar que um dos extremos permaneça fixo por muitas iterações,
+situação que pode tornar lenta a convergência do método da
+falsa posição convencional.
+
+O procedimento é repetido até que o resíduo ou a largura do
+intervalo satisfaça a tolerância estabelecida. Dessa forma,
+obtém-se o momento inicial que permite satisfazer a condição
+de contorno angular na extremidade final do domínio.
+
+\subsection{Integração no domínio do tempo e variáveis internas
+viscoelásticas}
+\label{subsec:integracao-temporal}
+
+Além da formulação no domínio da frequência, o modelo utiliza
+uma abordagem no domínio do tempo para representar diretamente
+a evolução da resposta viscoelástica. Nessa formulação, o
+comportamento dependente do histórico de deformação é incorporado
+por meio de variáveis internas associadas aos termos da série
+de Prony.
+
+Para cada termo de relaxação, define-se uma variável interna
+$q_m(s,t)$, cuja evolução temporal representa a contribuição
+histórica daquele mecanismo de relaxação para a resposta
+mecânica. Essa representação permite substituir a necessidade
+de armazenar todo o histórico de curvatura por um conjunto
+finito de variáveis de estado.
+
+A atualização das variáveis internas entre dois instantes
+consecutivos é realizada por uma relação recursiva da forma
+
+\begin{equation}
+  q_m^{n+1}(s)
+  =
+  a_m q_m^n(s)
+  +
+  w_{0,m}k^n(s)
+  +
+  w_{1,m}k^{n+1}(s),
+  \label{eq:recursao-viscoelastica}
+\end{equation}
+
+em que $n$ representa o índice do passo temporal, $k^n$ e
+$k^{n+1}$ são os valores da curvatura nos instantes consecutivos,
+e $a_m$, $w_{0,m}$ e $w_{1,m}$ são coeficientes determinados
+pelos parâmetros do respectivo termo de relaxação e pelo
+intervalo de tempo utilizado.
+
+A utilização dessa formulação recursiva permite atualizar a
+contribuição de cada mecanismo de relaxação a partir do estado
+anterior e dos valores de curvatura no intervalo atual. Assim,
+a memória viscoelástica é preservada sem que seja necessário
+armazenar explicitamente todos os valores anteriores da
+curvatura, reduzindo os requisitos de memória computacional.
+
+A integração no domínio do tempo envolve, portanto, a evolução
+conjunta das variáveis mecânicas e das variáveis internas
+viscoelásticas. Em cada passo temporal, a resposta é calculada
+considerando a contribuição acumulada dos mecanismos de
+relaxação, enquanto a condição de contorno é satisfeita pela
+determinação iterativa do momento inicial, conforme descrito
+na Subseção~\ref{subsec:busca-raizes}.
+
+\subsection{Reconstrução da resposta em fase e no domínio do
+tempo}
+\label{subsec:reconstrucao-resposta}
+
+Após a determinação dos coeficientes harmônicos, a resposta
+mecânica é reconstruída por meio da combinação das diferentes
+componentes da expansão perturbativa. Essa etapa permite
+recuperar a dependência temporal das grandezas inicialmente
+representadas por coeficientes associados a cada frequência.
+
+A reconstrução é realizada pela avaliação das componentes
+harmônicas nos instantes ou fases de interesse. De maneira
+geral, a resposta pode ser expressa pela soma
+
+\begin{equation}
+  u(s,t) =
+  a_0(s) +
+  \sum_{n=1}^{N_h}
+  \left[
+    a_n(s)\cos(n\omega t) +
+    b_n(s)\sin(n\omega t)
+  \right],
+  \label{eq:reconstrucao-resposta}
+\end{equation}
+
+com a inclusão dos termos correspondentes às diferentes ordens
+perturbativas consideradas no modelo.
+
+A partir da distribuição espacial do ângulo $\phi(s,t)$, a
+geometria deformada do elemento é determinada pela integração
+das relações cinemáticas
+
+\begin{align}
+  \frac{dx}{ds} &= \cos\phi(s,t), \\
+  \frac{dy}{ds} &= \sin\phi(s,t).
+\end{align}
+
+Consequentemente, as coordenadas da linha deformada podem ser
+obtidas por
+
+\begin{align}
+  x(s,t) &=
+  x(0,t)+
+  \int_0^s \cos\phi(\xi,t)\,d\xi, \\
+  y(s,t) &=
+  y(0,t)+
+  \int_0^s \sin\phi(\xi,t)\,d\xi.
+\end{align}
+
+Essas integrais são avaliadas numericamente a partir da
+discretização espacial utilizada na solução. A reconstrução
+permite obter a geometria deformada e avaliar as grandezas
+mecânicas de interesse, incluindo curvatura, ângulo, tensão
+na região superior do elemento e envelopes de resposta ao
+longo do ciclo de carregamento.
+
+Dessa forma, a combinação entre a expansão perturbativa, a
+integração das equações diferenciais e a reconstrução
+harmônica possibilita representar a resposta do sistema tanto
+em função da posição quanto da fase ou do instante de
+carregamento.
 
 % ----------------------------------------------------------------------
 % Pedro
