@@ -930,6 +930,45 @@ Seção~\ref{sec:viscoelasticidade} e na Subseção~\ref{sub:rigidez}.
 \chapter{Metodologia}
 \label{sec:metodologia}
 
+%% Melhorar esse trecho. C: Explicar por cima toda a metodologia, resultados que serao observados, criterios de projeto e analise.
+A presente seção trabalha a metodologia desenvolvida para avaliar o comportamento do conjunto linha flexível-enrijecedor
+sob a ação de um carregamento harmônico aplicado na extremidade livre do conjunto. A metodologia inicia com o desenvolvimento
+matemático do sistema considerando o Diagrama do Corpo Livre (DCL) para obtenção do equacionamento dinâmico, a incorporação da 
+viscoelasticidade a partir do módulo de relaxação obtido pela análise experimental, seguido da implementação do método do tiro
+(\emph{shooting method}) e desenvolvimento de uma solução no domínio da frequência.
+
+% Trecho melhorado
+A metodologia desenvolvida para o desenvolvimento do solver numérico do sistema físico linha flexível-enrijecedor consiste em
+estabelecer premissas, destrinchar os diferentes modelos matemáticos que descrevem o comportamento material e a resposta estrutural 
+dado o carregamento considerado e o desenvolvimento da solução numérica que corresponde à viscoelasticidade linear.
+
+A fim de realizar o estudo de caso, o objetivo inical após o desenvolvimento da metodologia era validar a resolução por meio da comparação
+dos resultados obtidos neste trabalho com os desenvolvidos por \cite{Caire2011} em suas análises experimentais e numéricas. Subsequentemente,
+após essa validação da ferramenta, uma avaliação em diferentes condições buscando uma compreensão mais vasta do comportamento do sistema
+modelado pode ser obtida. Para avaliação de resultados, são estabelecidos critérios visando a aprovação da capacidade estrutural do projeto.
+
+Como discutido anteriormente, o enrijecedor tem como função principal reduzir de forma gradativa a rigidez do sistema ao longo do trecho inicial 
+de sua extensão. Dessa forma, entende-se que a função principal envolve a suavização da curvatura a fim de que o limite de projeto não seja atendido.
+A este limite é associado o valor de menor raio de curvatura -- \emph{Minimum Bending Radius (MBR)} -- definido pela Equação \eqref{eq:mbr}.
+
+% conferir essa equação
+\begin{equation}
+\label{eq:mbr}
+R_\text{min} = \frac{1}{\kappa_\text{max}},
+\end{equation}
+onde $R_\text{min}$ é o menor raio de curvatura admissível e $\kappa_\text{max}$ é a curvatura máxima permitida.
+
+Um outro critério de projeto relevante está associado à estrutura do enrijecedor. Como materiais viscoelásticos apresentam um comportamento 
+de natureza não linear, o escoamento como em materiais elásticos não é bem definido e com isso então considera-se um limite de 15% de deformação
+O cálculo para a deformação máxima advém da aplicação da Teoria de Vigas de Euler-Bernoulli, conforme Equação \eqref{eq:deformacao-maxima}.
+
+% Conferir essa equação
+\begin{equation}
+\label{eq:deformacao-maxima}
+\varepsilon_\text{max} = \frac{\kappa_\text{max} h}{2},
+\end{equation}
+onde $\varepsilon_\text{max}$ é a deformação máxima, $\kappa_\text{max}$ é a curvatura máxima e $h$ é a altura da seção transversal da viga.
+
 \section{Premissas Adotadas}
 \label{sec:premissas-adotadas}
 
@@ -957,13 +996,14 @@ afastados precisam ser representadas de outra forma.
 
 % Justificando o desprezo do alongamento axial.
 A linha flexível pode se curvar sem apresentar um aumento significativo de comprimento,
-pois possui elevada rigidez axial, ou seja, oferece grande oposição ao alongamento. Por isso, considera-se que o comprimento
-medido ao longo do eixo do conjunto permanece constante durante a flexão. A mesma aproximação
-é adotada para o enrijecedor, deixando o cálculo de seu alongamento fora do escopo do modelo.
-Isso não significa retirar a força de tração da análise: ela continua atuando e influencia
-a forma assumida pelo conjunto. Também não impede que, ao se curvar, as fibras de um lado
-se alonguem e as do lado oposto se encurtem. O que se despreza é o aumento do comprimento
-do eixo, e essa aproximação é adequada quando tal aumento é pequeno nas condições estudadas.
+pois possui elevada rigidez axial, ou seja, oferece grande oposição ao alongamento. Por isso, 
+considera-se que o comprimento medido ao longo do eixo do conjunto permanece constante durante
+a flexão. A mesma aproximação é adotada para o enrijecedor, deixando o cálculo de seu 
+alongamento fora do escopo do modelo. Isso não significa retirar a força de tração da análise:
+ela continua atuando e influencia a forma assumida pelo conjunto. Também não impede que, ao 
+se curvar, as fibras de um lado se alonguem e as do lado oposto se encurtem. O que se despreza
+é o aumento do comprimento do eixo, e essa aproximação é adequada quando tal aumento é pequeno
+nas condições estudadas.
 
 % Justificando o desprezo da folga radial.
 Entre a superfície externa da linha flexível e a superfície interna do enrijecedor pode existir
@@ -1018,12 +1058,49 @@ Com base nessas considerações, as premissas são sintetizadas a seguir:
   sem considerar variações térmicas ou acoplamento termomecânico.
 \end{enumerate}
 
+% Ajustes necessarios para o material
 \section{Caracterização do Material}
 \label{sec:caracterizacao-do-material}
 
+\subsection{Dados Experimentais}
+\label{sec:dados-experimentais}
+
+\subsection{Ajuste dos Termos da Série de Prony}
+\label{sec:ajuste-prony}
+
+% Sistemas de Equações
 \section{Equacionamento do Sistema Linha Flexível-Enrijecedor}
 \label{sec:equacionamento-do-sistema}
 
+\subsection{Caracterização do Sistema}
+\label{sec:caracterizacao-sistema}
+
+\subsection{Sistema de Equações}
+\label{sec:sistema-equacoes}
+
+\subsection{Condições de Contorno}
+\label{sec:condicoes-contorno}
+
+\section{Implementando a Viscoelasticidade no Sistema}
+\label{sec:implementando-viscoelasticidade}
+
+\subsection{Aplicação do Método da Perturbação}
+\label{sec:aplicacao-metodo-perturbacao}
+
+% Desenvolvimento da Solução
+\section{Solução Viscoelástica Linear}
+\label{sec:solucao-viscoelastica-linear}
+
+% Reconstrução das Respostas para o Modelo de Caire
+\section{Reconstrução da Resposta}
+\label{sec:reconstrucao-da-resposta}
+
+\section{Validação da Solução}
+\label{sec:validacao-da-solucao}
+
+% Estudo de Caso: avaliar um enrijecedor da Prysmian como exemplo
+\section{Estudo de Caso}
+\label{sec:estudo-de-caso}
 
 % ----------------------------------------------------------------------
 \chapter{Resultados e Discussão}
@@ -1032,11 +1109,13 @@ Com base nessas considerações, as premissas são sintetizadas a seguir:
 % ----------------------------------------------------------------------
 
 \chapter{Conclusão}
+\label{sec:conclusao}
 
 \section{Análises}
+\label{sec:analises}
 
 \section{Trabalhos Futuros}
-
+\label{sec:trabalhos-futuros}
 
 %%% ====================================================================
 %%% Início da parte pós-textual do documento.
