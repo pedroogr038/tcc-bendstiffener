@@ -9,11 +9,11 @@
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introdução}}{9}{chapter.1}%
+\contentsline {chapter}{\chapternumberline {1}Introdução}{9}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Objetivo Geral}{11}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Objetivos Específicos}{11}{section.1.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Referencial Teórico}}{13}{chapter.2}%
+\contentsline {chapter}{\chapternumberline {2}Referencial Teórico}{13}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Flexão}{13}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Vigas e Tipos de Carregamento}{13}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Força Cortante e Momento Fletor}{14}{subsection.2.1.2}%
@@ -24,21 +24,28 @@
 \contentsline {subsection}{\numberline {2.2.1}Rigidez}{20}{subsection.2.2.1}%
 \contentsline {section}{\numberline {2.3}Equações Diferenciais}{20}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Métodos Numéricos}{20}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Séries de Prony}{20}{section.2.5}%
+\contentsline {subsection}{\numberline {2.4.1}Representação viscoelástica por série de Prony}{20}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Expansão perturbativa em harmônicos}{22}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Formulação das equações diferenciais ordinárias}{23}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Método do tiro}{23}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.5}Integração das equações diferenciais pelo método de Runge-Kutta de quarta ordem}{25}{subsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.4.6}Localização de raízes pelo método de Newton e pelo método de Illinois}{26}{subsection.2.4.6}%
+\contentsline {subsection}{\numberline {2.4.7}Integração no domínio do tempo e variáveis internas viscoelásticas}{28}{subsection.2.4.7}%
+\contentsline {subsection}{\numberline {2.4.8}Reconstrução da resposta em fase e no domínio do tempo}{28}{subsection.2.4.8}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Metodologia}}{21}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Premissas Adotadas}{21}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Caracterização do Material}{23}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Equacionamento do Sistema Linha Flexível-Enrijecedor}{23}{section.3.3}%
+\contentsline {chapter}{\chapternumberline {3}Metodologia}{30}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Premissas Adotadas}{30}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Caracterização do Material}{32}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Equacionamento do Sistema Linha Flexível-Enrijecedor}{32}{section.3.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Resultados e Discussão}}{24}{chapter.4}%
+\contentsline {chapter}{\chapternumberline {4}Resultados e Discussão}{33}{chapter.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Conclusão}}{25}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Análises}{25}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{25}{section.5.2}%
+\contentsline {chapter}{\chapternumberline {5}Conclusão}{34}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Análises}{34}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{34}{section.5.2}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{26}{section*.22}%
+\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{35}{section*.22}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \setcounter {tocdepth}{0}
 \setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
@@ -46,7 +53,7 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Demonstração do Teorema Loren Ipsum}}{28}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {A}Demonstração do Teorema Loren Ipsum}{37}{appendix.A}%
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }
 \setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
@@ -54,4 +61,4 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Exemplo de lombada}}{30}{appendix.anexochapback.1}%
+\contentsline {appendix}{\chapternumberline {A}Exemplo de lombada}{39}{appendix.anexochapback.1}%
