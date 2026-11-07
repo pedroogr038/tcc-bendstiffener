@@ -20,6 +20,14 @@ Dispon{\'\i}vel em:
 {ASIMOV, Isaac. The mammoth book of zingers, quips, and one-liners.
 In:  \underline{\ \ \ \ \ \ \ \ }. [S.l.]: Running Press, 2004. p.~299.}
 
+\bibitem[Caire 2005]{Caire2005}
+\abntrefinfo{Caire}{CAIRE}{2005}
+{CAIRE, Marcelo.
+\emph{Análise de enrijecedores à flexão}.
+Disserta\c{c}\~{a}o (Dissertação (Mestrado em Engenharia Oceânica)) ---
+  Universidade Federal do Rio de Janeiro, COPPE, Programa de Engenharia
+  Oceânica, Rio de Janeiro, 2005.}
+
 \bibitem[Caire 2011]{Caire2011}
 \abntrefinfo{Caire}{CAIRE}{2011}
 {CAIRE, Marcelo.
@@ -63,5 +71,15 @@ Disserta\c{c}\~{a}o (Mestrado em Engenharia Mecânica) --- Universidade Federal
   Science}, v.~41, n.~245, p. 744--746, 1921.
 Dispon{\'\i}vel em: \url{https://doi.org/10.1080/14786442108636264}. Acesso em:
   2 nov. 2026.}
+
+\bibitem[Zill e Cullen 2001]{Zill2001v1}
+\abntrefinfo{Zill e Cullen}{ZILL; CULLEN}{2001a}
+{ZILL, Dennis~G.; CULLEN, Michael~R. \emph{Equações diferenciais}. 3. ed.
+  São Paulo: Pearson Makron Books, 2001. v.~1.}
+
+\bibitem[Zill e Cullen 2001]{Zill2001v2}
+\abntrefinfo{Zill e Cullen}{ZILL; CULLEN}{2001b}
+{ZILL, Dennis~G.; CULLEN, Michael~R. \emph{Equações diferenciais}. 3. ed.
+  São Paulo: Pearson Makron Books, 2001. v.~2.}
 
 \end{thebibliography}

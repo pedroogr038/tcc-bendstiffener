@@ -616,6 +616,7 @@ possam provocar carregamento dinâmico \cite[p.~111]{Norton2013}.
 Seja $q(x)$ a função que descreve o carregamento distribuído ao longo do eixo $x$ da
 viga. A força cortante $V(x)$ e o momento fletor $M(x)$ relacionam-se com $q(x)$ por
 \cite[p.~111]{Norton2013}:
+
 \begin{equation}
   \label{eq:q-V-M}
   q(x) = \frac{\mathrm{d}V}{\mathrm{d}x} = \frac{\mathrm{d}^2 M}{\mathrm{d}x^2}.
@@ -623,10 +624,12 @@ viga. A força cortante $V(x)$ e o momento fletor $M(x)$ relacionam-se com $q(x)
 
 Integrando-se a Equação~(\ref{eq:q-V-M}) uma vez, obtém-se a força cortante e, uma
 segunda vez, o momento fletor:
+
 \begin{align}
   V(x) &= \int q(x)\,\mathrm{d}x + C_1, \label{eq:V-integral}\\
   M(x) &= \int V(x)\,\mathrm{d}x + C_1 x + C_2, \label{eq:M-integral}
 \end{align}
+
 em que $C_1$ e $C_2$ são constantes de integração, determinadas pelas condições de
 contorno do problema \cite[p.~112, 163]{Norton2013}. Em termos geométricos, a
 diferença entre as forças cortantes em dois pontos quaisquer é igual à área sob a curva
@@ -724,10 +727,12 @@ permaneçam planas, a deformação varia linearmente com a distância à linha n
 sob a lei de Hooke, o mesmo ocorre com a tensão normal, que é nula na linha neutra
 \cite[p.~156]{Norton2013}. Essa relação conduz à conhecida fórmula da tensão de
 flexão:
+
 \begin{equation}
   \label{eq:sigma-flexao}
   \sigma_x = -\frac{M y}{I},
 \end{equation}
+
 em que $M$ é o momento fletor na seção considerada, $I$ é o momento de inércia da área
 da seção transversal em relação à linha neutra, que passa pelo centroide da seção
 em uma viga reta, e $y$ é a distância da linha neutra ao ponto onde a tensão é
@@ -735,18 +740,22 @@ calculada \cite[p.~156]{Norton2013}. O sinal negativo resulta da convenção de 
 adotada.
 
 A tensão máxima ocorre nas fibras externas, onde $y = c$:
+
 \begin{equation}
   \label{eq:sigma-max}
   \sigma_{max} = \frac{M c}{I},
 \end{equation}
+
 sendo $c$ a distância da linha neutra à fibra externa, tomada como positiva tanto
 na parte superior quanto na inferior. Essas duas distâncias só são iguais em seções
 simétricas em relação à linha neutra \cite[p.~156]{Norton2013}. Uma forma alternativa
 frequentemente empregada é
+
 \begin{equation}
   \label{eq:sigma-Z}
   \sigma_{max} = \frac{M}{Z}, \qquad Z = \frac{I}{c},
 \end{equation}
+
 em que $Z$ é o módulo de resistência da seção \cite[p.~157]{Norton2013}. A
 Figura~\ref{fig:distribuicao-tensao} ilustra a distribuição linear da tensão normal ao
 longo da altura da seção.
@@ -807,12 +816,15 @@ momento fletor. Como o momento varia com $x$ quando $V \neq 0$, as tensões norm
 duas faces de um elemento da viga são diferentes, e o equilíbrio exige uma tensão de
 cisalhamento compensatória \cite[p.~158--159]{Norton2013}. A tensão de cisalhamento
 a uma distância $y_1$ da linha neutra é dada por \cite[p.~160]{Norton2013}:
+
 \begin{equation}
   \label{eq:tau-flexao}
   \tau = \frac{V Q}{I b},
 \end{equation}
+
 em que $b$ é a largura da seção transversal em $y_1$ e $Q$ é o momento estático, em
 relação à linha neutra, da porção da seção situada além de $y_1$:
+
 \begin{equation}
   \label{eq:Q}
   Q = \int_{y_1}^{c} y\,\mathrm{d}A.
@@ -872,10 +884,12 @@ bem abaixo dos níveis de falha do material, as deflexões elásticas podem caus
 interferências e desalinhamentos em um sistema \cite[p.~162]{Norton2013}. A deflexão
 por flexão é obtida a partir da equação da viga
 \cite[p.~162]{Norton2013}:
+
 \begin{equation}
   \label{eq:viga-EI}
   \frac{\mathrm{d}^2 y}{\mathrm{d}x^2} = \frac{M(x)}{E I},
 \end{equation}
+
 em que $y(x)$ é a deflexão, $E$ é o módulo de elasticidade do material e $I$ é o
 momento de inércia da seção. O produto $E I$ é a rigidez à flexão da viga. A
 Equação~(\ref{eq:viga-EI}) é válida somente para pequenas deflexões e não inclui o
@@ -886,6 +900,7 @@ razão entre comprimento e altura seja inferior a, aproximadamente, 10
 Derivando-se a Equação~(\ref{eq:viga-EI}) duas vezes e integrando-se duas vezes,
 obtém-se o conjunto de equações que descreve o comportamento da viga
 \cite[p.~163]{Norton2013}:
+
 \begin{align}
   \frac{q}{E I} &= \frac{\mathrm{d}^4 y}{\mathrm{d}x^4}, \label{eq:viga-q}\\
   \frac{V}{E I} &= \frac{\mathrm{d}^3 y}{\mathrm{d}x^3}, \label{eq:viga-V}\\
@@ -893,6 +908,7 @@ obtém-se o conjunto de equações que descreve o comportamento da viga
   \theta        &= \frac{\mathrm{d}y}{\mathrm{d}x}, \label{eq:viga-theta}\\
   y             &= f(x), \label{eq:viga-y}
 \end{align}
+
 em que $\theta$ é a rotação da seção. O único parâmetro de material nessas equações é o
 módulo de elasticidade $E$, que define a rigidez do material \cite[p.~163]{Norton2013}.
 A determinação da função de deflexão é, portanto, um exercício de integração: a função
@@ -924,6 +940,543 @@ Seção~\ref{sec:viscoelasticidade} e na Subseção~\ref{sub:rigidez}.
 
 \section{Equações Diferenciais}
 \label{sec:equacoes-diferenciais}
+
+O comportamento mecânico estudado neste trabalho, desde a deflexão de uma viga até o
+equilíbrio do conjunto linha flexível-enrijecedor, é descrito por equações que
+relacionam uma função desconhecida às suas derivadas. Esta seção apresenta, com base em
+\citeonline{Zill2001v1,Zill2001v2}, a terminologia, os problemas de valor inicial e de
+contorno, os resultados de existência e unicidade e a teoria de equações e sistemas
+lineares de primeira ordem. Em seguida, mostra-se como esses conceitos se aplicam ao
+sistema de equações do enrijecedor formulado por \citeonline{Caire2005,Caire2011}. Os
+métodos numéricos empregados na solução são tratados na
+Seção~\ref{sec:metodos-numericos}.
+ 
+\subsection{Terminologia e Classificação}
+\label{sub:edo-classificacao}
+ 
+Uma equação que contém as derivadas ou diferenciais de uma ou mais variáveis
+dependentes em relação a uma ou mais variáveis independentes é denominada equação
+diferencial \cite[p.~2]{Zill2001v1}. Essas equações são classificadas segundo o tipo, a
+ordem e a linearidade. Quanto ao tipo, a equação é ordinária (EDO) quando contém apenas
+derivadas ordinárias em relação a uma única variável independente, e parcial (EDP)
+quando envolve derivadas parciais em relação a duas ou mais variáveis independentes
+\cite[p.~2--3]{Zill2001v1}. No regime harmônico permanente adotado neste trabalho, a
+dependência temporal é representada por funções harmônicas conhecidas
+(Subseção~\ref{sub:edo-enrijecedor}), de modo que a única variável independente das
+incógnitas é o comprimento de arco ao longo do eixo do conjunto e o problema se reduz a
+EDOs.
+ 
+A ordem da equação é a da derivada de maior ordem que nela aparece
+\cite[p.~3]{Zill2001v1}. Uma EDO de ordem $n$ pode ser escrita, em forma geral, como
+
+\begin{equation}
+  \label{eq:edo-geral}
+  F\!\left(x,\, y,\, y',\, \ldots,\, y^{(n)}\right) = 0,
+\end{equation}
+
+em que $y(x)$ é a variável dependente e $y^{(n)}$ é a derivada de ordem $n$ em relação a
+$x$ \cite[p.~3]{Zill2001v1}. A equação é linear quando pode ser escrita na forma
+
+\begin{equation}
+  \label{eq:edo-linear-n}
+  a_n(x)\,y^{(n)} + a_{n-1}(x)\,y^{(n-1)} + \cdots + a_1(x)\,y' + a_0(x)\,y = g(x),
+\end{equation}
+
+isto é, quando a variável dependente e todas as suas derivadas aparecem no primeiro grau
+e cada coeficiente depende apenas da variável independente. Uma equação que não é linear
+é denominada não linear \cite[p.~4]{Zill2001v1}. A equação da viga,
+Equação~(\ref{eq:viga-q}), é um exemplo de EDO linear de quarta ordem: para $EI$
+constante, tem-se $a_4 = EI$, os demais coeficientes nulos e $g(x) = q(x)$.
+ 
+Uma solução de uma EDO em um intervalo $I$ é uma função com pelo menos $n$ derivadas
+que, substituída na equação, a reduz a uma identidade em todo o intervalo
+\cite[p.~4--5]{Zill2001v1}. Em geral, uma equação diferencial admite infinitas soluções:
+a resolução de uma equação de ordem $n$ conduz a uma família a $n$ parâmetros, e a
+escolha de valores para os parâmetros fornece soluções particulares
+\cite[p.~9--10]{Zill2001v1}. Quando toda solução no intervalo pode ser obtida dessa
+família, ela é denominada solução geral, designação que, na prática, é aplicada apenas
+às equações lineares \cite[p.~10]{Zill2001v1}. As equações não lineares, com exceção de
+algumas de primeira ordem, são em geral difíceis ou impossíveis de resolver em termos
+de funções elementares \cite[p.~10]{Zill2001v1}, o que justifica o recurso a métodos
+numéricos quando a equação do problema é não linear.
+ 
+\subsection{Problemas de Valor Inicial e de Valor de Contorno}
+\label{sub:pvi-pvc}
+ 
+Dada uma equação de primeira ordem, o problema de encontrar a solução que satisfaz uma
+condição especificada em um ponto $x_0$,
+
+\begin{equation}
+  \label{eq:pvi-1}
+  \frac{\mathrm{d}y}{\mathrm{d}x} = f(x, y), \qquad y(x_0) = y_0,
+\end{equation}
+
+é denominado problema de valor inicial (PVI) \cite[p.~39]{Zill2001v1}. A questão
+fundamental é saber se existe solução e se ela é única. Segundo o teorema de Picard, se
+$f(x, y)$ e $\partial f/\partial y$ são contínuas em uma região retangular $R$ do
+plano $xy$ que contém o ponto $(x_0, y_0)$ em seu interior, então existe um intervalo
+centrado em $x_0$ no qual o PVI (\ref{eq:pvi-1}) possui uma única solução
+\cite[p.~40]{Zill2001v1}. Essas condições são suficientes, mas não necessárias, e a
+existência da solução não implica que ela possa ser escrita em termos de funções
+elementares; nesses casos, aproximações podem ser obtidas por métodos numéricos
+\cite[p.~42]{Zill2001v1}.
+ 
+Para uma EDO linear de ordem $n$, o PVI consiste em resolver a
+Equação~(\ref{eq:edo-linear-n}) sujeita a $n$ condições prescritas em um mesmo ponto
+$x_0$:
+
+\begin{equation}
+  \label{eq:pvi-n}
+  y(x_0) = y_0, \quad y'(x_0) = y_1, \quad \ldots, \quad y^{(n-1)}(x_0) = y_{n-1},
+\end{equation}
+
+em que $y_0, y_1, \ldots, y_{n-1}$ são constantes \cite[p.~142]{Zill2001v1}. Se os
+coeficientes $a_i(x)$ e a função $g(x)$ são contínuos em um intervalo $I$ e
+$a_n(x) \neq 0$ em $I$, existe uma única solução do PVI em $I$
+\cite[p.~143]{Zill2001v1}. Tanto a continuidade quanto a condição $a_n(x) \neq 0$ são
+importantes: se $a_n(x)$ se anula em algum ponto do intervalo, a solução do PVI pode
+não ser única ou nem mesmo existir \cite[p.~143]{Zill2001v1}.
+ 
+Um problema distinto surge quando as condições são especificadas em pontos diferentes.
+Para uma equação linear de segunda ordem, por exemplo, resolver
+
+\begin{equation}
+  \label{eq:pvc}
+  a_2(x)\,y'' + a_1(x)\,y' + a_0(x)\,y = g(x), \qquad y(a) = y_0, \quad y(b) = y_1,
+\end{equation}
+
+é um problema de valor de contorno (PVC), e as condições $y(a) = y_0$ e $y(b) = y_1$
+são denominadas condições de contorno \cite[p.~144]{Zill2001v1}. Outras condições são
+possíveis, como as impostas às derivadas $y'(a)$ e $y'(b)$, e todas são casos
+particulares das condições gerais $\alpha_1 y(a) + \beta_1 y'(a) = \gamma_1$ e
+$\alpha_2 y(b) + \beta_2 y'(b) = \gamma_2$ \cite[p.~145]{Zill2001v1}. Diferentemente
+do PVI, mesmo quando as hipóteses do teorema de existência e unicidade para equações
+lineares são satisfeitas, um PVC pode ter várias soluções, uma única solução ou nenhuma
+\cite[p.~145--146]{Zill2001v1}.
+ 
+O cálculo da deflexão de vigas, visto na Subseção~\ref{sub:deflexao-vigas}, é um
+problema desse tipo: a equação de quarta ordem exige quatro condições, impostas nas duas
+extremidades da viga, como deslocamento e rotação nulos no engaste e momento fletor e
+força cortante nulos na extremidade livre. Do mesmo modo, o sistema de equações do
+enrijecedor, apresentado na Subseção~\ref{sub:edo-enrijecedor}, é um PVC, pois suas
+condições são impostas nas extremidades $s = 0$ e $s = L$.
+ 
+\subsection{Equações Lineares de Primeira Ordem}
+\label{sub:edo-linear-1}
+ 
+Para $n = 1$, a Equação~(\ref{eq:edo-linear-n}) torna-se uma equação linear de primeira
+ordem \cite[p.~69]{Zill2001v1}, que, dividida pelo coeficiente $a_1(x)$, assume a forma
+
+\begin{equation}
+  \label{eq:linear-1}
+  \frac{\mathrm{d}y}{\mathrm{d}x} + P(x)\,y = f(x),
+\end{equation}
+
+cuja solução é procurada em um intervalo $I$ no qual $P(x)$ e $f(x)$ são contínuas.
+Equações desse tipo admitem sempre um fator de integração,
+
+\begin{equation}
+  \label{eq:fator-integracao}
+  \mu(x) = e^{\int P(x)\,\mathrm{d}x},
+\end{equation}
+
+que, ao multiplicar a Equação~(\ref{eq:linear-1}), transforma o primeiro membro na
+derivada do produto $\mu(x)\,y$. Integrando-se ambos os membros, obtém-se
+\cite[p.~69--71]{Zill2001v1}
+
+\begin{equation}
+  \label{eq:solucao-linear-1}
+  y(x) = e^{-\int P(x)\,\mathrm{d}x} \int e^{\int P(x)\,\mathrm{d}x}\, f(x)\,\mathrm{d}x
+  \;+\; c\,e^{-\int P(x)\,\mathrm{d}x},
+\end{equation}
+
+em que $c$ é uma constante arbitrária. Como $P(x)$ e $f(x)$ são contínuas, essa família
+contém todas as soluções da equação no intervalo, o PVI correspondente tem solução única
+e não existem soluções singulares \cite[p.~72]{Zill2001v1}. Por isso a
+Equação~(\ref{eq:solucao-linear-1}) é a solução geral da equação. Essa é a estrutura que
+as equações de curvatura do enrijecedor assumem, com $P$ determinado pela variação da
+rigidez ao longo do comprimento (Subseção~\ref{sub:edo-enrijecedor}).
+ 
+\subsection{Sistemas de Equações Lineares de Primeira Ordem}
+\label{sub:sistemas-lineares}
+ 
+Uma equação de ordem superior pode ser reescrita como um sistema de equações de primeira
+ordem, adotando-se como novas variáveis a função e suas derivadas até a ordem $n - 1$
+\cite[p.~22]{Zill2001v2}. A deflexão da viga é um exemplo direto: as
+Equações~(\ref{eq:viga-q}) a (\ref{eq:viga-theta}) já definem as variáveis $y$,
+$\theta = y'$, $M/EI = y''$ e $V/EI = y'''$ e, para $EI$ constante,
+
+\begin{equation}
+  \label{eq:viga-sistema}
+  \frac{\mathrm{d}}{\mathrm{d}x}
+  \begin{bmatrix} y \\ \theta \\ M/EI \\ V/EI \end{bmatrix}
+  =
+  \begin{bmatrix}
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1 \\
+    0 & 0 & 0 & 0
+  \end{bmatrix}
+  \begin{bmatrix} y \\ \theta \\ M/EI \\ V/EI \end{bmatrix}
+  +
+  \begin{bmatrix} 0 \\ 0 \\ 0 \\ q/EI \end{bmatrix}.
+\end{equation}
+
+Essa redução é o que permite aplicar a problemas de ordem superior os algoritmos
+numéricos, que são estabelecidos em sua maioria para equações de primeira ordem
+\cite[p.~23--24]{Zill2001v2}.
+ 
+Um sistema linear de primeira ordem com $n$ variáveis dependentes pode ser escrito em
+forma matricial \cite[p.~48--49]{Zill2001v2}, aqui adaptada à variável independente $x$:
+
+\begin{equation}
+  \label{eq:sistema-nh}
+  \frac{\mathrm{d}\mathbf{X}}{\mathrm{d}x} = \mathbf{A}(x)\,\mathbf{X} + \mathbf{F}(x),
+\end{equation}
+
+em que $\mathbf{X}$ é a matriz coluna das funções incógnitas, $\mathbf{A}(x)$ é a matriz
+$n \times n$ dos coeficientes e $\mathbf{F}(x)$ é a matriz coluna dos termos não
+homogêneos. O sistema é homogêneo quando $\mathbf{F} = \mathbf{0}$:
+
+\begin{equation}
+  \label{eq:sistema-h}
+  \frac{\mathrm{d}\mathbf{X}}{\mathrm{d}x} = \mathbf{A}(x)\,\mathbf{X}.
+\end{equation}
+
+O PVI consiste em resolver a Equação~(\ref{eq:sistema-nh}) sujeita a
+$\mathbf{X}(x_0) = \mathbf{X}_0$; se os elementos de $\mathbf{A}(x)$ e $\mathbf{F}(x)$
+são contínuos em um intervalo $I$ que contém $x_0$, existe uma única solução do PVI em
+$I$ \cite[p.~51]{Zill2001v2}. A Tabela~\ref{tab:existencia-unicidade} reúne os três
+resultados de existência e unicidade apresentados nesta seção. Todos se referem a
+problemas de valor inicial: para um PVC, como o do enrijecedor, eles não garantem, por
+si sós, a existência ou a unicidade da solução.
+ 
+\begin{table}[h]
+  \caption{Condições suficientes para existência e unicidade de solução de problemas de
+    valor inicial.}
+  \label{tab:existencia-unicidade}
+  \begin{center}
+    \begin{tabular}{p{4.2cm}p{6.2cm}p{3.6cm}}
+      \toprule
+      Problema & Hipóteses & Conclusão \\
+      \midrule
+      PVI de primeira ordem, Equação~(\ref{eq:pvi-1})
+        & $f$ e $\partial f/\partial y$ contínuas em um retângulo $R$ que contém
+          $(x_0, y_0)$ em seu interior
+        & Solução única em um intervalo centrado em $x_0$ \\[1ex]
+      PVI linear de ordem $n$, Equações~(\ref{eq:edo-linear-n}) e (\ref{eq:pvi-n})
+        & $a_i(x)$ e $g(x)$ contínuas em $I$, com $a_n(x) \neq 0$ em $I$
+        & Solução única em $I$ \\[1ex]
+      PVI para sistema linear, Equação~(\ref{eq:sistema-nh})
+        & Elementos de $\mathbf{A}(x)$ e $\mathbf{F}(x)$ contínuos em $I \ni x_0$
+        & Solução única em $I$ \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  \fonte{Adaptado de \citeonline[p.~40, 143]{Zill2001v1} e \citeonline[p.~51]{Zill2001v2}.}
+\end{table}
+ 
+Para o sistema homogêneo, vale o princípio da superposição: toda combinação linear de
+vetores solução é também solução \cite[p.~51]{Zill2001v2}. Um conjunto de $n$ vetores
+solução linearmente independentes é denominado conjunto fundamental, e sempre existe um
+em um intervalo em que $\mathbf{A}(x)$ é contínua; a solução geral é a combinação linear
+$\mathbf{X}_c = c_1\mathbf{X}_1 + c_2\mathbf{X}_2 + \cdots + c_n\mathbf{X}_n$, em que os
+$c_i$ são constantes arbitrárias \cite[p.~55]{Zill2001v2}. A solução geral do sistema
+não homogêneo é $\mathbf{X} = \mathbf{X}_c + \mathbf{X}_p$, sendo $\mathbf{X}_p$ qualquer
+solução particular da Equação~(\ref{eq:sistema-nh}) \cite[p.~57--58]{Zill2001v2}.
+ 
+Reunindo-se os vetores de um conjunto fundamental como colunas, obtém-se uma matriz
+fundamental $\boldsymbol{\Phi}(x)$ \cite[p.~59]{Zill2001v2}, que satisfaz
+
+\begin{equation}
+  \label{eq:matriz-fundamental}
+  \frac{\mathrm{d}\boldsymbol{\Phi}}{\mathrm{d}x} = \mathbf{A}(x)\,\boldsymbol{\Phi},
+  \qquad \mathbf{X}_c = \boldsymbol{\Phi}(x)\,\mathbf{C},
+\end{equation}
+
+em que $\mathbf{C}$ é a matriz coluna das constantes. Substituindo-se $\mathbf{C}$ por
+uma matriz coluna de funções $\mathbf{U}(x)$, o método de variação dos parâmetros fornece
+a solução particular $\mathbf{X}_p = \boldsymbol{\Phi}\int \boldsymbol{\Phi}^{-1}
+\mathbf{F}\,\mathrm{d}x$ e, portanto, a solução geral \cite[p.~86]{Zill2001v2}
+
+\begin{equation}
+  \label{eq:var-parametros}
+  \mathbf{X}(x) = \boldsymbol{\Phi}(x)\,\mathbf{C}
+  + \boldsymbol{\Phi}(x) \int \boldsymbol{\Phi}^{-1}(x)\,\mathbf{F}(x)\,\mathrm{d}x.
+\end{equation}
+
+Os métodos baseados em autovalores e autovetores apresentados por
+\citeonline[p.~65]{Zill2001v2} aplicam-se a matrizes $\mathbf{A}$ de coeficientes
+constantes. Quando os elementos de $\mathbf{A}$ variam com a variável independente, como
+ocorre no enrijecedor, em geral não se dispõe de uma matriz fundamental em forma
+fechada, o que é um motivo adicional para o uso de métodos numéricos.
+ 
+\subsection{Aplicação ao Sistema Linha Flexível-Enrijecedor}
+\label{sub:edo-enrijecedor}
+ 
+O conjunto linha flexível-enrijecedor submetido à força de topo $F$ é representado por
+uma viga esbelta engastada que sofre grandes deslocamentos, trabalha em flexão e possui
+seção variável ao longo do comprimento, em razão do formato cônico do enrijecedor
+\cite[p.~49]{Caire2005}. Seja $s$ o comprimento de arco medido a partir da extremidade
+engastada, com $0 \le s \le L$. As coordenadas cartesianas $x(s)$ e $y(s)$ do eixo
+deformado e o ângulo de inclinação $\phi(s)$ da tangente em relação ao eixo $x$ se
+relacionam com a curvatura $k(s)$ por \cite[p.~50]{Caire2005}
+
+\begin{align}
+  \frac{\mathrm{d}x}{\mathrm{d}s} &= \cos\phi(s), \label{eq:geo-x}\\
+  \frac{\mathrm{d}y}{\mathrm{d}s} &= \sin\phi(s), \label{eq:geo-y}\\
+  \frac{\mathrm{d}\phi}{\mathrm{d}s} &= k(s), \label{eq:geo-phi}
+\end{align}
+
+em que, nesta subseção, $x$ e $y$ designam as coordenadas do eixo deformado
+(Figura~\ref{fig:esquema-enrijecedor}), e não a variável independente e a deflexão das
+subseções anteriores.
+ 
+\begin{figure}[h]
+  \centering
+  \caption{Esquema do sistema linha flexível-enrijecedor sob a força de topo $F$: o eixo
+    deformado é descrito pelo comprimento de arco $s$, pelo ângulo de inclinação $\phi(s)$
+    e pela curvatura $k = \mathrm{d}\phi/\mathrm{d}s$.}
+  \label{fig:esquema-enrijecedor}
+  \begin{tikzpicture}[x=1cm,y=1cm,line cap=round,>=stealth]
+    % engaste em s = 0
+    \draw[thick] (0,-0.9) -- (0,0.9);
+    \foreach \y in {-0.8,-0.6,-0.4,-0.2,0,0.2,0.4,0.6,0.8}{\draw (0,\y) -- (-0.25,\y-0.25);}
+    \node[anchor=south west] at (0.1,0.2) {$s=0$};
+    % eixo deformado
+    \draw[very thick] (0,0) .. controls (3,0) and (5,0.5) .. (6.5,2.5);
+    % ponto genérico: tangente, referência horizontal e angulo phi(s)
+    \fill (3.8125,0.5) circle (0.05);
+    \draw[thin] (2.9635,0.2) -- (5.228,1.0);
+    \draw[dashed] (3.8125,0.5) -- (5.6,0.5);
+    \draw (4.8125,0.5) arc (0:19.4:1.0);
+    \node[anchor=west] at (5.7,0.5) {$\phi(s)$};
+    % extremidade livre: força e angulo phi_L
+    \fill (6.5,2.5) circle (0.05);
+    \draw[->,very thick] (6.5,2.5) -- (7.4,3.7);
+    \node[anchor=west] at (7.4,3.8) {$F$};
+    \draw[dashed] (6.5,2.5) -- (8.3,2.5);
+    \draw (7.5,2.5) arc (0:53.13:1.0);
+    \node[anchor=west] at (7.7,2.85) {$\phi_L$};
+    \node[anchor=east] at (6.4,2.8) {$s=L$};
+    % comprimento de arco
+    \draw[->] (1.0,-0.6) -- (2.6,-0.6);
+    \node at (1.8,-0.9) {$s$};
+    % eixos
+    \draw[->] (-1.6,-1.8) -- (-0.6,-1.8) node[right] {$x$};
+    \draw[->] (-1.6,-1.8) -- (-1.6,-0.8) node[above] {$y$};
+  \end{tikzpicture}
+  \fonte{Adaptado de \citeonline[p.~49]{Caire2005}.}
+\end{figure}
+ 
+Pelo equilíbrio, o momento fletor $M(s)$ e a força cortante $V(s)$ se relacionam por
+$\mathrm{d}M/\mathrm{d}s = V$ \cite[p.~88]{Caire2011} e, pela teoria de Euler-Bernoulli
+com material linear elástico, $M = EI(s)\,k$, em que a rigidez à flexão do conjunto é a
+soma das parcelas da linha e do enrijecedor, $EI(s) = EI_{\mathrm{linha}} +
+EI_{BS}(s)$ \cite[p.~51]{Caire2005}. Para a força de topo atuando na direção da tangente
+à extremidade, caso que corresponde a $\alpha = 0$ na notação de \citeonline{Caire2005},
+tem-se $V(s) = -F\sin\!\big(\phi_L - \phi(s)\big)$ e a derivação de $M = EI(s)\,k$ em
+relação a $s$ conduz a \cite[p.~51]{Caire2005}
+
+\begin{equation}
+  \label{eq:dk-ds-estatica}
+  \frac{\mathrm{d}k}{\mathrm{d}s}
+  = -\frac{1}{EI(s)}\left[\frac{\mathrm{d}EI(s)}{\mathrm{d}s}\,k(s)
+  + F\sin\!\big(\phi_L - \phi(s)\big)\right],
+\end{equation}
+
+sujeita às condições de contorno \cite[p.~52]{Caire2005}
+
+\begin{equation}
+  \label{eq:cc-estatica}
+  x(0) = y(0) = \phi(0) = 0, \qquad \phi(L) = \phi_L.
+\end{equation}
+
+As Equações~(\ref{eq:geo-x}) a (\ref{eq:geo-phi}) e (\ref{eq:dk-ds-estatica}) formam um
+sistema de quatro EDOs não lineares de primeira ordem nas incógnitas $x$, $y$, $\phi$ e
+$k$, com quatro condições impostas em $s = 0$ e $s = L$, isto é, um PVC
+\cite[p.~52]{Caire2005}. A não linearidade provém dos termos $\cos\phi$, $\sin\phi$ e
+$\sin(\phi_L - \phi)$, razão pela qual o princípio da superposição e a solução geral
+das subseções anteriores não se aplicam ao sistema completo. A
+Equação~(\ref{eq:dk-ds-estatica}), porém, é linear em $k$ e tem a forma da
+Equação~(\ref{eq:linear-1}), com $P(s) = EI'(s)/EI(s)$. Como $\int P\,\mathrm{d}s =
+\ln EI(s)$, o fator de integração da Equação~(\ref{eq:fator-integracao}) é o próprio
+$EI(s)$, e a equação equivale a $\mathrm{d}(EI\,k)/\mathrm{d}s = V$, ou seja, a
+$\mathrm{d}M/\mathrm{d}s = V$, relação de equilíbrio da qual se partiu. Como $V$ depende
+de $\phi$, que por sua vez depende de $k$ pela Equação~(\ref{eq:geo-phi}), essa
+integração não fornece a solução em forma fechada.
+ 
+No caso viscoelástico com carregamento harmônico, \citeonline[p.~90--92]{Caire2011}
+escreve a força e o ângulo de topo como $F(t) = F_0 + \varepsilon F_0 \sin\omega t$ e
+$\phi_L(t) = \phi_{0L} + \alpha\,\phi_{0L}\sin(\omega t + \gamma)$, em que $F_0$ e
+$\phi_{0L}$ são os valores médios, $\varepsilon$ e $\alpha$ são pequenos parâmetros de
+perturbação, $\omega$ é a frequência e $\gamma$ é a diferença de fase. Cada grandeza
+$\chi(s,t)$, com $\chi$ representando $\phi$, $k$ ou $V$, é expandida em uma série de
+perturbação até a terceira ordem em $\varepsilon$ e $\alpha$ \cite[p.~91--93]{Caire2011}:
+
+\begin{equation}
+  \label{eq:base-perturbativa}
+  \chi(s,t) = \sum_{i=0}^{29} \chi_i(s)\,\Psi_i(\varepsilon, \alpha, \omega t),
+\end{equation}
+
+em que as trinta parcelas $\Psi_i$ são produtos de potências de $\varepsilon$ e $\alpha$
+por $\sin(n\omega t)$ e $\cos(n\omega t)$, com $n = 1, 2, 3$. Por exemplo,
+$\Psi_0 = 1$, $\Psi_1 = \varepsilon\sin\omega t$ e $\Psi_2 = \varepsilon\cos\omega t$.
+Assim, a dependência temporal fica concentrada nas funções $\Psi_i$, conhecidas, e as
+incógnitas passam a ser as funções $\chi_i(s)$, que dependem somente de $s$.
+ 
+A relação entre momento fletor e curvatura de cada coeficiente é escrita em forma
+matricial como $\mathbf{M} = \mathbf{EI}\,\mathbf{k}$, com $\mathbf{EI}$ uma matriz
+diagonal em blocos, formada por blocos escalares $\mathbf{EI}_0 = [C_0]$ e por blocos
+$2 \times 2$ do tipo
+
+\begin{equation}
+  \label{eq:bloco-EI}
+  \mathbf{EI}_n =
+  \begin{bmatrix}
+    C_1(s, n\omega) & -C_2(s, n\omega) \\
+    C_2(s, n\omega) & C_1(s, n\omega)
+  \end{bmatrix},
+\end{equation}
+
+associados à frequência $n\omega$ \cite[p.~93--94]{Caire2011}. Os coeficientes são
+
+\begin{align}
+  C_0(s) &= EI_{\mathrm{pipe}} + G(\infty)\,I_{BS}(s), \label{eq:C0}\\
+  C_1(s, n\omega) &= EI_{\mathrm{pipe}} + G'(n\omega)\,I_{BS}(s), \label{eq:C1}\\
+  C_2(s, n\omega) &= G''(n\omega)\,I_{BS}(s), \label{eq:C2}
+\end{align}
+
+em que $EI_{\mathrm{pipe}}$ é a rigidez à flexão da linha, $I_{BS}(s)$ é o segundo
+momento de área do enrijecedor, $G(\infty)$ é o módulo de relaxação para tempo infinito
+e $G'$ e $G''$ são os módulos de armazenamento e de perda, definidos na
+Seção~\ref{sec:viscoelasticidade} \cite[p.~89, 93--94]{Caire2011}.
+ 
+Combinando-se $\mathrm{d}\mathbf{M}/\mathrm{d}s = \mathbf{V}$ com $\mathbf{M} =
+\mathbf{EI}\,\mathbf{k}$, obtém-se para cada bloco
+\cite[p.~94]{Caire2011}
+
+\begin{equation}
+  \label{eq:dk-ds-matricial}
+  \frac{\mathrm{d}\mathbf{k}}{\mathrm{d}s}
+  = -\,\mathbf{EI}^{-1}\frac{\mathrm{d}\mathbf{EI}}{\mathrm{d}s}\,\mathbf{k}
+  + \mathbf{EI}^{-1}\mathbf{V},
+\end{equation}
+
+que explicitada resulta, para os coeficientes $i \in \{0, 5, 8, 11\}$ e para cada par
+$(i, i+1)$ associado à frequência $n\omega$, em \cite[p.~95--96]{Caire2011}
+
+\begin{align}
+  \frac{\mathrm{d}k_i}{\mathrm{d}s} &= -E_0(s)\,k_i(s) + D_0(s)\,V_i(s),
+    \label{eq:bloco-escalar}\\
+  \frac{\mathrm{d}}{\mathrm{d}s}
+  \begin{bmatrix} k_i \\ k_{i+1} \end{bmatrix}
+  &= -\begin{bmatrix} E_1 & -E_2 \\ E_2 & E_1 \end{bmatrix}
+  \begin{bmatrix} k_i \\ k_{i+1} \end{bmatrix}
+  + \begin{bmatrix} D_1 & -D_2 \\ D_2 & D_1 \end{bmatrix}
+  \begin{bmatrix} V_i \\ V_{i+1} \end{bmatrix},
+    \label{eq:bloco-par}
+\end{align}
+
+com $E_j = E_j(s, n\omega)$ e $D_j = D_j(s, n\omega)$, dados por
+
+\begin{align}
+  D_0 &= \frac{1}{C_0}, \quad
+  D_1 = \frac{C_1}{C_1^2 + C_2^2}, \quad
+  D_2 = -\frac{C_2}{C_1^2 + C_2^2}, \label{eq:coef-D}\\
+  E_0 &= \frac{C_{0,s}}{C_0}, \quad
+  E_1 = \frac{C_1 C_{1,s} + C_2 C_{2,s}}{C_1^2 + C_2^2}, \quad
+  E_2 = \frac{C_1 C_{2,s} - C_2 C_{1,s}}{C_1^2 + C_2^2}, \label{eq:coef-E}
+\end{align}
+
+em que $C_{j,s} = \mathrm{d}C_j/\mathrm{d}s$ \cite[p.~96]{Caire2011}. A cada coeficiente
+$k_i$ corresponde ainda a equação geométrica
+
+\begin{equation}
+  \label{eq:geo-phi-i}
+  \frac{\mathrm{d}\phi_i}{\mathrm{d}s} = k_i(s), \qquad i = 0, \ldots, 29,
+\end{equation}
+
+e a força cortante é dada por \cite[p.~93]{Caire2011}
+
+\begin{equation}
+  \label{eq:Vi}
+  V_i(s) = F_0\left[A_i(s)\sin\theta_0(s) + B_i(s)\cos\theta_0(s)\right],
+  \qquad \theta_0(s) = \phi_{0L} - \phi_0(s),
+\end{equation}
+
+em que $A_i(s)$ e $B_i(s)$ são funções polinomiais de $\phi_j(s)$ e de funções
+trigonométricas de $\gamma$, obtidas do desenvolvimento do seno da variação angular até a
+terceira ordem \cite[p.~92--93]{Caire2011}. Para $i = 0$, tem-se $A_0 = -1$ e $B_0 = 0$,
+de modo que $V_0 = -F_0\sin(\phi_{0L} - \phi_0)$, e a Equação~(\ref{eq:bloco-escalar})
+reproduz a Equação~(\ref{eq:dk-ds-estatica}) com $C_0$ no papel de $EI$.
+ 
+As Equações~(\ref{eq:bloco-escalar}), (\ref{eq:bloco-par}) e (\ref{eq:geo-phi-i}) formam
+um sistema de sessenta EDOs não lineares de primeira ordem, trinta para as curvaturas
+$k_i$ e trinta para os ângulos $\phi_i$ \cite[p.~96]{Caire2011}, sujeitas às condições de
+contorno
+
+\begin{align}
+  \phi_i(0) &= 0, \qquad 0 \le i \le 29, \label{eq:cc-0}\\
+  \phi_0(L) &= \phi_{0L}, \quad \phi_3(L) = \phi_{0L}\cos\gamma, \quad
+  \phi_4(L) = \phi_{0L}\sin\gamma, \label{eq:cc-L1}\\
+  \phi_i(L) &= 0, \qquad i = 1,\, 2 \ \text{e}\ 5 \le i \le 29, \label{eq:cc-L2}
+\end{align}
+
+impostas em $s = 0$ e $s = L$ \cite[p.~90, 96]{Caire2011}. Trata-se, portanto, de um PVC,
+como no caso estático. A Tabela~\ref{tab:blocos} organiza as trinta equações de curvatura
+em blocos, segundo a frequência dos termos a que se referem.
+ 
+\begin{table}[h]
+  \caption{Blocos de equações de curvatura do sistema harmônico, agrupados pela
+    frequência dos termos.}
+  \label{tab:blocos}
+  \begin{center}
+    \begin{tabular}{llp{6.2cm}c}
+      \toprule
+      Frequência & Tipo de bloco & Índices $i$ & Equações \\
+      \midrule
+      Constante & Escalar, Eq.~(\ref{eq:bloco-escalar}) & $0$, $5$, $8$, $11$ & 4 \\
+      $\omega$ & Par, Eq.~(\ref{eq:bloco-par})
+        & $(1,2)$, $(3,4)$, $(14,15)$, $(18,19)$, $(22,23)$, $(26,27)$ & 12 \\
+      $2\omega$ & Par, Eq.~(\ref{eq:bloco-par})
+        & $(6,7)$, $(9,10)$, $(12,13)$ & 6 \\
+      $3\omega$ & Par, Eq.~(\ref{eq:bloco-par})
+        & $(16,17)$, $(20,21)$, $(24,25)$, $(28,29)$ & 8 \\
+      \midrule
+      \multicolumn{3}{l}{Total} & 30 \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  \fonte{Elaborada pelos autores com base em \citeonline[p.~91--96]{Caire2011}.}
+\end{table}
+ 
+Cada bloco da Tabela~\ref{tab:blocos} é um sistema linear de primeira ordem com
+coeficientes variáveis, na forma da Equação~(\ref{eq:sistema-nh}), com
+$\mathbf{X} = \mathbf{k}$, $\mathbf{A} = -\mathbf{EI}^{-1}\,\mathrm{d}\mathbf{EI}/
+\mathrm{d}s$ e $\mathbf{F} = \mathbf{EI}^{-1}\mathbf{V}$. Nesse caso, a matriz fundamental
+é conhecida: $\boldsymbol{\Phi} = \mathbf{EI}^{-1}$, pois $\mathrm{d}\boldsymbol{\Phi}/
+\mathrm{d}s = -\mathbf{EI}^{-1}\,(\mathrm{d}\mathbf{EI}/\mathrm{d}s)\,\mathbf{EI}^{-1}
+= \mathbf{A}\boldsymbol{\Phi}$. Substituindo-se na Equação~(\ref{eq:var-parametros}),
+
+\begin{equation}
+  \label{eq:k-variacao-parametros}
+  \mathbf{k}(s) = \mathbf{EI}^{-1}(s)\left[\mathbf{C}
+  + \int \mathbf{V}(s)\,\mathrm{d}s\right],
+\end{equation}
+
+isto é, $\mathbf{EI}\,\mathbf{k} = \mathbf{C} + \int \mathbf{V}\,\mathrm{d}s$, o que
+equivale a $\mathrm{d}\mathbf{M}/\mathrm{d}s = \mathbf{V}$. A
+Equação~(\ref{eq:k-variacao-parametros}) é, porém, apenas formal: como $\mathbf{V}$
+depende dos ângulos $\phi_j$ pela Equação~(\ref{eq:Vi}) e estes dependem das curvaturas
+pela Equação~(\ref{eq:geo-phi-i}), a expressão é implícita, e a solução do sistema
+completo exige métodos numéricos. \citeonline[p.~107]{Caire2011} indica como escolhas
+naturais o método das diferenças finitas e o método do tiro, que transforma o PVC em um
+PVI equivalente por um processo iterativo; esses métodos são apresentados na
+Seção~\ref{sec:metodos-numericos}. Uma vez obtidas as funções $k_i(s)$ e $\phi_i(s)$, a
+curvatura e o ângulo em qualquer instante são recuperados pela
+Equação~(\ref{eq:base-perturbativa}), e as coordenadas $x(s,t)$ e $y(s,t)$ resultam da
+integração das Equações~(\ref{eq:geo-x}) e (\ref{eq:geo-y}) \cite[p.~96--97]{Caire2011}.
 
 % ---------------------------------------------------------------------
 
