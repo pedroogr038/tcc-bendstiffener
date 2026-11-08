@@ -55,6 +55,30 @@ Disserta\c{c}\~{a}o (Mestrado em Engenharia Mecânica) --- Universidade Federal
 [S.l.], 2024. Especificação técnica I-ET-3000.00-1519-29B-PZ9-004. Revisão
   C, de 6 fev. 2024.}
 
+\bibitem[Pipkin e Rogers 1968]{PipkinRogers1968}
+\abntrefinfo{Pipkin e Rogers}{PIPKIN; ROGERS}{1968}
+{PIPKIN, A.~C.; ROGERS, T.~G. A non-linear integral representation for
+  viscoelastic behaviour.
+\emph{Journal of the Mechanics and Physics of Solids}, v.~16, n.~1, p. 59--72,
+  1968.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1016/0022-5096(68)90016-1}. Acesso
+  em: 7 nov. 2026.}
+
+\bibitem[SciPy s.d.]{SciPyLeastSquares}
+\abntrefinfo{SciPy}{SCIPY}{s.d.}
+{SCIPY. \emph{scipy.optimize.least\_squares}.
+[S.l.], s.d. Dispon{\'\i}vel em:
+  \url{https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least\_squares.html}.
+  Acesso em: 7 nov. 2026.}
+
+\bibitem[Souza 2008]{Souza2008}
+\abntrefinfo{Souza}{SOUZA}{2008}
+{SOUZA, José~Roberto de.
+\emph{Análise estrutural de enrijecedores à flexão de geometria complexa
+  utilizados em operações offshore}.
+Disserta\c{c}\~{a}o (Mestrado em Engenharia Mecânica) --- Universidade de São
+  Paulo, Escola Politécnica, São Paulo, 2008.}
+
 \bibitem[Timoshenko 1921]{Timoshenko1921}
 \abntrefinfo{Timoshenko}{TIMOSHENKO}{1921}
 {TIMOSHENKO, S.~P. On the correction for shear of the differential equation for
