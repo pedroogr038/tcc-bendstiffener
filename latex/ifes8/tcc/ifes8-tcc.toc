@@ -8,42 +8,60 @@
 \babel@toc {brazil}{}\relax 
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introdução}}{14}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Uso Básico da Classe Ifes8}{14}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Uma Seção para Testar Listas Não Ordenadas}{15}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Uma Seção sem Propósito}{16}{section.1.3}%
+\contentsline {chapter}{\chapternumberline {1}Introdução}{10}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Objetivo Geral}{12}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Objetivos Específicos}{12}{section.1.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Seção Primária}}{20}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Seção Secundária}{20}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Seção Terciária}{20}{subsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.1.1}Seção Quaternária}{20}{subsubsection.2.1.1.1}%
-\contentsline {paragraph}{\numberline {2.1.1.1.1}Seção Quinária}{21}{paragraph.2.1.1.1.1}%
+\contentsline {chapter}{\chapternumberline {2}Referencial Teórico}{14}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Flexão}{14}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Vigas e Tipos de Carregamento}{14}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Força Cortante e Momento Fletor}{15}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Tensões Normais de Flexão}{16}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Tensões de Cisalhamento na Flexão}{19}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Deflexão em Vigas}{20}{subsection.2.1.5}%
+\contentsline {section}{\numberline {2.2}Viscoelasticidade}{21}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Rigidez}{21}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3}Equações Diferenciais}{21}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Terminologia e Classificação}{22}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Problemas de Valor Inicial e de Valor de Contorno}{23}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Equações Lineares de Primeira Ordem}{24}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Sistemas de Equações Lineares de Primeira Ordem}{25}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}Aplicação ao Sistema Linha Flexível-Enrijecedor}{27}{subsection.2.3.5}%
+\contentsline {section}{\numberline {2.4}Métodos Numéricos}{31}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Representação viscoelástica por série de Prony}{32}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Expansão perturbativa em harmônicos}{33}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Formulação das equações diferenciais ordinárias}{34}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Método do tiro}{35}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.5}Integração das equações diferenciais pelo método de Runge-Kutta de quarta ordem}{36}{subsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.4.6}Localização de raízes pelo método de Newton e pelo método de Illinois}{37}{subsection.2.4.6}%
+\contentsline {subsection}{\numberline {2.4.7}Integração no domínio do tempo e variáveis internas viscoelásticas}{39}{subsection.2.4.7}%
+\contentsline {subsection}{\numberline {2.4.8}Reconstrução da resposta em fase e no domínio do tempo}{40}{subsection.2.4.8}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Este é um Capítulo com Título Realmente Bastante Longo para Verificar o Alinhamento}}{22}{chapter.3}%
+\contentsline {chapter}{\chapternumberline {3}Metodologia}{42}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Premissas Adotadas}{43}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Caracterização do Material}{45}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Dados Experimentais}{45}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Ajuste dos Termos da Série de Prony}{45}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Equacionamento do Sistema Linha Flexível-Enrijecedor}{45}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Caracterização do Sistema}{45}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Sistema de Equações}{45}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Condições de Contorno}{45}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Implementando a Viscoelasticidade no Sistema}{45}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Aplicação do Método da Perturbação}{45}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.5}Solução Viscoelástica Linear}{45}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Reconstrução da Resposta}{45}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Validação da Solução}{45}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Estudo de Caso}{45}{section.3.8}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Formatação de Elementos Pré-textuais}}{23}{chapter.4}%
+\contentsline {chapter}{\chapternumberline {4}Resultados e Discussão}{46}{chapter.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Formatação de Elementos Textuais}}{25}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Formatação de Tabelas}{25}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Formatação de Figuras}{26}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Formatação de Equações e Fórmulas}{27}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Formatação de Códigos Fonte}{29}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Formatação de Citações}{30}{section.5.5}%
-\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Formatação de Elementos Pós-textuais}}{32}{chapter.6}%
-\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {7}\MakeTextUppercase []{Conclusões}}{33}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Análises}{33}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Trabalhos Futuros}{34}{section.7.2}%
+\contentsline {chapter}{\chapternumberline {5}Conclusão}{47}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Análises}{47}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{47}{section.5.2}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{37}{section*.32}%
+\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{48}{section*.25}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \setcounter {tocdepth}{0}
 \setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
@@ -51,18 +69,7 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Demonstração do Teorema Loren Ipsum}}{41}{appendix.A}%
-\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\cftinsert {A}
-\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Visão Geral de Indução Estrutural}}{43}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Princípio da Boa Ordenação}{43}{section.B.1}%
-\contentsline {section}{\numberline {B.2}Indução em Listas}{43}{section.B.2}%
-\contentsline {subsection}{\numberline {B.2.1}Estudo de Caso: Tamanho da Lista}{44}{subsection.B.2.1}%
-\contentsline {subsection}{\numberline {B.2.2}Estudo de Caso: Pesquisa em Lista}{44}{subsection.B.2.2}%
-\contentsline {section}{\numberline {B.3}Indução em Árvores}{45}{section.B.3}%
-\contentsline {subsection}{\numberline {B.3.1}Estudo de Caso: Cálculo de Profundidade}{45}{subsection.B.3.1}%
-\contentsline {subsection}{\numberline {B.3.2}Estudo de Caso: Pesquisa em Árvore}{46}{subsection.B.3.2}%
+\contentsline {appendix}{\chapternumberline {A}Demonstração do Teorema Loren Ipsum}{50}{appendix.A}%
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }
 \setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
@@ -70,4 +77,4 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Exemplo de lombada}}{48}{appendix.anexochapback.1}%
+\contentsline {appendix}{\chapternumberline {A}Exemplo de lombada}{52}{appendix.anexochapback.1}%

@@ -1,14 +1,3 @@
-%%% Uso da classe LaTeX Ifes8 para elaboração de trabalho acadêmicos
-%%% de acordo como as normas estabelecidas no documento “Normas para
-%%% Apresentação de Trabalhos Acadêmicos e Científicos: Documento Impresso e/ou
-%%% Digital”, 9ª edição -- 2024.
-%%% 
-%%% Para a versão mais recente desta classe verifique:
-%%% https://github.com/quigonjeff/ifes8
-%%%
-%%% Autor: Prof. Jefferson O. Andrade <jefferson.andrade@ifes.edu.br>
-%%% Atualizado por: Gustavo Cardoso Pimentel em 11 de agosto de 2026 (Adequação às normas Ifes 2024 - 9ª edição)
-%%% Data de criação: 2021-07-01 | Data de atualização: 2026-08-11
 %%%
 \documentclass[times,english,brazilian,oneside,section=TITLE]{ifes8}
 
@@ -58,12 +47,12 @@
 
 \titulo{Metodologia para Caracterização Viscoelástica e Dimensionamento de Enrijecedores à Flexão para Risers Flexíveis}
 
-\autor{Alexandre Lima Simões}
-\autorficha{Simões, Alexandre Lima}
+\autor{Alexandre Lima Simões\\Pedro Antônio Gomes Goronci}
+\autorficha{Simões, Alexandre Lima; Goronci, Pedro Antônio Gomes}
 
-\orientador{Prof. Dr. Jefferson O. Andrade}
+\orientador{Prof. Dr. Vinicius Erler de Souza Ramos}
 
-\coorientadora{Prof.ª Dr.ª Fulana Detal Longname}
+% \coorientadora{Prof.ª Dr.ª Fulana Detal Longname}
 
 \instituicao{Instituto Federal do Espírito Santo}
 
@@ -71,7 +60,7 @@
 
 \data{2026}
 
-\local{Serra}
+\local{Vitória, ES}
 
 \preambulo{Trabalho de Conclusão de Curso apresentado à Coordenadoria
   do Curso de Engenharia Mecânica do Instituto Federal do Espírito
@@ -119,11 +108,13 @@
           \imprimirinstituicao, \imprimirdata\\
 
           \hspace{0.5cm}        
-          1. Palavra-chave1.
-          2. Palavra-chave2.
-          I. Orientador.
-          II. Universidade xxx.
-          III. Faculdade de xxx.
+          1. Viscoelasticidade.
+          2. Engenharia do petróleo.
+          3. Equações diferenciais.
+          4. Métodos numéricos.
+          I. Vinicius Erler de Souza Ramos.
+          II. Instituto Federal do Espírito Santo.
+          III. Campus Vitória.
           IV. Título.
           
           \begin{flushright}
@@ -163,11 +154,15 @@
     \textbf{COMISSÃO EXAMINADORA}\\[5mm]
     \assinatura{\imprimirorientador \\
       Instituto Federal do Espírito Santo \\
-      Orientadora}
+      Orientador}
     % \vspace{-1cm}
-    \assinatura{\imprimircoorientador \\
-      Instituto Federal do Espírito Santo \\
-      Coorientador}
+    \makeatletter
+    \abntex@ifnotempty{\imprimircoorientador}{%
+      \assinatura{\imprimircoorientador \\
+        Instituto Federal do Espírito Santo \\
+        Coorientador}
+    }
+    \makeatother
     % \vspace{-1cm}
     \assinatura{Membro Convidado da Banca 1 \\
       Instituição Externa 1}
@@ -176,35 +171,6 @@
       Instituição Externa 2}
   \end{center}
 \end{folhadeaprovacao}
-
-
-%%% --------------------------------------------------------------------
-%%% Ambiente para escrita da declaração do autor
-%%% 2020-09-02: Jefferson Andrade. A declaração do autor não é mais necessária
-%%% nos trabalhos acadêmcios do Ifes.
-% \begin{declaracaodoautor}
-
-%   \vspace*{1.5cm}
-
-%   Declaro, para fins de pesquisa acadêmica, didática e
-%   técnico-científica, que este Trabalho de Conclusão de Curso pode ser
-%   parcialmente utilizado, desde que se faça referência à fonte e ao
-%   autor.
-
-%   \vspace*{2.5cm}
-
-%   \centering
-
-%   \imprimirlocal, 11 de agosto de 2026.
-
-%   \vspace*{2.5cm}
-
-%   \imprimirautor
-
-%   \vspace*{\fill}
-  
-% \end{declaracaodoautor}
-
 
 %%% ====================================================================
 %%% Ambiente para a escrita da dedicatória.
@@ -243,83 +209,89 @@
 
 %%% Ambiente para resumo em português
 \begin{resumo}
-  O objetivo deste documento é servir como um modelo de trabalho de
-  conclusão de curso tem por objetivo, bem como apresentar e descrever
-  os mecanismos básicos para a confecção deste tipo de documento
-  utilizando a classe de documentos \ifestex\ em \LaTeX.
-  %
-  Para uma melhor compreensão do modo de utilização desta classe é
-  necessário analisar o código fonte deste documento bem como ler a
-  documentação da classe \abnTeX, na qual a classe \ifestex\ se
-  baseia.
 
-  Palavras-chave: Palavra1. Palavra2. Palavra3. Palavra4.
+  A engenharia \emph{offshore} (fora da costa) é responsável pelo desenvolvimento de atividades
+  relacionadas à exploração e produção de petróleo e gás natural em ambientes marítimos. Para essas
+  aplicações, o uso de linhas flexíveis é essencial para o escoamento da produção e para a interligação
+  de equipamentos marinhos com a plataforma de operação FPSO (\emph{Floating Production Storage and Offloading}).
+  De modo geral, as linhas flexíveis não possuem resistência à flexão suficiente para suportar as cargas associadas
+  ao ambiente que são trasnferidas para as conexões de topo, sendo necessário o uso de enrijecedores à flexão.
+  O objetivo deste trabalho é apresentar uma metodologia para a caracterização viscoelástica e 
+  o dimensionamento de enrijecedores à flexão para risers flexíveis por meio da implementação 
+  de um modelo matemático capaz de descrever o comportamento viscoelástico mediante regressão
+  dos dados experimentais obtidos no ensaio de relaxação do poliuretano e implementação de solução
+  numérica para avaliação da resposta dinâmica do sistema enrijecedor de curvatura com duto flexível
+  em regime harmônico.
+
+  Palavras-chave: Engenharia offshore. Enrijecedores à Flexão. Viscoelasticidade. Métodos numéricos. Dimensionamento. 
 \end{resumo}
 
 %%% Ambiente para resumo em inglês.
 \begin{resumo}[Abstract]
   \begin{otherlanguage}{english}
-    The goal of this document is to work as a model for the
-    undergraduate final year project report, as well as present and
-    describe the basic mechanisms for the preparation of this type of
-    document using the \LaTeX\ document class \ifestex.
-    %
-    To better understand how to use that class, it is necessary to
-    study the source code of this document as well as read the
-    documentation of the \abnTeX\ class, upon which the \ifestex\
-    class is based.
+    The offshore engineering is responsible for the development of activities related to the exploration and 
+    production of oil and natural gas in marine environments. For these applications, the use of flexible 
+    risers is essential for the flow of production and for the interconnection of marine equipment with the 
+    FPSO (\emph{Floating Production Storage and Offloading}) platform. In general, flexible risers do not 
+    have sufficient bending resistance to withstand the loads associated with the environment, which are transferred 
+    to the top connections, making the use of bending stiffeners necessary. The objective of this work is to 
+    present a methodology for the viscoelastic characterization and the design of bending stiffeners for flexible 
+    risers through the implementation of a mathematical model capable of describing the viscoelastic behavior by 
+    regression of the experimental data obtained in the polyurethane relaxation test and the implementation of a 
+    numerical solution for evaluating the dynamic response of the bending stiffener system with flexible pipe under 
+    harmonic regime.
 
-    Keywords: Keyword1. Keyword2. Keyword3. Keyword4.
+    Keywords: Offshore Engineering. Bending Stiffeners. Viscoelasticity. Numerical Methods. Design.
   \end{otherlanguage}
 \end{resumo}
 
 
-%%% Lista de figuras
-\renewcommand{\listfigurename}{Lista de figuras}
-\pdfbookmark[0]{\listfigurename}{lof}
-\listoffigures*
-\cleardoublepage
+% %%% Lista de figuras
+% \renewcommand{\listfigurename}{Lista de figuras}
+% \pdfbookmark[0]{\listfigurename}{lof}
+% \listoffigures*
+% \cleardoublepage
 
 
-%%% Lista de tabelas
-\pdfbookmark[0]{\listtablename}{lot}
-\listoftables*
-\cleardoublepage
+% %%% Lista de tabelas
+% \pdfbookmark[0]{\listtablename}{lot}
+% \listoftables*
+% \cleardoublepage
 
 
-%%% Lista de quadros
-\pdfbookmark[0]{\listadequadrosname}{loq}
-\listadequadros*
-\cleardoublepage
+% %%% Lista de quadros
+% \pdfbookmark[0]{\listadequadrosname}{loq}
+% \listadequadros*
+% \cleardoublepage
 
 
-%%% Lista de abreviaturas
-\begin{abreviaturas}
-  \simb{Abrev.} -- Abreviatura
-  \simb{Assoc.} -- Associação
-  \simb{Atm.} -- Atmosfera
-  \simb{Bel.} -- Bacharel
-  \simb{Bioq.} -- Bioquímica
-  \simb{Cit.} -- Citação
-  \simb{Compl.} -- Complemento
-  \simb{Dic.} -- Dicionário
-  \simb{Dipl.} -- Diploma
-\end{abreviaturas}
+% %%% Lista de abreviaturas
+% \begin{abreviaturas}
+%   \simb{Abrev.} -- Abreviatura
+%   \simb{Assoc.} -- Associação
+%   \simb{Atm.} -- Atmosfera
+%   \simb{Bel.} -- Bacharel
+%   \simb{Bioq.} -- Bioquímica
+%   \simb{Cit.} -- Citação
+%   \simb{Compl.} -- Complemento
+%   \simb{Dic.} -- Dicionário
+%   \simb{Dipl.} -- Diploma
+% \end{abreviaturas}
 
 
-%%% Lista de siglas
-\begin{siglas}
-  \simb{ABNT} -- Associação Brasileira de Normas Técnicas
-  \simb{ACM} -- Association for Computing Machinery
-  \simb{APA} -- American Psychological Association
-  \simb{BIOS} -- Basic Input / Output System
-  \simb{CREA} -- Conselho Regional de Engenharia e Agronomia
-  \simb{IBGE} -- Instituto Brasileiro de Geografia e Estatística
-  \simb{IEEE} -- Institute of Electrical and Electronics Engineers
-  \simb{Ifes} -- Instituo Federal de Educação, Ciência e Tecnologia do Espírito Santo
-  \simb{ISDN} -- Integrated Services Digital Network
-  \simb{RISC} -- Reduced Instruction Set Computer
-\end{siglas}
+% %%% Lista de siglas
+% \begin{siglas}
+%   \simb{ABNT} -- Associação Brasileira de Normas Técnicas
+%   \simb{ACM} -- Association for Computing Machinery
+%   \simb{APA} -- American Psychological Association
+%   \simb{BIOS} -- Basic Input / Output System
+%   \simb{CREA} -- Conselho Regional de Engenharia e Agronomia
+%   \simb{IBGE} -- Instituto Brasileiro de Geografia e Estatística
+%   \simb{IEEE} -- Institute of Electrical and Electronics Engineers
+%   \simb{Ifes} -- Instituo Federal de Educação, Ciência e Tecnologia do Espírito Santo
+%   \simb{ISDN} -- Integrated Services Digital Network
+%   \simb{RISC} -- Reduced Instruction Set Computer
+% \end{siglas}
 
 
 %%% Lista de símbolos
@@ -346,706 +318,1923 @@
 %%% Configuração do espaçamento entre títulos e texto
 \setlength{\afterchapskip}{0\baselineskip}
 
-
+% ----------------------------------------------------------------------
+% Pedro
 \chapter{Introdução}
 \label{cha:introducao}
 
-O Instituto Federal do Espírito Santo (Ifes) normatiza definições de
-apresentação para trabalhos acadêmicos. À época da edição deste
-documento (agosto de 2026), a norma mais recente é a 9ª edição,
-publicada em 2024 \cite{Ifes2024}.
+% Introduz o contexto.
+A produção de petróleo e gás em alto-mar integra cadeias de fornecimento de energia e de matérias-primas 
+utilizadas em diferentes setores da economia. A continuidade dessas atividades depende de uma infraestrutura
+capaz de operar sob condições ambientais exigentes. Nesse contexto, a confiabilidade dos equipamentos submarinos
+não se restringe ao desempenho da produção, mas também está relacionada à segurança e à prevenção de falhas com
+possíveis consequências ambientais \cite{ANP2023}.
 
-Com o objetivo de facilitar tanto o trabalho dos alunos na preparação
-de seus Trabalhos de Conclusão de Curso (TCC), quanto o trabalho do
-setor de bibliotecas, responsável pela validação da formatação dos
-trabalhos entregues, foi solicitado que o Ifes disponibilizasse uma
-classe e/ou modelo em \LaTeX\ que seguisse as normas de
-apresentação. Com esse objetivo foi iniciado o trabalho de construção
-da classe \ifestex.\footnote{A título de esclarecimento, caso não seja
-  evidente, o autor deste documento é o Prof.\ Jefferson O.\ Andrade,
-  o estudante \emph{Alunus Alunovisk Alunovich} é fictício.}
+% % Relaciona com linhas flexíveis e explica os diferentes trechos.
+% Nesse contexto, a comunicação entre as plataformas que operam longe da costa (\emph{offshore}) e os sistemas
+% submarinos que realizam as operações no leito marinho é um objeto de estudo relevante para a engenharia. As 
+% unidades flutuantes de operação e armazenamento (\emph{FPSO -- Floating Production Storage and Offloading})
+% são conectadas por meio de linhas flexíveis que permitem o transporte de petróleo e gás natural diretamente 
+% da extração por meio de dutos flexíveis, e existem também cabos desenvolvidos para a transmissão de sinais, 
+% dados e energia entre as plataformas e os sistemas submarinos, denominados cabos umbilicais. O trecho suspenso
+% que em mar que vai do ponto de conexão da plataforma até a zona de contato com o leito marinho é comumente 
+% atribuído pelo nome de \emph{riser} e é caracterizado pela forte resposta dinâmica, enquanto o trecho estático
+% é o restante da linha flexível que permanece em contato com o leito marinho e é chamado de \emph{flowline}.
 
-Este documento funciona ao mesmo tempo como manual e como modelo de
-TCC para a classe \ifestex. Esta classe é essencialmente uma
-customização da classe \abnTeX\ \cite{abntex2classe} -- que, por sua
-vez, é uma extensão da classe \texttt{memoir}. Deste modo, este
-manual/modelo, vai buscar, na medida do possível, não repetir o que já
-está disponível no manual do \abnTeX\ ou nas normas do Ifes
-\cite{Ifes2024}, e se concentrar no que é novo e/ou diferente na
-classe \ifestex.
+% Apresenta os risers flexíveis e a função dos enrijecedores à flexão.
+Entre os componentes dessa infraestrutura estão os \emph{risers} flexíveis, que conectam as instalações 
+submarinas às unidades de produção, como as FPSO -- \emph{Floating Production Storage and Offloading} e 
+FPU -- \emph{Floating Production Unit}. Sua flexibilidade permite acomodar movimentos da unidade flutuante, mas
+a conexão com estruturas mais rígidas constitui regiões mais críticas, sujeitas a maiores concentrações de 
+esforços e deformações. Para controlar a curvatura nessa transição, empregam-se enrijecedores à flexão, cuja 
+geometria cônica proporciona uma variação gradual de rigidez do conjunto linha flexível-enrijecedor 
+\cite{Caire2011,Lopes2025}. Uma visualização do enrijecedor instalado juntamente com a linha flexível que 
+adentra o mar é apresentada na Figura \ref{fig:enrijecedor_flexao}.
 
-É altamente recomendável que os estudantes verifiquem, além da versão
-em PDF deste documento, também o seu código fonte em \LaTeX.
+% % Destaca a severidade do ambiente offshore.
+% O trecho dinâmico das linhas flexíveis está sempre sujeito à ação de forças hidrodinâmicas relacionadas à 
+% corrente marítima e à incidência de ondas, cargas provenientes da movimentação da plataforma e que podem ser
+% agravadas por condições ambientais adversas e também por variações na operação da plataforma, como cargas 
+% acidentais (e.g. perda de linhas de ancoragem, inundação de compartimentos da plataforma). Dessa forma, 
+% apesar das linhas flexíveis serem projetadas para suportar condições de elevada tração e curvatura, o projeto
+% desse tipo de produto não funcionaria sem o uso de acessórios específicos que possam contribuir para sua 
+% operação, considerando a severidade do ambiente \emph{offshore}. 
 
-\section{Uso Básico da Classe Ifes8}
-\label{sec:uso-basico}
+% % Relaciona linhas flexíveis com a necessidade de enrijecedores à flexão.
+% De modo geral, na região de conexão da linha com a plataforma (região de topo), a curvadura pode ser concentrada,
+% permitindo que o valor de máxima curvatura permitida no projeto seja ultrapassado com maior facilidade.
+% Para evitar que o limite de curvatura seja excedido, utilizam-se de um equipamento capaz de suavizar os ângulos
+% gerados na região de topo a partir do aumento de rigidez com uma redução gradual ao longo do comprimento
+% da linha. Esses acessórios são chamados de enrijecedores à flexão e possuem um formato cônico com a base maior 
+% próxima do ponto de conexão e envolvem o cabo submarino, de modo que o atravessa o centro do enrijecedor. 
 
-Para utilizar a classe \ifestex\ no seu trabalho acadêmico,
-evidentemente, você precisará informar ao \LaTeX\ que está usando a
-classe. Isso é feito colocando-se a declaração abaixo como a primeira
-linha de código do seu documento.\vspace{\baselineskip}
+% % Importancia do dimensionamento do enrijecedor.
+% Dada a função de suavização da curvatura na região de topo, o enrijecedor à flexão desempenha um papel crucial 
+% para a segurança estrutural da linha flexível, sendo bastante presente em projetos que envolvam cabos submarinos. 
+% Portanto, o dimensionamento correto dos enrijecedores é apreciado do ponto de vista da engenharia, por conta 
+% de sua relevância estrutural devido a sua relevância e criticidade.
 
-\begin{lstlisting}[language={[LaTeX]TeX}]
-  \documentclass[times,english,brazil]{ifes8}  
-\end{lstlisting}
+% % Características do enrijecedor. (ACHAR UMA CITAÇÃO PARA ISSO)
+% Dada a importância dos enrijecedores, ainda se faz necessário compreender como suas propriedades mecânicas 
+% devem atender aos requisitos funcionais do sistema enrijecedor e dalinha flexível. São feitos de poliuretano -- um 
+% material polimérico de elevada resistência mecânica, resistência abrasiva e capacidade de absorvação de impactos 
+% \cite{Balmoral?} -- e possuem um inserto metálico no seu interior para permitir a união com outros acessórios 
+% importantes do sistema de fixação da linha flexível.
 
-A opção \texttt{12pt} indica o tamanho padrão da fonte do texto,
-conforme estabelecido pelas normas do Ifes \cite[pp.~20]{Ifes2024}.
+%%%% https://expo.windjournal.jp/booth/haradacorp/
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{pics/Bend stiffener, installation expo_windjounal_haracop.jpeg}
+\caption{Enrijecedor à flexão.}
+\label{fig:enrijecedor_flexao}
+\end{figure}
 
-A opção \texttt{a4paper} estabelece o uso de papel tamanho A4,
-conforme definido em \cite[pp.~19]{Ifes2024}.
+% % Mais detalhes sobre o poliuretano para entrar no tema de viscoelasticidade.
+% O poliuretano é um material polimérico que apresenta comportamento viscoelástico em temperatura ambiente, 
+% os efeitos desse tipo de material se manifestam principalmente pela fluência de deformação e pela relaxação 
+% de tensão \cite{Pagliosa2004}. Essa característica não pode ser negligênciada no dimensionamento de componentes 
+% estruturais sujeitos a carregamentos de longo prazo, como é o caso de enrijecedores à flexão.
 
-A opção \texttt{times} não é explicitamente necessária uma vez que ela
-é o padrão. Essa opção faz com que a fonte padrão do documento seja
-“Latin Modern” que é semelhante à “Times New Roman”, porém superior
-tipograficamente. A opção complementar à \texttt{times} é a
-\texttt{arial}. A opção \texttt{arial} faz com que a fonte padrão do
-documento (inclusive para fórmulas matemáticas) seja a “Helvetica” que
-é semelhante à “Arial”, porém superior tipograficamente.
+% Análise global e local.
+A análise desses sistemas pode ser desenvolvida em diferentes escalas. Na análise global, avalia-se a resposta da linha 
+às ações ambientais e aos movimentos da unidade flutuante, obtendo-se informações dos carregamentos na região de conexão
+(região de topo). Essas informações podem ser utilizadas em um modelo local do conjunto \emph{riser}-enrijecedor, 
+permitindo a determinação das curvaturas e deformações nessa região. Essa separação é o que permite investigar aspectos
+específicos do componente sem adentrar toda a complexidade de uma única vez. O presente trabalho, portanto, é focado no 
+desenvolvimento de uma análise local.
 
-As opções \texttt{english} e \texttt{brazil} são passadas ao pacote
-\texttt{babel}, que é carregado automaticamente pela classe \abnTeX.
-A classe \texttt{babel} redefine vários elementos do \LaTeX para
-controlar questões relacionadas ao idioma do documento, tais como
-nomes de alguns elementos textuais pré-definidos (``Figura'',
-``Tabela'', etc.) e hifenização. A razão de incluir a opção
-\texttt{english} é devido à necessidade de haver o resumo em língua
-estrangeira. Caso o resumo esteja em outra língua estrangeira deve-se
-usar a opção correspondente, como \texttt{french}, \texttt{spanish},
-etc. É importante notar que, quando mais de uma opção de linguagem é
-informada ao \texttt{babel} é preciso dizer ao babel no corpo do
-documento que língua usar. Isso é feito colocando-se a seguinte linha
-de código no documento:\vspace{\baselineskip}
+% Importância de considerar a viscoelasticidade no dimensionamento de enrijecedores à flexão.
+Sob este prisma, o dimensionamento de enrijecedores à flexão não envolve apenas a definição da geometria, mas também a descrição
+do comportamento mecânico do poliuretano empregado em sua fabricação e a caracterização das cargas de ambiente. Uma 
+idealização elástica permite simplificar a análise, porém não representa os fenômenoos dependentes do tempo, como a fluência 
+de deformações e a relaxação de tensões \cite{Pagliosa2004}. Nos enrijecedores submetidos a carregamentos periódicos, também
+importa considerar a influência da frequência e da dissipação de energia na resposta do sistema \cite{Caire2011}. 
 
-\begin{lstlisting}[language={[LaTeX]TeX}]
-  \selectlanguage{brazil}  
-\end{lstlisting}
+% Caracterização experimental - modelo constitutivo
+A inclusão desses efeitos exige a identificação de parâmetros capazes de representar a resposta do material nas condições
+de interesse. Como discute \citeonline{Pagliosa2004}, propriedades obtidas em ensaios convencionais de tração não são suficientes
+para a descrição do comportamento de longo prazo de materiais poliméricos, como é o caso do poliuretano. Ensaios de 
+relaxação e de fluência fornecem informações para a construção de modelos constitutivos dependentes do tempo, permitindo
+relacionar a caracterização experimental à análise estrutural. O comportamento desse tipo de material é típicamente 
+representado por modelos constitutivos e suas devidas funções constitutivas dependentes do tempo, como as Séries de Prony,
+que permitem descrever a evolução da resposta mecânica do material ao longo do tempo.
 
-Além destas opções, qualquer opção válida para a classe \abnTeX\ pode
-ser passada na declaração \texttt{documentclass}. As opções
-específicas da classes \abnTeX\ serão passadas diretamente à ela.
+% Necessidade de métodos numéricos
+A aplicação desses modelos ao conjunto \emph{riser}-enrijecedor requer procedimentos numéricos para determinar sua resposta
+estrutural. \citeonline{Lopes2025} investiga essa abordagem considerando o material elástico e aponta a implmentação de um modelo 
+que considere a viscoelasticidade do material como uma possibilidade de continuidade. \citeonline{Caire2011}, por sua vez, apresenta
+formulações viscoelásticas para a análise específica de enrijecedores à flexão submetidos a carregamentos dependentes do 
+tempo. A partir dessas contribuições, este trabalho busca integrar a identificação de parâmetros do poliuretano à 
+implementação e à validação de uma metodologia numérica de análise sob carregamento harmônico simples.
 
+% Desafios na integração da caracterização experimental e análise numérica
+A disponibilidade de formulações viscoelásticas, entretanto, não dispensa a necessidade da implementação de um processo de 
+identificação adequada dos parâmetros do material nem a verificação de sua implementação numérica. O desafio consiste em 
+integrar essas etapas de maneira consistente, para que os dados de caracterização sejam utilizados na previsão de curvaturas
+e deformações relevantes ao dimensionamento do enrijecedor.
 
-\section{Uma Seção para Testar Listas Não Ordenadas}
+% Noções importantes (que vão ser abordadas para justificar as considerações)
 
-\blindtext[1]
+% Idealização do carregamento harmônico simples.
+A representação simplificada das solicitações ambientais também encontra aplicação nas análises globais de carregamento
+extremo. A especificação técnica da \citeonline[apêndice B, seção B.2.1]{Petrobras2024} admite, como alternativa à análise
+com ondas irregulares, o procedimento de máxima resposta com ondas regulares. A partir do espectro de ondas e dos
+operadores de amplitude de resposta (RAOs) da unidade flutuante no ponto de conexão do umbilical, esse procedimento
+estabelece uma representação regular destinada a reproduzir os máximos de movimento angular e de aceleração vertical
+estimados para uma tempestade de três horas. A especificação exige, entretanto, a verificação dos casos mais críticos
+por análises com ondas irregulares \cite[apêndice B, seção B.1]{Petrobras2024}.
 
-\begin{itemize}
-\item Primiero item.
-\item Segundo item.
-  \begin{itemize}
-  \item Primeiro sub-item.
-  \item Segundo sub-item.
-    \begin{itemize}
-    \item Primeiro sub-sub-item.
-    \item Segundo sub-sub-item.
-    \item Terceiro sub-sub-item.
-      \begin{itemize}
-      \item Primeiro item do subnível 4.
-      \item Segundo item do subnível 4.
-      \end{itemize}
-    \item Quarto sub-sub-item.
-    \end{itemize}
-  \item Terceiro sub-item.
-  \end{itemize}
-\item Terceiro item.
-\item Quarto item.
-\end{itemize}
+Essa possibilidade de representação regular oferece contexto para o uso de solicitações periódicas em modelos
+simplificados, mas não implica que os carregamentos locais sejam necessariamente harmônicos. Neste trabalho, o
+carregamento harmônico simples é adotado como uma idealização controlada para investigar a resposta viscoelástica do
+conjunto \emph{riser}-enrijecedor, sem reproduzir toda a complexidade das solicitações reais nem pressupor equivalência
+automática com os carregamentos obtidos pelo procedimento de máxima resposta.
 
-\blindtext[2]
-
-
-\section{Uma Seção sem Propósito}
-\label{sec:sem-proposito1}
-
-\Blindtext
-
-\blinditemize[7]
-
-\blindtext[2]
-
-\blindenumerate[5]
-
-\blindtext
-
-
-
-% ----------------------------------------------------------------------
-\chapter{Seção Primária}
-\label{cha:secao-primaria}
-
-\blindtext[1]
-
-\section{Seção Secundária}
-\label{sec:secao-secundaria}
-
-\blindtext[1]
-
-\subsection{Seção Terciária}
-\label{sec:secao-terciaria}
-
-\blindtext[1]
-
-\subsubsection{Seção Quaternária}
-\label{sec:secao-quaternaria}
-
-\blindtext[1]
-
-\paragraph{Seção Quinária}
-\label{sec:secao-quinaria}
-
-\blindtext[1]
+% Representação simplificada do sistema linha flexível-enrijecedor. (importante para vigas)
+Em uma representação simplificada, o sistema linha flexível-enrijecedor pode ser tratado como uma estrutura submetida à 
+flexão e à tração, cuja rigidez flexional varia ao longo do comprimento. A geometria do enrijecedor contribui para essa 
+variação, enquanto o comportamento do poliuretano introduz uma dependência temporal na resposta. A modelagem procura, 
+portanto, combinar a descrição geométrica do conjunto com uma relação constitutiva adequada ao material.
 
 
-% ---------------------------------------------------------------------
-\chapter{Este é um Capítulo com Título Realmente Bastante
-  Longo para Verificar o Alinhamento}
+\section{Objetivo Geral}
+\label{sec:objetivo-geral}
 
+O objetivo geral deste trabalho é aplicar e validar uma metodologia numérica
+para caracterização viscoelástica de poliuretanos e análise de enrijecedores à
+flexão para \emph{risers} flexíveis, empregando modelos constitutivos identificados a 
+partir de ensaios de relaxação, implementação computacional da formulação de análise e 
+proposição de critérios para dimensionamento de  enrijecedores à flexão para um 
+carregamento harmônico simples.
 
-\blindtext
+\section{Objetivos Específicos}
+\label{sec:objetivos-especificos}
 
-
-
-% ----------------------------------------------------------------------
-\chapter{Formatação de Elementos Pré-textuais}
-\label{cha:format-pre-text}
-
-O manual do \abnTeX\ descreve bem a construção dos elementos
-pré-textuais típicos de um trabalho acadêmico, disponibilizando macros
-para a maioria deles, conforme pode ser verificado em
-\cite[cap.~6]{Araujo2016}. Esses elementos, segundo as normas do Ifes
-são:
+O trabalho tem como objetivos específicos:
 
 \begin{enumerate}
-\item Folha de rosto (obrigatório)
-\item Ficha catalográfica (obrigatório)
-\item Errata (opcional)
-\item Folha de aprovação (obrigatório)
-\item Dedicatória (opcional)
-\item Agradecimentos (opcional)
-\item Epígrafe (opcional)
-\item Resumo na língua vernácula (obrigatório)
-\item Resumo em língua estrangeira (obrigatório)
-\item Lista de ilustrações (opcional)
-\item Lista de tabelas (opcional)
-\item Lista de abreviaturas e siglas (opcional)
-\item Lista de símbolos (opcional)
-\item Sumário (obrigatório)
+  \item Realizar revisão bibliográfica sobre: viscoelasticidade, poliuretanos, 
+enrijecedores à flexão, modelos físicos e séries de Prony.
+  \item Implementar procedimentos para identificação de parâmetros de modelos 
+viscoelásticos a partir de dados de ensaios de relaxação.
+  \item Implementar numericamente a formulação viscoelástica para enrijecedores à flexão, 
+  considerando os efeitos viscoelásticos do poliuretano e carregamento harmônico simples.
+  \item Avaliar e validar a resposta estrutural do enrijecedor e comparar com os resultados 
+  esperados pela bibliografia.
+  \item Realizar um estudo de caso.
+  \item Analisar os resultados obtidos no estudo de caso e discutir sobre as limitações 
+  envolvendo a metodologia.
+
 \end{enumerate}
 
-Todos estes elementos tem suporte na classe \abnTeX, e a documentação
-da classe deve ser consultada para mais informações sobre como usar
-esse suporte \cite{Araujo2016}.
 
-Este documento apresenta todas estas seções, construídas usando o
-suporte da classe \abnTeX, e pode-se consultar o seu código fonte para
-uma introdução rápida a este suporte.
+% \begin{itemize}
+%   \item Contextualização da indústria offshore e a importância das linhas flexíveis.
+%   \item Problema de pesquisa: necessidade de enrijecedores à flexão para risers flexíveis.
+%   \item Aprofundamento do problema: desafios na caracterização viscoelástica de poliuretanos e dimensionamento de enrijecedores.
+%   \item Análise global e inputs do problema (cargas submetidas).
+%   \item Apresentação de ferramentas e métodos numéricos relevantes para o desenvolvimento da análise estrutural do \emph{bend stiffener}.
+%   \begin{itemize}
+%     \item Softwares de análise estrutural e simulação numérica como OrcaBend.
+%     \item Linguagens de programação utilizadas para implementação de modelos matemáticos como Python e MATLAB.
+%     \item Métodos numéricos aplicados à análise de estruturas viscoelásticas, incluindo método de diferenças finitas (FDM), Runge-Kutta e método da perturbação.
+%   \end{itemize}
+%   \item Apresentação das séries de Prony como ferramenta fundamental para desenvolvimento da formulação matemática e implementação computacional da análise estrutural do \emph{bend stiffener}.
+% \end{itemize}
 
-A classe \ifestex\ redefine os comandos \verb!\imprimircapa! e
-\verb!\folhaderostocontent! para adequar a capa e a folha de rosto aos
-modelos indicados nos apêndices C e E, respectivamente, das normas do
-Ifes \cite{Ifes2024}.
+% ---------------------------------------------------------------------
+% Alexandre
+\chapter{Referencial Teórico}
+\label{cha:referencial-teorico}
 
+Nesse capítulo apresenta-se o referencial teórico que fundamenta o desenvolvimento do trabalho, 
+abordando conceitos essenciais relacionados à viscoelasticidade, poliuretanos, enrijecedores à 
+flexão e modelos constitutivos utilizados na análise estrutural de \emph{risers} flexíveis.
+Ademais, explicitam-se os conceitos básicos sobre equações diferenciais, métodos numéricos e 
+modelos constitutivos utilizados na solução destas. Por fim, são discutidos os conceitos de 
+séries de Prony e sua aplicação na caracterização viscoelástica de materiais poliméricos, 
+com ênfase em poliuretanos.
 
+% ---------------------------------------------------------------------
 
-\chapter{Formatação de Elementos Textuais}
-\label{cha:format-text}
+\section{Flexão}
+\label{sec:flexao}
 
-A quantidade e o número de capítulos da parte textual ficam a cargo da
-decisão do aluno e de seu orientador. Tipicamente a parte textual tem
-entre 5 e 7 capítulos. Uma estrutura típica dos capítulos da parte
-textual seria a seguinte:
+A flexão é o modo de solicitação em que um elemento estrutural, ao ser submetido a
+carregamentos transversais ao seu eixo, desenvolve esforços internos que tendem a
+curvá-lo. Do ponto de vista do projeto mecânico, qualquer peça apoiada e sujeita a
+esforços transversais ao seu comprimento comporta-se como uma viga, de modo que o
+estudo da flexão se confunde com o estudo das vigas \cite[p.~154]{Norton2013}. Como o
+enrijecedor à flexão e a linha flexível por ele envolvida trabalham essencialmente sob
+esse regime, esta seção reúne os conceitos de cargas, esforços internos, tensões e
+deflexões em vigas que fundamentam a formulação desenvolvida nos capítulos seguintes.
 
-\begin{SingleSpace}
-  \begin{enumerate}
-  \item Introdução
-  \item Revisão Bibliográfica
-  \item Especificação e Projeto
-  \item Implementação
-  \item Experimentos e Resultados
-  \item Conclusões e Trabalhos Futuros
-  \end{enumerate}
-\end{SingleSpace}
+\subsection{Vigas e Tipos de Carregamento}
+\label{sub:vigas-carregamentos}
 
-Evidentemente, os títulos dos capítulos podem mudar e pode haver a
-fusão de alguns capítulos, ou pode haver a divisão de alguns dos
-capítulos em dois ou mais. Entretanto, não é comum haver um número
-muito grande de capítulos.
+Segundo \citeonline[p.~111]{Norton2013}, uma viga é qualquer elemento que suporta um
+carregamento transversal ao longo de seu eixo e que também pode suportar carregamentos
+na direção axial. A classificação das vigas é feita em função da forma como são
+vinculadas, conforme ilustrado na Figura~\ref{fig:tipos-vigas}:
 
-A formatação dos títulos das seções do trabalho seguem as diretrizes
-indicadas 4.3.7.1 das normas do Ifes \cite[p.~34]{Ifes2024}.
-% , e a
-% formatação dos títulos segue o seguinte esquema:
+\begin{itemize}
+  \item \textbf{viga biapoiada:} apoiada por pinos ou apoios estreitos em cada
+  extremidade;
+  \item \textbf{viga engastada:} fixa em uma extremidade e livre na outra;
+  \item \textbf{viga biapoiada com extremidade em balanço:} biapoiada, mas projetando-se
+  além de um de seus apoios;
+  \item \textbf{viga indeterminada (hiperestática):} possui mais apoios do que o
+  necessário para o equilíbrio estático, de modo que suas reações não podem ser obtidas
+  apenas pelas equações de equilíbrio.
+\end{itemize}
 
-% \begin{description}
-% \item[Capítulo] Maiúsculas, em negrito, tamanho \verb!\LARGE!.
-% \item[Seção] Maiúsculas, tamanho \verb!\Large!.
-% \item[Subseção] \emph{Smallcaps}, tamanho \verb!\large!.
-% \item[Subsubseção] 
-% \end{description}
+\begin{figure}[h]
+  \centering
+  \caption{Tipos usuais de vigas quanto aos vínculos: (a) biapoiada; (b) engastada;
+    (c) biapoiada com extremidade em balanço; (d) indeterminada.}
+  \label{fig:tipos-vigas}
+  \begin{tikzpicture}[x=1cm,y=1cm,line cap=round,>=stealth]
+    % ---------- (a) biapoiada ----------
+    \begin{scope}[shift={(0,3.6)}]
+      \draw[very thick] (0,0) -- (4,0);
+      \draw (0,0) -- (-0.25,-0.4) -- (0.25,-0.4) -- cycle;
+      \draw (-0.4,-0.4) -- (0.4,-0.4);
+      \draw (4,0) circle (0.1);
+      \draw (4,-0.1) -- (3.75,-0.5) -- (4.25,-0.5) -- cycle;
+      \draw (3.6,-0.5) -- (4.4,-0.5);
+      \foreach \x in {-0.3,-0.1,0.1,0.3}{\draw (\x,-0.4) -- (\x-0.12,-0.55);}
+      \node[anchor=east] at (-0.7,-0.1) {(a)};
+    \end{scope}
+    % ---------- (b) engastada ----------
+    \begin{scope}[shift={(7,3.6)}]
+      \draw[very thick] (0,0) -- (4,0);
+      \draw[thick] (0,-0.5) -- (0,0.5);
+      \foreach \y in {-0.45,-0.25,-0.05,0.15,0.35}{\draw (0,\y) -- (-0.2,\y-0.2);}
+      \node[anchor=east] at (-0.5,0) {(b)};
+    \end{scope}
+    % ---------- (c) balanço ----------
+    \begin{scope}[shift={(0,1.5)}]
+      \draw[very thick] (0,0) -- (5,0);
+      \draw (0,0) -- (-0.25,-0.4) -- (0.25,-0.4) -- cycle;
+      \draw (-0.4,-0.4) -- (0.4,-0.4);
+      \draw (3,0) circle (0.1);
+      \draw (3,-0.1) -- (2.75,-0.5) -- (3.25,-0.5) -- cycle;
+      \draw (2.6,-0.5) -- (3.4,-0.5);
+      \foreach \x in {-0.3,-0.1,0.1,0.3}{\draw (\x,-0.4) -- (\x-0.12,-0.55);}
+      \node[anchor=east] at (-0.7,-0.1) {(c)};
+    \end{scope}
+    % ---------- (d) indeterminada ----------
+    \begin{scope}[shift={(7,1.5)}]
+      \draw[very thick] (0,0) -- (4,0);
+      \draw[thick] (0,-0.5) -- (0,0.5);
+      \foreach \y in {-0.45,-0.25,-0.05,0.15,0.35}{\draw (0,\y) -- (-0.2,\y-0.2);}
+      \draw (4,0) circle (0.1);
+      \draw (4,-0.1) -- (3.75,-0.5) -- (4.25,-0.5) -- cycle;
+      \draw (3.6,-0.5) -- (4.4,-0.5);
+      \node[anchor=east] at (-0.5,0) {(d)};
+    \end{scope}
+  \end{tikzpicture}
+  \fonte{Adaptado de \citeonline[p.~111]{Norton2013}.}
+\end{figure}
 
+A viga engastada, em particular, é a idealização adotada neste trabalho para o conjunto
+enrijecedor e linha flexível, conforme as premissas apresentadas no
+Capítulo~\ref{sec:metodologia}, uma vez que o engaste modela a fixação da estrutura
+na região de topo.
 
-\section{Formatação de Tabelas}
-\label{sec:format-tabelas}
+As cargas aplicadas a uma viga podem ser forças concentradas, forças distribuídas ao
+longo de parte do comprimento ou do comprimento total, e momentos concentrados. Essas
+cargas dão origem tanto a forças cortantes quanto a momentos fletores na viga, de
+modo que a análise dos esforços internos consiste em determinar a magnitude e a
+distribuição desses esforços ao longo do comprimento \cite[p.~111]{Norton2013}. Em
+geral, as vigas são tratadas como sistemas estáticos, ainda que vibrações e acelerações
+possam provocar carregamento dinâmico \cite[p.~111]{Norton2013}.
 
-As normas do Ifes remetem ao documento ``normas de apresentação
-tabular'' do Instituto Brasileiro de Geografia e Estatística(IBGE),
-disponível em
-\url{http://biblioteca.ibge.gov.br/visualizacao/livros/liv23907.pdf}.
-Que é a mesma referência utilizada pelo \abnTeX. Assim, para atender
-às normas do Ifes, basta utilizar a macro \verb!\IBGEtab!, conforme
-explicado em \cite[p.~41]{Araujo2016}.
+\subsection{Força Cortante e Momento Fletor}
+\label{sub:cortante-momento}
 
-\begin{table}[h!]
-  % \IBGEtab{%
-  %   \caption[Um exemplo de tabela alinhada conforme padrão IBGE]{Um
-  %     exemplo de tabela alinhada que pode ser longa ou curta, conforme
-  %     padrão IBGE.}%
-  %   \label{tabela-ibge}
-  % }{%
-  %   \begin{tabular}{ccc}
-  %     \toprule
-  %     Nome           & Nascimento & Documento      \\
-  %     \midrule
-  %     \midrule
-  %     Maria da Silva & 11/11/1111 & 111.111.111-11 \\
-  %     Júlia da Silva & 12/11/1111 & 111.111.112-22 \\
-  %     Paulo da Silva & 13/11/1111 & 111.111.113-33 \\
-  %     Pedro da Silva & 14/11/1111 & 111.111.114-44 \\
-  %     \bottomrule
-  %   \end{tabular}%
-  % }{%
-  %   \fonte{Produzido pelos autores, 2026}%
-  %   \nota{Esta é uma nota, que diz que os dados são baseados na
-  %     regressão linear.}%
-  %   \nota[Anotações]{Uma anotação adicional, seguida de várias outras.}%
-  % }
-    \caption[Um exemplo de tabela alinhada conforme padrão IBGE]{Um
-      exemplo de tabela alinhada que pode ser longa ou curta, conforme
-      padrão IBGE.}%
-    \label{tabela-ibge}
-    \begin{center}
-      \begin{tabular}{ccc}
-        \toprule
-        Nome           & Nascimento & Documento      \\
-        \midrule
-        \midrule
-        Maria da Silva & 11/11/1111 & 111.111.111-11 \\
-        Júlia da Silva & 12/11/1111 & 111.111.112-22 \\
-        Paulo da Silva & 13/11/1111 & 111.111.113-33 \\
-        Pedro da Silva & 14/11/1111 & 111.111.114-44 \\
-        \bottomrule
-      \end{tabular}%
-    \end{center}
-    \fonte{Produzido pelos autores, 2026}%
-    \nota{Esta é uma nota, que diz que os dados são baseados na
-      regressão linear.}%
-    \nota[Anotações]{Uma anotação adicional, seguida de várias outras.}%
-\end{table}
+Seja $q(x)$ a função que descreve o carregamento distribuído ao longo do eixo $x$ da
+viga. A força cortante $V(x)$ e o momento fletor $M(x)$ relacionam-se com $q(x)$ por
+\cite[p.~111]{Norton2013}:
 
-A Tabela~\ref{tabela-ibge}, é o mesmo exemplo apresentado no manual da
-classe \abnTeX, inserida aqui apenas a título de demonstração.
+\begin{equation}
+  \label{eq:q-V-M}
+  q(x) = \frac{\mathrm{d}V}{\mathrm{d}x} = \frac{\mathrm{d}^2 M}{\mathrm{d}x^2}.
+\end{equation}
 
+Integrando-se a Equação~(\ref{eq:q-V-M}) uma vez, obtém-se a força cortante e, uma
+segunda vez, o momento fletor:
 
-\begin{quadro}[htb]
-  % \IBGEtab{
-  %   \caption{Exemplo de uso de \texttt{cline} para formatação de
-  %     tabelas.}
-  %   \label{qdr:ex2}
-  % }{
-  %   \begin{tabular}{|r|l|}
-  %     \hline
-  %     7C0         & hexadecimal \\
-  %     3700        & octal       \\ \cline{2-2}
-  %     11111000000 & binary      \\
-  %     \hline
-  %     \hline
-  %     1984        & decimal     \\
-  %     \hline
-  %   \end{tabular}
-  % }{
-  %   \fonte{\LaTeX/Tables, Basic examples \cite{Wikibook-LaTeX}.}
-  % }
-  \begin{center}
-    \caption{Exemplo de uso de \texttt{cline} para formatação de quadros.}
-    \label{qdr:ex2}
-    \begin{tabular}{|r|l|}
-      \hline
-      7C0         & hexadecimal \\
-      3700        & octal       \\ \cline{2-2}
-      11111000000 & binary      \\
-      \hline
-      \hline
-      1984        & decimal     \\
-      \hline
-    \end{tabular}
-    \fonte{\LaTeX/Tables, Basic examples \cite{Wikibook-LaTeX}.}
-  \end{center}
-\end{quadro}
+\begin{align}
+  V(x) &= \int q(x)\,\mathrm{d}x + C_1, \label{eq:V-integral}\\
+  M(x) &= \int V(x)\,\mathrm{d}x + C_1 x + C_2, \label{eq:M-integral}
+\end{align}
 
-O Quadro~\ref{qdr:ex2} ilustra o resultado o uso do comando
-\verb!\cline! para criar linhas de separação (bordas) em apenas
-algumas das colunas de uma tabela. Note que este exemplo consta apenas
-para ilustrar as capacidades de formatação de tabelas do \LaTeX. As
-normas do Ifes definem que \textbf{não deve haver} linhas horizontais
-separando as linhas de dados, nem linhas horizontais separando as
-colunas.
+em que $C_1$ e $C_2$ são constantes de integração, determinadas pelas condições de
+contorno do problema \cite[p.~112, 163]{Norton2013}. Em termos geométricos, a
+diferença entre as forças cortantes em dois pontos quaisquer é igual à área sob a curva
+do carregamento distribuído entre eles, e a diferença entre os momentos fletores em dois
+pontos é igual à área sob a curva da força cortante \cite[p.~112]{Norton2013}.
+
+Quanto à convenção de sinais, adota-se o momento fletor positivo quando ele coloca
+a parte superior da viga em compressão e a parte inferior em tração, e a força
+cortante positiva quando provoca uma rotação horária na seção em que atua
+\cite[p.~112]{Norton2013}. Os valores máximos absolutos
+de $V$ e $M$ são os de maior interesse, pois determinam as tensões críticas na viga.
+Como $V$ é a derivada de $M$, o momento fletor atinge um máximo ou um mínimo nas
+seções em que a força cortante se anula \cite[p.~122]{Norton2013}. Nas vigas
+engastadas com carga na extremidade livre, a força cortante não se anula ao longo do
+comprimento e o momento máximo ocorre no engaste, que é a seção crítica do projeto.
+
+Para carregamentos formados por parcelas discretas, possivelmente descontínuas ao longo
+do comprimento, é conveniente representar $q(x)$ por funções de singularidade, que
+permitem escrever uma única expressão válida em toda a viga e facilitam a solução
+computacional \cite[p.~112--113]{Norton2013}. Sob pequenas deflexões, vale também a
+superposição de efeitos, de modo que casos combinados podem ser resolvidos somando-se
+as soluções de casos individuais \cite[p.~122]{Norton2013}.
+
+\subsection{Tensões Normais de Flexão}
+\label{sub:tensoes-flexao}
+
+Embora raramente uma viga real esteja sujeita à flexão pura, esse caso é o ponto de
+partida para o desenvolvimento da teoria das tensões de flexão. Considere-se a viga
+biapoiada da Figura~\ref{fig:flexao-pura}, com duas cargas idênticas aplicadas
+simetricamente. No trecho entre as cargas a força cortante é nula e o momento
+fletor é constante, caracterizando a flexão pura \cite[p.~155]{Norton2013}.
+
+A dedução das tensões nesse regime baseia-se nas seguintes hipóteses
+\cite[p.~155--156]{Norton2013}:
+
+\begin{enumerate}
+  \item o segmento analisado está distante das cargas aplicadas e dos vínculos externos;
+  \item a viga é carregada em um plano de simetria;
+  \item as seções transversais permanecem planas e perpendiculares à linha neutra
+  durante a flexão;
+  \item o material é homogêneo e obedece à lei de Hooke;
+  \item as tensões permanecem abaixo do limite elástico e as deflexões são pequenas;
+  \item o segmento está sujeito à flexão pura, sem cargas axiais ou cortantes;
+  \item a viga é inicialmente reta.
+\end{enumerate}
+
+Essas hipóteses são as da teoria clássica de vigas de Euler-Bernoulli, adotada nas
+premissas deste trabalho (Capítulo~\ref{sec:metodologia}).
+
+\begin{figure}[h]
+  \centering
+  \caption{Flexão pura em uma viga biapoiada: (a) carregamento e reações;
+    (b) diagrama de força cortante; (c) diagrama de momento fletor.}
+  \label{fig:flexao-pura}
+  \begin{tikzpicture}[x=1cm,y=1cm,line cap=round,>=stealth]
+    % --- (a) viga e cargas ---
+    \draw[very thick] (0,0) -- (8,0);
+    \draw (0,0) -- (-0.25,-0.4) -- (0.25,-0.4) -- cycle;
+    \draw (8,-0.1) -- (7.75,-0.5) -- (8.25,-0.5) -- cycle;
+    \draw (8,0) circle (0.1);
+    \draw[->,thick] (2,1.2) -- (2,0.05);
+    \draw[->,thick] (6,1.2) -- (6,0.05);
+    \node at (2,1.45) {$P$};
+    \node at (6,1.45) {$P$};
+    \node at (2,-0.25) {$A$};
+    \node at (6,-0.25) {$B$};
+    \node at (0,0.35) {$R_1$};
+    \node at (8,0.35) {$R_2$};
+    \node[anchor=east] at (-0.6,0.3) {(a)};
+    % --- (b) cortante ---
+    \begin{scope}[shift={(0,-2.6)}]
+      \draw[thin] (0,0) -- (8,0);
+      \draw[fill=gray!25] (0,0) -- (0,0.8) -- (2,0.8) -- (2,0) -- cycle;
+      \draw[fill=gray!25] (6,0) -- (6,-0.8) -- (8,-0.8) -- (8,0) -- cycle;
+      \node at (-0.3,0.8) {$V$};
+      \node[anchor=east] at (-0.6,0) {(b)};
+      \draw[dotted] (2,1.5) -- (2,-0.8);
+      \draw[dotted] (6,1.5) -- (6,-0.8);
+    \end{scope}
+    % --- (c) momento ---
+    \begin{scope}[shift={(0,-4.8)}]
+      \draw[thin] (0,0) -- (8,0);
+      \draw[fill=gray!25] (0,0) -- (2,0.9) -- (6,0.9) -- (8,0) -- cycle;
+      \node at (-0.3,0.9) {$M$};
+      \node[anchor=east] at (-0.6,0) {(c)};
+    \end{scope}
+  \end{tikzpicture}
+  \fonte{Adaptado de \citeonline[p.~156]{Norton2013}.}
+\end{figure}
+
+Quando o momento fletor é aplicado, o segmento se curva: as fibras de um dos lados
+encurtam-se e ficam em compressão, as do lado oposto alongam-se e ficam em tração,
+enquanto a linha neutra mantém o comprimento original. Para que as seções
+permaneçam planas, a deformação varia linearmente com a distância à linha neutra, e,
+sob a lei de Hooke, o mesmo ocorre com a tensão normal, que é nula na linha neutra
+\cite[p.~156]{Norton2013}. Essa relação conduz à conhecida fórmula da tensão de
+flexão:
+
+\begin{equation}
+  \label{eq:sigma-flexao}
+  \sigma_x = -\frac{M y}{I},
+\end{equation}
+
+em que $M$ é o momento fletor na seção considerada, $I$ é o momento de inércia da área
+da seção transversal em relação à linha neutra, que passa pelo centroide da seção
+em uma viga reta, e $y$ é a distância da linha neutra ao ponto onde a tensão é
+calculada \cite[p.~156]{Norton2013}. O sinal negativo resulta da convenção de sinais
+adotada.
+
+A tensão máxima ocorre nas fibras externas, onde $y = c$:
+
+\begin{equation}
+  \label{eq:sigma-max}
+  \sigma_{max} = \frac{M c}{I},
+\end{equation}
+
+sendo $c$ a distância da linha neutra à fibra externa, tomada como positiva tanto
+na parte superior quanto na inferior. Essas duas distâncias só são iguais em seções
+simétricas em relação à linha neutra \cite[p.~156]{Norton2013}. Uma forma alternativa
+frequentemente empregada é
+
+\begin{equation}
+  \label{eq:sigma-Z}
+  \sigma_{max} = \frac{M}{Z}, \qquad Z = \frac{I}{c},
+\end{equation}
+
+em que $Z$ é o módulo de resistência da seção \cite[p.~157]{Norton2013}. A
+Figura~\ref{fig:distribuicao-tensao} ilustra a distribuição linear da tensão normal ao
+longo da altura da seção.
+
+\begin{figure}[h]
+  \centering
+  \caption{Distribuição da tensão normal de flexão ao longo da altura de uma seção
+    simétrica: tração em um lado, compressão no outro e tensão nula na linha neutra.}
+  \label{fig:distribuicao-tensao}
+  \begin{tikzpicture}[x=1cm,y=1cm,line cap=round,>=stealth]
+    % seção (retângulo representando a altura da seção)
+    \draw[thick] (0,-2) rectangle (0.8,2);
+    % linha neutra
+    \draw[dash dot] (-0.6,0) -- (6.4,0);
+    \node at (3.0,0.3) {linha neutra};
+    % eixo y e distância c
+    \draw[->] (-1.0,0) -- (-1.0,2.5);
+    \node at (-1.0,2.75) {$y$};
+    \draw[<->] (-0.4,0) -- (-0.4,2);
+    \node[anchor=east] at (-0.45,1) {$c$};
+    % diagrama de tensões (triangular)
+    \draw[thick] (6,2.2) -- (6,-2.2);
+    \draw[fill=gray!25] (6,0) -- (6,2) -- (4.8,2) -- cycle;
+    \draw[fill=gray!25] (6,0) -- (6,-2) -- (7.2,-2) -- cycle;
+    \node[anchor=east] at (4.7,2.0) {compressão};
+    \node[anchor=west] at (7.3,-2.0) {tração};
+    \node at (6,2.5) {$\sigma_x$};
+  \end{tikzpicture}
+  \fonte{Adaptado de \citeonline[p.~156]{Norton2013}.}
+\end{figure}
+
+O momento de inércia $I$ depende exclusivamente da geometria da seção. Para um
+retângulo de largura $b$ e altura $h$, $I = b h^3/12$ \cite[p.~161]{Norton2013}; para
+uma seção circular maciça de diâmetro $d$, $I = \pi d^4/64$, e para uma seção
+anular de diâmetros externo $D$ e interno $d$, $I = \pi (D^4 - d^4)/64$. A dependência
+de $I$ com a quarta potência do diâmetro explica por que pequenas variações de
+geometria alteram de modo significativo a rigidez e as tensões, aspecto central no
+projeto de elementos de seção variável como o enrijecedor.
+
+As Equações~(\ref{eq:sigma-flexao}) a (\ref{eq:sigma-Z}), embora deduzidas para
+flexão pura, também podem ser utilizadas quando há outros carregamentos além do
+momento fletor, desde que a deformação por cisalhamento seja desprezível
+\cite[p.~157]{Norton2013}.
+
+No caso de vigas curvas, isto é, de elementos com curvatura inicial significativa,
+como ganchos e grampos, a linha neutra se desloca em direção ao centro de curvatura
+e deixa de coincidir com a linha centroidal; a distribuição de tensões passa a ser
+hiperbólica e não mais linear, e as Equações~(\ref{eq:sigma-flexao}) a
+(\ref{eq:sigma-Z}) não se aplicam diretamente \cite[p.~157--158]{Norton2013}.
+Como a hipótese de viga inicialmente reta é adotada neste trabalho, esse caso não é
+desenvolvido aqui.
+
+\subsection{Tensões de Cisalhamento na Flexão}
+\label{sub:cisalhamento-flexao}
+
+Na situação mais comum, a viga está submetida simultaneamente a força cortante e a
+momento fletor. Como o momento varia com $x$ quando $V \neq 0$, as tensões normais nas
+duas faces de um elemento da viga são diferentes, e o equilíbrio exige uma tensão de
+cisalhamento compensatória \cite[p.~158--159]{Norton2013}. A tensão de cisalhamento
+a uma distância $y_1$ da linha neutra é dada por \cite[p.~160]{Norton2013}:
+
+\begin{equation}
+  \label{eq:tau-flexao}
+  \tau = \frac{V Q}{I b},
+\end{equation}
+
+em que $b$ é a largura da seção transversal em $y_1$ e $Q$ é o momento estático, em
+relação à linha neutra, da porção da seção situada além de $y_1$:
+
+\begin{equation}
+  \label{eq:Q}
+  Q = \int_{y_1}^{c} y\,\mathrm{d}A.
+\end{equation}
+
+Como $Q$ se anula na fibra externa e é máximo na linha neutra, a tensão de
+cisalhamento devida à força cortante é nula na superfície e máxima na linha neutra,
+ao contrário da tensão normal de flexão, que é nula na linha neutra e máxima na
+superfície. Por isso, a combinação das duas tensões em um elemento qualquer da seção
+raramente origina um estado de tensão pior do que o das fibras externas
+\cite[p.~160]{Norton2013}. A Tabela~\ref{tab:tau-max} apresenta os valores máximos
+da tensão de cisalhamento para algumas seções usuais, sendo $A$ a área da seção.
 
 \begin{table}[h]
-  % \ibgetab{
-  %   \caption[Exemplo de tabela em que é necessário quebras de
-  %   linha.]{Exemplo de tabela em que o texto é muito grande para caber
-  %     em uma única linha, e é necessário introduzir quebras de linha
-  %     dentro da célula.}
-  %   \label{tab:ex3}
-  % }{
-  %   \begin{tabular}{lllp{5cm}}
-  %     \toprule
-  %     Day       & Min Temp & Max Temp & Summary                                                      \\
-  %     \midrule
-  %     Monday    & 11ºC     & 22ºC     & A clear day with lots of sunshine.  
-  %                                       However, the strong breeze will bring down the temperatures. \\
-  %     Tuesday   & 9ºC      & 19ºC     & Cloudy with rain, across many northern regions. Clear spells 
-  %                                       across most of Scotland and Northern Ireland, 
-  %                                       but rain reaching the far northwest.                         \\
-  %     Wednesday & 10ºC     & 21ºC     & Rain will still linger for the morning. 
-  %                                       Conditions will improve by early afternoon and continue 
-  %                                       throughout the evening.                                      \\
-  %     \bottomrule
-  %   \end{tabular}
-  % }{
-  %   \fonte{\LaTeX/Tables, Text wrapping in tables \cite{Wikibook-LaTeX}.}
-  % }
+  \caption{Tensão máxima de cisalhamento devida à força cortante em vigas de
+    diferentes seções transversais.}
+  \label{tab:tau-max}
   \begin{center}
-    \caption[Exemplo de tabela em que é necessário quebras de linha.]{Exemplo de
-      tabela em que o texto é muito grande para caber em uma única linha, e é
-      necessário introduzir quebras de linha dentro da célula.}
-    \label{tab:ex3}
-    \begin{tabular}{lllp{5cm}}
+    \begin{tabular}{lc}
       \toprule
-      Day       & Min Temp & Max Temp & Summary                                                      \\
+      Seção transversal                   & $\tau_{max}$ (na linha neutra)  \\
       \midrule
-      Monday    & 11ºC     & 22ºC     & A clear day with lots of sunshine.  
-                                        However, the strong breeze will bring down the temperatures. \\
-      Tuesday   & 9ºC      & 19ºC     & Cloudy with rain, across many northern regions. Clear spells 
-                                        across most of Scotland and Northern Ireland, 
-                                        but rain reaching the far northwest.                         \\
-      Wednesday & 10ºC     & 21ºC     & Rain will still linger for the morning. 
-                                        Conditions will improve by early afternoon and continue 
-                                        throughout the evening.                                      \\
+      Retangular                          & $\dfrac{3V}{2A}$                \\[2ex]
+      Circular maciça                     & $\dfrac{4V}{3A}$                \\[2ex]
+      Circular oca de parede fina         & $\dfrac{2V}{A}$                 \\[2ex]
+      Viga I (aproximação pela alma)      & $\dfrac{V}{A_{alma}}$           \\
       \bottomrule
     \end{tabular}
-    \fonte{\LaTeX/Tables, Text wrapping in tables \cite{Wikibook-LaTeX}.}
   \end{center}
+  \fonte{Adaptado de \citeonline[p.~161--162]{Norton2013}.}
+  \nota{Para a seção circular oca, considera-se parede de espessura inferior a,
+    aproximadamente, um décimo do raio externo.}
 \end{table}
 
-A Tabela~\ref{tab:ex3} apresenta um exemplo de tabela onde o texto em
-uma das colunas é muito grande para caber nas células. Portanto é
-necessário introduzir quebras de linha dentro das células. Uma forma
-de se conseguir este efeito é indicar, como opção de formatação do
-ambiente \texttt{tabular} o valor \verb!p{x}!, onde $x$ deve ser
-substituído pela largura desejada para a coluna, por exemplo,
-\texttt{5cm}. Outras opções podem ser obtidas com o uso dos pacotes
-\texttt{tabularx} e \texttt{tabulary}.
+A tensão de cisalhamento devida à cortante é pequena em comparação com a tensão
+normal de flexão quando a viga é longa em relação à sua altura. Como regra prática,
+ela pode ser ignorada se a razão entre o comprimento e a altura da viga for igual
+ou superior a 10; abaixo desse valor, a análise deve considerar ambas as tensões
+\cite[p.~160--161]{Norton2013}.
 
+\subsection{Deflexão em Vigas}
+\label{sub:deflexao-vigas}
 
+A teoria de Euler-Bernoulli considera que as seções transversais permanecem planas e
+perpendiculares ao eixo deformado da viga. Isso significa desprezar a parcela da deflexão
+causada pela deformação por cisalhamento, mas não a força cortante que participa do equilíbrio.
+Quando essa parcela é relevante, uma teoria que a inclua, como a de \citeonline{Timoshenko1921}, permite
+considerar separadamente a rotação da seção e a inclinação do eixo. A escolha depende da
+geometria e das rigidezes à flexão e ao cisalhamento, não apenas da comparação entre tensões.
+Para o conjunto linha flexível-enrijecedor, \citeonline[p.~85--86]{Caire2011} discute avaliações
+nas quais a inclusão do cisalhamento teve pouca influência na distribuição de curvatura.
+Além disso, a hipótese de Euler-Bernoulli não deve ser confundida com a aproximação de
+pequenas rotações utilizada na equação de deflexão apresentada a seguir.
 
-\section{Formatação de Figuras}
-\label{sec:format-figuras}
+Além das tensões, o projetista deve considerar a deflexão, pois, mesmo com tensões
+bem abaixo dos níveis de falha do material, as deflexões elásticas podem causar
+interferências e desalinhamentos em um sistema \cite[p.~162]{Norton2013}. A deflexão
+por flexão é obtida a partir da equação da viga
+\cite[p.~162]{Norton2013}:
 
-Não existe nada de excepcional sobre a formatação de figuras nas
-normas do Ifes. Os únicos pontos que se deve prestar atenção é que o
-título (\texttt{caption}) da figura deve ser colocado acima da figura
-propriamente dita, e a fonte e notas/legendas devem vir abaixo da
-figura.
+\begin{equation}
+  \label{eq:viga-EI}
+  \frac{\mathrm{d}^2 y}{\mathrm{d}x^2} = \frac{M(x)}{E I},
+\end{equation}
 
+em que $y(x)$ é a deflexão, $E$ é o módulo de elasticidade do material e $I$ é o
+momento de inércia da seção. O produto $E I$ é a rigidez à flexão da viga. A
+Equação~(\ref{eq:viga-EI}) é válida somente para pequenas deflexões e não inclui o
+efeito da força cortante, que em vigas longas é normalmente desprezado, a menos que a
+razão entre comprimento e altura seja inferior a, aproximadamente, 10
+\cite[p.~162--163]{Norton2013}.
+
+Derivando-se a Equação~(\ref{eq:viga-EI}) duas vezes e integrando-se duas vezes,
+obtém-se o conjunto de equações que descreve o comportamento da viga
+\cite[p.~163]{Norton2013}:
+
+\begin{align}
+  \frac{q}{E I} &= \frac{\mathrm{d}^4 y}{\mathrm{d}x^4}, \label{eq:viga-q}\\
+  \frac{V}{E I} &= \frac{\mathrm{d}^3 y}{\mathrm{d}x^3}, \label{eq:viga-V}\\
+  \frac{M}{E I} &= \frac{\mathrm{d}^2 y}{\mathrm{d}x^2}, \label{eq:viga-M}\\
+  \theta        &= \frac{\mathrm{d}y}{\mathrm{d}x}, \label{eq:viga-theta}\\
+  y             &= f(x), \label{eq:viga-y}
+\end{align}
+
+em que $\theta$ é a rotação da seção. O único parâmetro de material nessas equações é o
+módulo de elasticidade $E$, que define a rigidez do material \cite[p.~163]{Norton2013}.
+A determinação da função de deflexão é, portanto, um exercício de integração: a função
+de carregamento $q$ é normalmente conhecida e as constantes de integração são obtidas
+a partir das condições de contorno da configuração particular da viga
+\cite[p.~163]{Norton2013}. Para uma viga engastada em $x = 0$, por exemplo, as
+condições de contorno são deflexão e rotação nulas no engaste, $y(0) = 0$ e
+$\theta(0) = 0$, e momento fletor e força cortante nulos na extremidade livre.
+
+Quando a seção transversal varia ao longo do comprimento, o produto $E I$ deixa de
+ser constante e passa a ser uma função $E I(x)$. Nesse caso, é necessário construir
+a função $M/EI$ a partir do diagrama de momento antes de integrar, e a integração
+deve ser feita por trechos para considerar as variações de $I$
+\cite[p.~163]{Norton2013}. Esse é o caso do enrijecedor à flexão, cuja geometria
+cônica faz com que $I$ decresça com $x$. Além disso, ao se considerar o
+comportamento viscoelástico do poliuretano, o módulo de elasticidade $E$ deixa de ser
+uma constante e passa a depender do tempo, conforme discutido na
+Seção~\ref{sec:viscoelasticidade} e na Subseção~\ref{sub:rigidez}.
+
+% ---------------------------------------------------------------------
+
+\section{Viscoelasticidade}
+\label{sec:viscoelasticidade}
+
+\subsection{Rigidez}
+\label{sub:rigidez}
+
+% ---------------------------------------------------------------------
+
+\section{Equações Diferenciais}
+\label{sec:equacoes-diferenciais}
+
+O comportamento mecânico estudado neste trabalho, desde a deflexão de uma viga até o
+equilíbrio do conjunto linha flexível-enrijecedor, é descrito por equações que
+relacionam uma função desconhecida às suas derivadas. Esta seção apresenta, com base em
+\citeonline{Zill2001v1,Zill2001v2}, a terminologia, os problemas de valor inicial e de
+contorno, os resultados de existência e unicidade e a teoria de equações e sistemas
+lineares de primeira ordem. Em seguida, mostra-se como esses conceitos se aplicam ao
+sistema de equações do enrijecedor formulado por \citeonline{Caire2005,Caire2011}. Os
+métodos numéricos empregados na solução são tratados na
+Seção~\ref{sec:metodos-numericos}.
+ 
+\subsection{Terminologia e Classificação}
+\label{sub:edo-classificacao}
+ 
+Uma equação que contém as derivadas ou diferenciais de uma ou mais variáveis
+dependentes em relação a uma ou mais variáveis independentes é denominada equação
+diferencial \cite[p.~2]{Zill2001v1}. Essas equações são classificadas segundo o tipo, a
+ordem e a linearidade. Quanto ao tipo, a equação é ordinária (EDO) quando contém apenas
+derivadas ordinárias em relação a uma única variável independente, e parcial (EDP)
+quando envolve derivadas parciais em relação a duas ou mais variáveis independentes
+\cite[p.~2--3]{Zill2001v1}. No regime harmônico permanente adotado neste trabalho, a
+dependência temporal é representada por funções harmônicas conhecidas
+(Subseção~\ref{sub:edo-enrijecedor}), de modo que a única variável independente das
+incógnitas é o comprimento de arco ao longo do eixo do conjunto e o problema se reduz a
+EDOs.
+ 
+A ordem da equação é a da derivada de maior ordem que nela aparece
+\cite[p.~3]{Zill2001v1}. Uma EDO de ordem $n$ pode ser escrita, em forma geral, como
+
+\begin{equation}
+  \label{eq:edo-geral}
+  F\!\left(x,\, y,\, y',\, \ldots,\, y^{(n)}\right) = 0,
+\end{equation}
+
+em que $y(x)$ é a variável dependente e $y^{(n)}$ é a derivada de ordem $n$ em relação a
+$x$ \cite[p.~3]{Zill2001v1}. A equação é linear quando pode ser escrita na forma
+
+\begin{equation}
+  \label{eq:edo-linear-n}
+  a_n(x)\,y^{(n)} + a_{n-1}(x)\,y^{(n-1)} + \cdots + a_1(x)\,y' + a_0(x)\,y = g(x),
+\end{equation}
+
+isto é, quando a variável dependente e todas as suas derivadas aparecem no primeiro grau
+e cada coeficiente depende apenas da variável independente. Uma equação que não é linear
+é denominada não linear \cite[p.~4]{Zill2001v1}. A equação da viga,
+Equação~(\ref{eq:viga-q}), é um exemplo de EDO linear de quarta ordem: para $EI$
+constante, tem-se $a_4 = EI$, os demais coeficientes nulos e $g(x) = q(x)$.
+ 
+Uma solução de uma EDO em um intervalo $I$ é uma função com pelo menos $n$ derivadas
+que, substituída na equação, a reduz a uma identidade em todo o intervalo
+\cite[p.~4--5]{Zill2001v1}. Em geral, uma equação diferencial admite infinitas soluções:
+a resolução de uma equação de ordem $n$ conduz a uma família a $n$ parâmetros, e a
+escolha de valores para os parâmetros fornece soluções particulares
+\cite[p.~9--10]{Zill2001v1}. Quando toda solução no intervalo pode ser obtida dessa
+família, ela é denominada solução geral, designação que, na prática, é aplicada apenas
+às equações lineares \cite[p.~10]{Zill2001v1}. As equações não lineares, com exceção de
+algumas de primeira ordem, são em geral difíceis ou impossíveis de resolver em termos
+de funções elementares \cite[p.~10]{Zill2001v1}, o que justifica o recurso a métodos
+numéricos quando a equação do problema é não linear.
+ 
+\subsection{Problemas de Valor Inicial e de Valor de Contorno}
+\label{sub:pvi-pvc}
+ 
+Dada uma equação de primeira ordem, o problema de encontrar a solução que satisfaz uma
+condição especificada em um ponto $x_0$,
+
+\begin{equation}
+  \label{eq:pvi-1}
+  \frac{\mathrm{d}y}{\mathrm{d}x} = f(x, y), \qquad y(x_0) = y_0,
+\end{equation}
+
+é denominado problema de valor inicial (PVI) \cite[p.~39]{Zill2001v1}. A questão
+fundamental é saber se existe solução e se ela é única. Segundo o teorema de Picard, se
+$f(x, y)$ e $\partial f/\partial y$ são contínuas em uma região retangular $R$ do
+plano $xy$ que contém o ponto $(x_0, y_0)$ em seu interior, então existe um intervalo
+centrado em $x_0$ no qual o PVI (\ref{eq:pvi-1}) possui uma única solução
+\cite[p.~40]{Zill2001v1}. Essas condições são suficientes, mas não necessárias, e a
+existência da solução não implica que ela possa ser escrita em termos de funções
+elementares; nesses casos, aproximações podem ser obtidas por métodos numéricos
+\cite[p.~42]{Zill2001v1}.
+ 
+Para uma EDO linear de ordem $n$, o PVI consiste em resolver a
+Equação~(\ref{eq:edo-linear-n}) sujeita a $n$ condições prescritas em um mesmo ponto
+$x_0$:
+
+\begin{equation}
+  \label{eq:pvi-n}
+  y(x_0) = y_0, \quad y'(x_0) = y_1, \quad \ldots, \quad y^{(n-1)}(x_0) = y_{n-1},
+\end{equation}
+
+em que $y_0, y_1, \ldots, y_{n-1}$ são constantes \cite[p.~142]{Zill2001v1}. Se os
+coeficientes $a_i(x)$ e a função $g(x)$ são contínuos em um intervalo $I$ e
+$a_n(x) \neq 0$ em $I$, existe uma única solução do PVI em $I$
+\cite[p.~143]{Zill2001v1}. Tanto a continuidade quanto a condição $a_n(x) \neq 0$ são
+importantes: se $a_n(x)$ se anula em algum ponto do intervalo, a solução do PVI pode
+não ser única ou nem mesmo existir \cite[p.~143]{Zill2001v1}.
+ 
+Um problema distinto surge quando as condições são especificadas em pontos diferentes.
+Para uma equação linear de segunda ordem, por exemplo, resolver
+
+\begin{equation}
+  \label{eq:pvc}
+  a_2(x)\,y'' + a_1(x)\,y' + a_0(x)\,y = g(x), \qquad y(a) = y_0, \quad y(b) = y_1,
+\end{equation}
+
+é um problema de valor de contorno (PVC), e as condições $y(a) = y_0$ e $y(b) = y_1$
+são denominadas condições de contorno \cite[p.~144]{Zill2001v1}. Outras condições são
+possíveis, como as impostas às derivadas $y'(a)$ e $y'(b)$, e todas são casos
+particulares das condições gerais $\alpha_1 y(a) + \beta_1 y'(a) = \gamma_1$ e
+$\alpha_2 y(b) + \beta_2 y'(b) = \gamma_2$ \cite[p.~145]{Zill2001v1}. Diferentemente
+do PVI, mesmo quando as hipóteses do teorema de existência e unicidade para equações
+lineares são satisfeitas, um PVC pode ter várias soluções, uma única solução ou nenhuma
+\cite[p.~145--146]{Zill2001v1}.
+ 
+O cálculo da deflexão de vigas, visto na Subseção~\ref{sub:deflexao-vigas}, é um
+problema desse tipo: a equação de quarta ordem exige quatro condições, impostas nas duas
+extremidades da viga, como deslocamento e rotação nulos no engaste e momento fletor e
+força cortante nulos na extremidade livre. Do mesmo modo, o sistema de equações do
+enrijecedor, apresentado na Subseção~\ref{sub:edo-enrijecedor}, é um PVC, pois suas
+condições são impostas nas extremidades $s = 0$ e $s = L$.
+ 
+\subsection{Equações Lineares de Primeira Ordem}
+\label{sub:edo-linear-1}
+ 
+Para $n = 1$, a Equação~(\ref{eq:edo-linear-n}) torna-se uma equação linear de primeira
+ordem \cite[p.~69]{Zill2001v1}, que, dividida pelo coeficiente $a_1(x)$, assume a forma
+
+\begin{equation}
+  \label{eq:linear-1}
+  \frac{\mathrm{d}y}{\mathrm{d}x} + P(x)\,y = f(x),
+\end{equation}
+
+cuja solução é procurada em um intervalo $I$ no qual $P(x)$ e $f(x)$ são contínuas.
+Equações desse tipo admitem sempre um fator de integração,
+
+\begin{equation}
+  \label{eq:fator-integracao}
+  \mu(x) = e^{\int P(x)\,\mathrm{d}x},
+\end{equation}
+
+que, ao multiplicar a Equação~(\ref{eq:linear-1}), transforma o primeiro membro na
+derivada do produto $\mu(x)\,y$. Integrando-se ambos os membros, obtém-se
+\cite[p.~69--71]{Zill2001v1}
+
+\begin{equation}
+  \label{eq:solucao-linear-1}
+  y(x) = e^{-\int P(x)\,\mathrm{d}x} \int e^{\int P(x)\,\mathrm{d}x}\, f(x)\,\mathrm{d}x
+  \;+\; c\,e^{-\int P(x)\,\mathrm{d}x},
+\end{equation}
+
+em que $c$ é uma constante arbitrária. Como $P(x)$ e $f(x)$ são contínuas, essa família
+contém todas as soluções da equação no intervalo, o PVI correspondente tem solução única
+e não existem soluções singulares \cite[p.~72]{Zill2001v1}. Por isso a
+Equação~(\ref{eq:solucao-linear-1}) é a solução geral da equação. Essa é a estrutura que
+as equações de curvatura do enrijecedor assumem, com $P$ determinado pela variação da
+rigidez ao longo do comprimento (Subseção~\ref{sub:edo-enrijecedor}).
+ 
+\subsection{Sistemas de Equações Lineares de Primeira Ordem}
+\label{sub:sistemas-lineares}
+ 
+Uma equação de ordem superior pode ser reescrita como um sistema de equações de primeira
+ordem, adotando-se como novas variáveis a função e suas derivadas até a ordem $n - 1$
+\cite[p.~22]{Zill2001v2}. A deflexão da viga é um exemplo direto: as
+Equações~(\ref{eq:viga-q}) a (\ref{eq:viga-theta}) já definem as variáveis $y$,
+$\theta = y'$, $M/EI = y''$ e $V/EI = y'''$ e, para $EI$ constante,
+
+\begin{equation}
+  \label{eq:viga-sistema}
+  \frac{\mathrm{d}}{\mathrm{d}x}
+  \begin{bmatrix} y \\ \theta \\ M/EI \\ V/EI \end{bmatrix}
+  =
+  \begin{bmatrix}
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1 \\
+    0 & 0 & 0 & 0
+  \end{bmatrix}
+  \begin{bmatrix} y \\ \theta \\ M/EI \\ V/EI \end{bmatrix}
+  +
+  \begin{bmatrix} 0 \\ 0 \\ 0 \\ q/EI \end{bmatrix}.
+\end{equation}
+
+Essa redução é o que permite aplicar a problemas de ordem superior os algoritmos
+numéricos, que são estabelecidos em sua maioria para equações de primeira ordem
+\cite[p.~23--24]{Zill2001v2}.
+ 
+Um sistema linear de primeira ordem com $n$ variáveis dependentes pode ser escrito em
+forma matricial \cite[p.~48--49]{Zill2001v2}, aqui adaptada à variável independente $x$:
+
+\begin{equation}
+  \label{eq:sistema-nh}
+  \frac{\mathrm{d}\mathbf{X}}{\mathrm{d}x} = \mathbf{A}(x)\,\mathbf{X} + \mathbf{F}(x),
+\end{equation}
+
+em que $\mathbf{X}$ é a matriz coluna das funções incógnitas, $\mathbf{A}(x)$ é a matriz
+$n \times n$ dos coeficientes e $\mathbf{F}(x)$ é a matriz coluna dos termos não
+homogêneos. O sistema é homogêneo quando $\mathbf{F} = \mathbf{0}$:
+
+\begin{equation}
+  \label{eq:sistema-h}
+  \frac{\mathrm{d}\mathbf{X}}{\mathrm{d}x} = \mathbf{A}(x)\,\mathbf{X}.
+\end{equation}
+
+O PVI consiste em resolver a Equação~(\ref{eq:sistema-nh}) sujeita a
+$\mathbf{X}(x_0) = \mathbf{X}_0$; se os elementos de $\mathbf{A}(x)$ e $\mathbf{F}(x)$
+são contínuos em um intervalo $I$ que contém $x_0$, existe uma única solução do PVI em
+$I$ \cite[p.~51]{Zill2001v2}. A Tabela~\ref{tab:existencia-unicidade} reúne os três
+resultados de existência e unicidade apresentados nesta seção. Todos se referem a
+problemas de valor inicial: para um PVC, como o do enrijecedor, eles não garantem, por
+si sós, a existência ou a unicidade da solução.
+ 
+\begin{table}[h]
+  \caption{Condições suficientes para existência e unicidade de solução de problemas de
+    valor inicial.}
+  \label{tab:existencia-unicidade}
+  \begin{center}
+    \begin{tabular}{p{4.2cm}p{6.2cm}p{3.6cm}}
+      \toprule
+      Problema & Hipóteses & Conclusão \\
+      \midrule
+      PVI de primeira ordem, Equação~(\ref{eq:pvi-1})
+        & $f$ e $\partial f/\partial y$ contínuas em um retângulo $R$ que contém
+          $(x_0, y_0)$ em seu interior
+        & Solução única em um intervalo centrado em $x_0$ \\[1ex]
+      PVI linear de ordem $n$, Equações~(\ref{eq:edo-linear-n}) e (\ref{eq:pvi-n})
+        & $a_i(x)$ e $g(x)$ contínuas em $I$, com $a_n(x) \neq 0$ em $I$
+        & Solução única em $I$ \\[1ex]
+      PVI para sistema linear, Equação~(\ref{eq:sistema-nh})
+        & Elementos de $\mathbf{A}(x)$ e $\mathbf{F}(x)$ contínuos em $I \ni x_0$
+        & Solução única em $I$ \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  \fonte{Adaptado de \citeonline[p.~40, 143]{Zill2001v1} e \citeonline[p.~51]{Zill2001v2}.}
+\end{table}
+ 
+Para o sistema homogêneo, vale o princípio da superposição: toda combinação linear de
+vetores solução é também solução \cite[p.~51]{Zill2001v2}. Um conjunto de $n$ vetores
+solução linearmente independentes é denominado conjunto fundamental, e sempre existe um
+em um intervalo em que $\mathbf{A}(x)$ é contínua; a solução geral é a combinação linear
+$\mathbf{X}_c = c_1\mathbf{X}_1 + c_2\mathbf{X}_2 + \cdots + c_n\mathbf{X}_n$, em que os
+$c_i$ são constantes arbitrárias \cite[p.~55]{Zill2001v2}. A solução geral do sistema
+não homogêneo é $\mathbf{X} = \mathbf{X}_c + \mathbf{X}_p$, sendo $\mathbf{X}_p$ qualquer
+solução particular da Equação~(\ref{eq:sistema-nh}) \cite[p.~57--58]{Zill2001v2}.
+ 
+Reunindo-se os vetores de um conjunto fundamental como colunas, obtém-se uma matriz
+fundamental $\boldsymbol{\Phi}(x)$ \cite[p.~59]{Zill2001v2}, que satisfaz
+
+\begin{equation}
+  \label{eq:matriz-fundamental}
+  \frac{\mathrm{d}\boldsymbol{\Phi}}{\mathrm{d}x} = \mathbf{A}(x)\,\boldsymbol{\Phi},
+  \qquad \mathbf{X}_c = \boldsymbol{\Phi}(x)\,\mathbf{C},
+\end{equation}
+
+em que $\mathbf{C}$ é a matriz coluna das constantes. Substituindo-se $\mathbf{C}$ por
+uma matriz coluna de funções $\mathbf{U}(x)$, o método de variação dos parâmetros fornece
+a solução particular $\mathbf{X}_p = \boldsymbol{\Phi}\int \boldsymbol{\Phi}^{-1}
+\mathbf{F}\,\mathrm{d}x$ e, portanto, a solução geral \cite[p.~86]{Zill2001v2}
+
+\begin{equation}
+  \label{eq:var-parametros}
+  \mathbf{X}(x) = \boldsymbol{\Phi}(x)\,\mathbf{C}
+  + \boldsymbol{\Phi}(x) \int \boldsymbol{\Phi}^{-1}(x)\,\mathbf{F}(x)\,\mathrm{d}x.
+\end{equation}
+
+Os métodos baseados em autovalores e autovetores apresentados por
+\citeonline[p.~65]{Zill2001v2} aplicam-se a matrizes $\mathbf{A}$ de coeficientes
+constantes. Quando os elementos de $\mathbf{A}$ variam com a variável independente, como
+ocorre no enrijecedor, em geral não se dispõe de uma matriz fundamental em forma
+fechada, o que é um motivo adicional para o uso de métodos numéricos.
+ 
+\subsection{Aplicação ao Sistema Linha Flexível-Enrijecedor}
+\label{sub:edo-enrijecedor}
+ 
+O conjunto linha flexível-enrijecedor submetido à força de topo $F$ é representado por
+uma viga esbelta engastada que sofre grandes deslocamentos, trabalha em flexão e possui
+seção variável ao longo do comprimento, em razão do formato cônico do enrijecedor
+\cite[p.~49]{Caire2005}. Seja $s$ o comprimento de arco medido a partir da extremidade
+engastada, com $0 \le s \le L$. As coordenadas cartesianas $x(s)$ e $y(s)$ do eixo
+deformado e o ângulo de inclinação $\phi(s)$ da tangente em relação ao eixo $x$ se
+relacionam com a curvatura $k(s)$ por \cite[p.~50]{Caire2005}
+
+\begin{align}
+  \frac{\mathrm{d}x}{\mathrm{d}s} &= \cos\phi(s), \label{eq:geo-x}\\
+  \frac{\mathrm{d}y}{\mathrm{d}s} &= \sin\phi(s), \label{eq:geo-y}\\
+  \frac{\mathrm{d}\phi}{\mathrm{d}s} &= k(s), \label{eq:geo-phi}
+\end{align}
+
+em que, nesta subseção, $x$ e $y$ designam as coordenadas do eixo deformado
+(Figura~\ref{fig:esquema-enrijecedor}), e não a variável independente e a deflexão das
+subseções anteriores.
+ 
 \begin{figure}[h]
   \centering
-  \caption{Diagrama de Venn indicando porque \LaTeX{} é melhor que M\$ Word.
-    Continuando esta legenda para exceder o tamanho de uma linha de texto.
-    Frequentemente não é necessário tanto, entretanto em algumas situações a
-    lengenda deve ser mais longa para explicar corretamente o conteúdo da
-    figura, quadro ou tabela.}
-  \label{fig:ex1}
-  \begin{tikzpicture}
-    \begin{scope}[blend group = soft light]
-      \fill[red!30!white]   ( 90:1.2) circle (2);
-      \fill[green!30!white] (210:1.2) circle (2);
-      \fill[blue!30!white]  (330:1.2) circle (2);
-    \end{scope}
-    \node at ( 90:2)    {Typography};
-    \node at ( 210:2)   {Design};
-    \node at ( 330:2)   {Coding};
-    \node [font=\Large] {\LaTeX};
+  \caption{Esquema do sistema linha flexível-enrijecedor sob a força de topo $F$: o eixo
+    deformado é descrito pelo comprimento de arco $s$, pelo ângulo de inclinação $\phi(s)$
+    e pela curvatura $k = \mathrm{d}\phi/\mathrm{d}s$.}
+  \label{fig:esquema-enrijecedor}
+  \begin{tikzpicture}[x=1cm,y=1cm,line cap=round,>=stealth]
+    % engaste em s = 0
+    \draw[thick] (0,-0.9) -- (0,0.9);
+    \foreach \y in {-0.8,-0.6,-0.4,-0.2,0,0.2,0.4,0.6,0.8}{\draw (0,\y) -- (-0.25,\y-0.25);}
+    \node[anchor=south west] at (0.1,0.2) {$s=0$};
+    % eixo deformado
+    \draw[very thick] (0,0) .. controls (3,0) and (5,0.5) .. (6.5,2.5);
+    % ponto genérico: tangente, referência horizontal e angulo phi(s)
+    \fill (3.8125,0.5) circle (0.05);
+    \draw[thin] (2.9635,0.2) -- (5.228,1.0);
+    \draw[dashed] (3.8125,0.5) -- (5.6,0.5);
+    \draw (4.8125,0.5) arc (0:19.4:1.0);
+    \node[anchor=west] at (5.7,0.5) {$\phi(s)$};
+    % extremidade livre: força e angulo phi_L
+    \fill (6.5,2.5) circle (0.05);
+    \draw[->,very thick] (6.5,2.5) -- (7.4,3.7);
+    \node[anchor=west] at (7.4,3.8) {$F$};
+    \draw[dashed] (6.5,2.5) -- (8.3,2.5);
+    \draw (7.5,2.5) arc (0:53.13:1.0);
+    \node[anchor=west] at (7.7,2.85) {$\phi_L$};
+    \node[anchor=east] at (6.4,2.8) {$s=L$};
+    % comprimento de arco
+    \draw[->] (1.0,-0.6) -- (2.6,-0.6);
+    \node at (1.8,-0.9) {$s$};
+    % eixos
+    \draw[->] (-1.6,-1.8) -- (-0.6,-1.8) node[right] {$x$};
+    \draw[->] (-1.6,-1.8) -- (-1.6,-0.8) node[above] {$y$};
   \end{tikzpicture}
-  \fonte{A Venn Diagram for PDF blending \cite{Kottwitz2015}.}
-  \nota{Este diagrama foi inteiramente feito com comandos \LaTeX,
-    utilizando o pacote \texttt{tikz}, sem necessidade de qualquer
-    outro software externo.}
+  \fonte{Adaptado de \citeonline[p.~49]{Caire2005}.}
 \end{figure}
-
-A Figura~\ref{fig:ex1} apresenta um diagrama de Venn que coloca o
-\LaTeX como a interseção de três importantes áreas de conhecimento: a
-tipografia, o \emph{design}, e a codificação. Essa representação faz
-sentido pois o \LaTeX é ao mesmo tempo um ambiente de programação com
-os algoritmos de tipografia mais sofisticados disponíveis ao usuário
-doméstico e, caso se deseje, oferece extremo controle sobre todo o
-\emph{design} do documento.
-
-\begin{figure}[h]
-  \centering
-  \caption{Grafo completo com 16 nós.}
-  \label{fig:ex2}
-  \newcount\mycount
-  \begin{tikzpicture}[transform shape]
-    % the multiplication with floats is not possible. Thus I split the
-    % loop in two.
-    \foreach \number in {1,...,8}{
-      % Computer angle:
-      \mycount=\number
-      \advance\mycount by -1
-      \multiply\mycount by 45
-      \advance\mycount by 0
-      \node[draw,circle,inner sep=0.25cm] (N-\number) at
-      (\the\mycount:5.4cm) {}; 
-    }
-    \foreach \number in {9,...,16}{
-      % Computer angle:
-      \mycount=\number
-      \advance\mycount by -1
-      \multiply\mycount by 45
-      \advance\mycount by 22.5
-      \node[draw,circle,inner sep=0.25cm] (N-\number) at
-      (\the\mycount:5.4cm) {}; 
-    }
-    \foreach \number in {1,...,15}{
-      \mycount=\number
-      \advance\mycount by 1
-      \foreach \numbera in {\the\mycount,...,16}{
-        \path (N-\number) edge[->,bend right=3] (N-\numbera)
-        edge[<-,bend left=3] (N-\numbera); 
-      }
-    }
-  \end{tikzpicture}
-  \fonte{A complete graph \cite{Quintin2012}.}
-  \nota{Novamente, o diagrama foi completamente gerado em \LaTeX, sem
-    a necessidade de recorrer a softwares externos. Note-se que o
-    grafo possui $\frac{16\cdot(16-1)}{2}= 120$ arestas, esse número de arestas
-    foi gerado programaticamente e não manualmente.}
-\end{figure}
-
-A Figura~\ref{fig:ex2} demonstra a capacidade de codificação que se
-ganha ``de graça'' ao utilizar o \LaTeX. Consultando o código fonte
-deste documento (ou a fonte da figura), pode-se notar que os nós e
-arestas do grafo são gerados programaticamente e não manualmente como
-seria necessário com o uso do M\$ Word ou do LibreOffice.
-
-
-\section{Formatação de Equações e Fórmulas}
-\label{sec:format-equac}
-
-As normas do Ifes não estabelecem qualquer restrição maior quanto à
-formatação de equações e fórmulas, exceto pelo fato de que devem ser
-destacadas do texto e que, quando numeradas, a numeração deve ser
-sequencial, com algarismos arábicos, entre parênteses e anumeração
-deve ser alinhada à direita. Todos esses requisitos são
-automaticamente obtidos quando se utiliza o ambiente \texttt{equation}
-do \LaTeX.
+ 
+Pelo equilíbrio, o momento fletor $M(s)$ e a força cortante $V(s)$ se relacionam por
+$\mathrm{d}M/\mathrm{d}s = V$ \cite[p.~88]{Caire2011} e, pela teoria de Euler-Bernoulli
+com material linear elástico, $M = EI(s)\,k$, em que a rigidez à flexão do conjunto é a
+soma das parcelas da linha e do enrijecedor, $EI(s) = EI_{\mathrm{linha}} +
+EI_{BS}(s)$ \cite[p.~51]{Caire2005}. Para a força de topo atuando na direção da tangente
+à extremidade, caso que corresponde a $\alpha = 0$ na notação de \citeonline{Caire2005},
+tem-se $V(s) = -F\sin\!\big(\phi_L - \phi(s)\big)$ e a derivação de $M = EI(s)\,k$ em
+relação a $s$ conduz a \cite[p.~51]{Caire2005}
 
 \begin{equation}
-  \label{eq:1}
-  \cos (2\theta) = \cos^2 \theta - \sin^2 \theta
+  \label{eq:dk-ds-estatica}
+  \frac{\mathrm{d}k}{\mathrm{d}s}
+  = -\frac{1}{EI(s)}\left[\frac{\mathrm{d}EI(s)}{\mathrm{d}s}\,k(s)
+  + F\sin\!\big(\phi_L - \phi(s)\big)\right],
 \end{equation}
 
-Como pode ser visto na Equação~(\ref{eq:1}), embora o padrão da classe
-\abnTeX\ seja a numeração das equações por capítulo, a classe
-\ifestex\ automaticamente configura a numeração contínua de equações.
+sujeita às condições de contorno \cite[p.~52]{Caire2005}
 
 \begin{equation}
-  \label{eq:2}
-  x = a_0 + \cfrac{1}{a_1 
-    + \cfrac{1}{a_2 
-      + \cfrac{1}{a_3 + \cfrac{1}{a_4}}}}
+  \label{eq:cc-estatica}
+  x(0) = y(0) = \phi(0) = 0, \qquad \phi(L) = \phi_L.
 \end{equation}
 
-A Equação~(\ref{eq:2}) demonstra uma equação um pouco mais complexa
-que a anterior.
+As Equações~(\ref{eq:geo-x}) a (\ref{eq:geo-phi}) e (\ref{eq:dk-ds-estatica}) formam um
+sistema de quatro EDOs não lineares de primeira ordem nas incógnitas $x$, $y$, $\phi$ e
+$k$, com quatro condições impostas em $s = 0$ e $s = L$, isto é, um PVC
+\cite[p.~52]{Caire2005}. A não linearidade provém dos termos $\cos\phi$, $\sin\phi$ e
+$\sin(\phi_L - \phi)$, razão pela qual o princípio da superposição e a solução geral
+das subseções anteriores não se aplicam ao sistema completo. A
+Equação~(\ref{eq:dk-ds-estatica}), porém, é linear em $k$ e tem a forma da
+Equação~(\ref{eq:linear-1}), com $P(s) = EI'(s)/EI(s)$. Como $\int P\,\mathrm{d}s =
+\ln EI(s)$, o fator de integração da Equação~(\ref{eq:fator-integracao}) é o próprio
+$EI(s)$, e a equação equivale a $\mathrm{d}(EI\,k)/\mathrm{d}s = V$, ou seja, a
+$\mathrm{d}M/\mathrm{d}s = V$, relação de equilíbrio da qual se partiu. Como $V$ depende
+de $\phi$, que por sua vez depende de $k$ pela Equação~(\ref{eq:geo-phi}), essa
+integração não fornece a solução em forma fechada.
+ 
+No caso viscoelástico com carregamento harmônico, \citeonline[p.~90--92]{Caire2011}
+escreve a força e o ângulo de topo como $F(t) = F_0 + \varepsilon F_0 \sin\omega t$ e
+$\phi_L(t) = \phi_{0L} + \alpha\,\phi_{0L}\sin(\omega t + \gamma)$, em que $F_0$ e
+$\phi_{0L}$ são os valores médios, $\varepsilon$ e $\alpha$ são pequenos parâmetros de
+perturbação, $\omega$ é a frequência e $\gamma$ é a diferença de fase. Cada grandeza
+$\chi(s,t)$, com $\chi$ representando $\phi$, $k$ ou $V$, é expandida em uma série de
+perturbação até a terceira ordem em $\varepsilon$ e $\alpha$ \cite[p.~91--93]{Caire2011}:
 
 \begin{equation}
-  \label{eq:3}
-  \begin{split}
-    F = \{F_{x} \in  F_{c} &: (|S| > |C|) \cap {}\\
-    &\quad (\text{minPixels}  < |S| < \text{maxPixels}) \cap {} \\
-    &\quad (|S_{\text{conected}}| > |S| - \epsilon) \}
-  \end{split}
+  \label{eq:base-perturbativa}
+  \chi(s,t) = \sum_{i=0}^{29} \chi_i(s)\,\Psi_i(\varepsilon, \alpha, \omega t),
 \end{equation}
 
-A Equação~(\ref{eq:3}) demonstra uma equação que foi fragmentada em
-mais de uma linha. As normas do Ifes determinam que
-\cite[p.~38]{Ifes2024}:
-
-\begin{citacao}
-  Recomenda-se que, em caso de fragmentação em mais de uma linha, por
-  falta de espaço, as equações devem ser interrompidas antes do sinal
-  de igualdade ou depois de adição, subtração, multiplicação e
-  divisão.
-\end{citacao}
-
-Supondo que o tema em questão vá além das quatro operações básicas da
-aritmética, assumimos que a regra de ``interromper depois'' valha
-também para os outros operadores matemáticos.
-
-
-\section{Formatação de Códigos Fonte}
-
-Em trabalhos das áreas de Ciência Exatas e da Terra, e de Engenharias,
-frequentemente é necessário incluir a listagem de algoritmos, ou de programas de
-computador no trabalho acadêmico.
-
-De um modo geral, é preferível incluir o algoritmo em um nível mais abstrato
-do que incluir o código fonte em linguagem de programação. O algoritmo permite
-que o leitor que deseja repetir o trabalho escolha a linguagem que preferir e
-implemente o algoritmo nela com mais facilidade.
-
-Para a formatação de algoritmos, recomenda-se o uso do pacote
-\texttt{algpseudocode}. Caso você prefira apresentar seus algoritmos com
-pseudocódigo em português, procure o pacote
-\href{https://github.com/quigonjeff/algpseudocodept}{\texttt{algpseudocodept}}.
-Os comandos e a forma de uso do \texttt{algpseudocodept} são exatamente os
-mesmos do \texttt{algpseudocode}, as as palavras chaves serão traduzidas para o
-português.
-
-\begin{algorithm}
-  \caption{Euclid’s algorithm}
-  \label{alg:euclid}
-  \begin{algorithmic}[1]
-    \Procedure{Euclid}{$a,b$}
-    \Comment{The g.c.d. of a and b}
-    \State $r\gets a\bmod b$
-    \While{$r\not=0$}\Comment{We have the answer if r is 0}
-      \State $a\gets b$
-      \State $b\gets r$
-      \State $r\gets a\bmod b$
-    \EndWhile\label{euclidendwhile}
-    \State \textbf{return} $b$\Comment{The gcd is b}
-    \EndProcedure
-  \end{algorithmic}
-\end{algorithm}
-
-O Algoritmo~\ref{alg:euclid} é um exemplo extraído da documentação do pacote
-\texttt{algpseudocode} e ilustra a aparência de um algoritmo em pseudocódigo
-formatado com esse pacote.
-
-Caso seja necessário incluir listagem de código fonte em linguagens de
-programação, recomenda-se o uso do pacote \texttt{listrings}. Este pacote
-é capaz de lidar com uma variedade muito grande de linguagens de programação,
-mas tem problemas para lidar com caracteres acentuados. Para evitar estes
-problemas é necessário utilizar uma tabela de conversão. Esta tabela \texttt{já
-  está pronta} para ser usada no arquivo \texttt{configlistings.tex} que é
-incluído no preâmbulo deste arquivo. Você não precisa escrever as configurações
-do \texttt{listings} de novo, basta usar o arquivo \texttt{configlistings.tex}
-deste exemplo.
-
-\begin{lstlisting}[language=Python,float,label=lst:cocktailsort,caption={Algoritmo de
-ordenação \emph{Cocktail sort} com limites deslocáveis.}]
-def cocktailshiftingbounds(A):
-    beginIdx = 0
-    endIdx = len(A) - 1
+em que as trinta parcelas $\Psi_i$ são produtos de potências de $\varepsilon$ e $\alpha$
+por $\sin(n\omega t)$ e $\cos(n\omega t)$, com $n = 1, 2, 3$. Por exemplo,
+$\Psi_0 = 1$, $\Psi_1 = \varepsilon\sin\omega t$ e $\Psi_2 = \varepsilon\cos\omega t$.
+Assim, a dependência temporal fica concentrada nas funções $\Psi_i$, conhecidas, e as
+incógnitas passam a ser as funções $\chi_i(s)$, que dependem somente de $s$.
  
-    while beginIdx <= endIdx:
-        newBeginIdx = endIdx
-        newEndIdx = beginIdx
-        for ii in range(beginIdx,endIdx):
-            if A[ii] > A[ii + 1]:
-                A[ii+1], A[ii] = A[ii], A[ii+1]
-                newEndIdx = ii
+A relação entre momento fletor e curvatura de cada coeficiente é escrita em forma
+matricial como $\mathbf{M} = \mathbf{EI}\,\mathbf{k}$, com $\mathbf{EI}$ uma matriz
+diagonal em blocos, formada por blocos escalares $\mathbf{EI}_0 = [C_0]$ e por blocos
+$2 \times 2$ do tipo
+
+\begin{equation}
+  \label{eq:bloco-EI}
+  \mathbf{EI}_n =
+  \begin{bmatrix}
+    C_1(s, n\omega) & -C_2(s, n\omega) \\
+    C_2(s, n\omega) & C_1(s, n\omega)
+  \end{bmatrix},
+\end{equation}
+
+associados à frequência $n\omega$ \cite[p.~93--94]{Caire2011}. Os coeficientes são
+
+\begin{align}
+  C_0(s) &= EI_{\mathrm{pipe}} + G(\infty)\,I_{BS}(s), \label{eq:C0}\\
+  C_1(s, n\omega) &= EI_{\mathrm{pipe}} + G'(n\omega)\,I_{BS}(s), \label{eq:C1}\\
+  C_2(s, n\omega) &= G''(n\omega)\,I_{BS}(s), \label{eq:C2}
+\end{align}
+
+em que $EI_{\mathrm{pipe}}$ é a rigidez à flexão da linha, $I_{BS}(s)$ é o segundo
+momento de área do enrijecedor, $G(\infty)$ é o módulo de relaxação para tempo infinito
+e $G'$ e $G''$ são os módulos de armazenamento e de perda, definidos na
+Seção~\ref{sec:viscoelasticidade} \cite[p.~89, 93--94]{Caire2011}.
  
-        endIdx = newEndIdx
+Combinando-se $\mathrm{d}\mathbf{M}/\mathrm{d}s = \mathbf{V}$ com $\mathbf{M} =
+\mathbf{EI}\,\mathbf{k}$, obtém-se para cada bloco
+\cite[p.~94]{Caire2011}
+
+\begin{equation}
+  \label{eq:dk-ds-matricial}
+  \frac{\mathrm{d}\mathbf{k}}{\mathrm{d}s}
+  = -\,\mathbf{EI}^{-1}\frac{\mathrm{d}\mathbf{EI}}{\mathrm{d}s}\,\mathbf{k}
+  + \mathbf{EI}^{-1}\mathbf{V},
+\end{equation}
+
+que explicitada resulta, para os coeficientes $i \in \{0, 5, 8, 11\}$ e para cada par
+$(i, i+1)$ associado à frequência $n\omega$, em \cite[p.~95--96]{Caire2011}
+
+\begin{align}
+  \frac{\mathrm{d}k_i}{\mathrm{d}s} &= -E_0(s)\,k_i(s) + D_0(s)\,V_i(s),
+    \label{eq:bloco-escalar}\\
+  \frac{\mathrm{d}}{\mathrm{d}s}
+  \begin{bmatrix} k_i \\ k_{i+1} \end{bmatrix}
+  &= -\begin{bmatrix} E_1 & -E_2 \\ E_2 & E_1 \end{bmatrix}
+  \begin{bmatrix} k_i \\ k_{i+1} \end{bmatrix}
+  + \begin{bmatrix} D_1 & -D_2 \\ D_2 & D_1 \end{bmatrix}
+  \begin{bmatrix} V_i \\ V_{i+1} \end{bmatrix},
+    \label{eq:bloco-par}
+\end{align}
+
+com $E_j = E_j(s, n\omega)$ e $D_j = D_j(s, n\omega)$, dados por
+
+\begin{align}
+  D_0 &= \frac{1}{C_0}, \quad
+  D_1 = \frac{C_1}{C_1^2 + C_2^2}, \quad
+  D_2 = -\frac{C_2}{C_1^2 + C_2^2}, \label{eq:coef-D}\\
+  E_0 &= \frac{C_{0,s}}{C_0}, \quad
+  E_1 = \frac{C_1 C_{1,s} + C_2 C_{2,s}}{C_1^2 + C_2^2}, \quad
+  E_2 = \frac{C_1 C_{2,s} - C_2 C_{1,s}}{C_1^2 + C_2^2}, \label{eq:coef-E}
+\end{align}
+
+em que $C_{j,s} = \mathrm{d}C_j/\mathrm{d}s$ \cite[p.~96]{Caire2011}. A cada coeficiente
+$k_i$ corresponde ainda a equação geométrica
+
+\begin{equation}
+  \label{eq:geo-phi-i}
+  \frac{\mathrm{d}\phi_i}{\mathrm{d}s} = k_i(s), \qquad i = 0, \ldots, 29,
+\end{equation}
+
+e a força cortante é dada por \cite[p.~93]{Caire2011}
+
+\begin{equation}
+  \label{eq:Vi}
+  V_i(s) = F_0\left[A_i(s)\sin\theta_0(s) + B_i(s)\cos\theta_0(s)\right],
+  \qquad \theta_0(s) = \phi_{0L} - \phi_0(s),
+\end{equation}
+
+em que $A_i(s)$ e $B_i(s)$ são funções polinomiais de $\phi_j(s)$ e de funções
+trigonométricas de $\gamma$, obtidas do desenvolvimento do seno da variação angular até a
+terceira ordem \cite[p.~92--93]{Caire2011}. Para $i = 0$, tem-se $A_0 = -1$ e $B_0 = 0$,
+de modo que $V_0 = -F_0\sin(\phi_{0L} - \phi_0)$, e a Equação~(\ref{eq:bloco-escalar})
+reproduz a Equação~(\ref{eq:dk-ds-estatica}) com $C_0$ no papel de $EI$.
  
-        for ii in range(endIdx,beginIdx-1,-1):
-            if A[ii] > A[ii + 1]:
-                A[ii+1], A[ii] = A[ii], A[ii+1]
-                newBeginIdx = ii
+As Equações~(\ref{eq:bloco-escalar}), (\ref{eq:bloco-par}) e (\ref{eq:geo-phi-i}) formam
+um sistema de sessenta EDOs não lineares de primeira ordem, trinta para as curvaturas
+$k_i$ e trinta para os ângulos $\phi_i$ \cite[p.~96]{Caire2011}, sujeitas às condições de
+contorno
+
+\begin{align}
+  \phi_i(0) &= 0, \qquad 0 \le i \le 29, \label{eq:cc-0}\\
+  \phi_0(L) &= \phi_{0L}, \quad \phi_3(L) = \phi_{0L}\cos\gamma, \quad
+  \phi_4(L) = \phi_{0L}\sin\gamma, \label{eq:cc-L1}\\
+  \phi_i(L) &= 0, \qquad i = 1,\, 2 \ \text{e}\ 5 \le i \le 29, \label{eq:cc-L2}
+\end{align}
+
+impostas em $s = 0$ e $s = L$ \cite[p.~90, 96]{Caire2011}. Trata-se, portanto, de um PVC,
+como no caso estático. A Tabela~\ref{tab:blocos} organiza as trinta equações de curvatura
+em blocos, segundo a frequência dos termos a que se referem.
  
-        beginIdx = newBeginIdx + 1
+\begin{table}[h]
+  \caption{Blocos de equações de curvatura do sistema harmônico, agrupados pela
+    frequência dos termos.}
+  \label{tab:blocos}
+  \begin{center}
+    \begin{tabular}{llp{6.2cm}c}
+      \toprule
+      Frequência & Tipo de bloco & Índices $i$ & Equações \\
+      \midrule
+      Constante & Escalar, Eq.~(\ref{eq:bloco-escalar}) & $0$, $5$, $8$, $11$ & 4 \\
+      $\omega$ & Par, Eq.~(\ref{eq:bloco-par})
+        & $(1,2)$, $(3,4)$, $(14,15)$, $(18,19)$, $(22,23)$, $(26,27)$ & 12 \\
+      $2\omega$ & Par, Eq.~(\ref{eq:bloco-par})
+        & $(6,7)$, $(9,10)$, $(12,13)$ & 6 \\
+      $3\omega$ & Par, Eq.~(\ref{eq:bloco-par})
+        & $(16,17)$, $(20,21)$, $(24,25)$, $(28,29)$ & 8 \\
+      \midrule
+      \multicolumn{3}{l}{Total} & 30 \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  \fonte{Elaborada pelos autores com base em \citeonline[p.~91--96]{Caire2011}.}
+\end{table}
  
-test1 = [7, 6, 5, 9, 8, 4, 3, 1, 2, 0]
-cocktailshiftingbounds(test1)
-print(test1)
- 
-test2=list('big fjords vex quick waltz nymph')
-cocktailshiftingbounds(test2)
-print(''.join(test2))
-\end{lstlisting}
+Cada bloco da Tabela~\ref{tab:blocos} é um sistema linear de primeira ordem com
+coeficientes variáveis, na forma da Equação~(\ref{eq:sistema-nh}), com
+$\mathbf{X} = \mathbf{k}$, $\mathbf{A} = -\mathbf{EI}^{-1}\,\mathrm{d}\mathbf{EI}/
+\mathrm{d}s$ e $\mathbf{F} = \mathbf{EI}^{-1}\mathbf{V}$. Nesse caso, a matriz fundamental
+é conhecida: $\boldsymbol{\Phi} = \mathbf{EI}^{-1}$, pois $\mathrm{d}\boldsymbol{\Phi}/
+\mathrm{d}s = -\mathbf{EI}^{-1}\,(\mathrm{d}\mathbf{EI}/\mathrm{d}s)\,\mathbf{EI}^{-1}
+= \mathbf{A}\boldsymbol{\Phi}$. Substituindo-se na Equação~(\ref{eq:var-parametros}),
 
-\section{Formatação de Citações}
-\label{sec:format-citac}
+\begin{equation}
+  \label{eq:k-variacao-parametros}
+  \mathbf{k}(s) = \mathbf{EI}^{-1}(s)\left[\mathbf{C}
+  + \int \mathbf{V}(s)\,\mathrm{d}s\right],
+\end{equation}
 
-Para citações diretas com mais de 3 linhas de texto, as normas do Ifes
-estabelecem que a citação deve aparecer em um parágrafo separado, com
-recuo de 4 cm da margem esquerda do texto, com fonte menor que a do
-corpo do texto, e com espaçamento simples. O ambiente \texttt{citacao}
-definido pelo \abnTeX\ gera exatamente esta formatação. Confira o
-exemplo abaixo:
+isto é, $\mathbf{EI}\,\mathbf{k} = \mathbf{C} + \int \mathbf{V}\,\mathrm{d}s$, o que
+equivale a $\mathrm{d}\mathbf{M}/\mathrm{d}s = \mathbf{V}$. A
+Equação~(\ref{eq:k-variacao-parametros}) é, porém, apenas formal: como $\mathbf{V}$
+depende dos ângulos $\phi_j$ pela Equação~(\ref{eq:Vi}) e estes dependem das curvaturas
+pela Equação~(\ref{eq:geo-phi-i}), a expressão é implícita, e a solução do sistema
+completo exige métodos numéricos. \citeonline[p.~107]{Caire2011} indica como escolhas
+naturais o método das diferenças finitas e o método do tiro, que transforma o PVC em um
+PVI equivalente por um processo iterativo; esses métodos são apresentados na
+Seção~\ref{sec:metodos-numericos}. Uma vez obtidas as funções $k_i(s)$ e $\phi_i(s)$, a
+curvatura e o ângulo em qualquer instante são recuperados pela
+Equação~(\ref{eq:base-perturbativa}), e as coordenadas $x(s,t)$ e $y(s,t)$ resultam da
+integração das Equações~(\ref{eq:geo-x}) e (\ref{eq:geo-y}) \cite[p.~96--97]{Caire2011}.
 
-\begin{citacao}
-  Resumindo, a extensão do ciberespaço acompanha e acelera uma
-  virtualização geral da economia e da sociedade. Das substâncias e
-  dos objetos, voltamos aos processos que os produzem. Dos territórios
-  pulamos para a nascente, em direção às redes móveis que os valorizam
-  e os desenham. Dos processos e das redes, passamos às competências e
-  aos cenários que as determinam, mais virtuais ainda. Os suportes de
-  inteligência coletiva do hiperespaço multiplicam e colocam em
-  sinergia as competência. Dos design à estratégia, os cenários são
-  alimentados pelas simulações e pelos dados colocados à disposição
-  pelo universo digital. \cite{Levy1999}
-\end{citacao}
+% ---------------------------------------------------------------------
 
-Note que toda citação deve vir acompanhada de sua referência
-bibliográfica, que pode aparecer ao final da citação, como no exemplo
-acima, ou pode preceder a citação no texto que a introduz, como é
-demonstrado no exemplo dado na seção 5.1.1 das normas do Ifes
-\cite[p.~39]{Ifes2024}.
+\section{Métodos Numéricos}
+\label{sec:metodos-numericos}
 
-Os demais estilos de citação direta, e as citações indiretas, não
-necessitam de qualquer tipo de formatação particular do texto,
-portanto não vamos abordar estes tópicos aqui.
+A solução do problema proposto requer a aplicação combinada de
+diferentes métodos numéricos, uma vez que o modelo matemático envolve
+comportamento viscoelástico, equações diferenciais ordinárias,
+condições de contorno e dependência da resposta em relação ao histórico
+de carregamento. Conforme apresentado por Chapra e Canale (2011), os
+métodos numéricos permitem transformar problemas matemáticos de maior
+complexidade em procedimentos computacionais baseados em operações
+aritméticas, possibilitando a obtenção de soluções aproximadas quando
+uma solução analítica não está disponível ou apresenta limitações
+práticas.
 
+Neste trabalho, são empregados métodos de aproximação por séries,
+integração numérica de equações diferenciais ordinárias, localização
+de raízes e solução de problemas de valor de contorno. A implementação
+é dividida em duas abordagens complementares: uma formulação no
+domínio da frequência, baseada em uma expansão perturbativa em
+harmônicos, e uma formulação no domínio do tempo, na qual a memória
+viscoelástica é representada por variáveis internas.
 
+\subsection{Representação viscoelástica por série de Prony}
+\label{subsec:serie-prony}
+
+O comportamento viscoelástico do material é representado por meio de
+uma série de Prony, que permite descrever a relaxação do módulo de
+cisalhamento como uma soma de contribuições exponenciais. Essa
+representação é expressa por
+
+\begin{equation}
+  G(t) = G_{\infty} +
+  \sum_{m=1}^{N} G_m \exp\left(-\frac{t}{\tau_m}\right),
+  \label{eq:prony-relaxacao}
+\end{equation}
+
+em que $G(t)$ é o módulo de relaxação ao longo do tempo, $G_{\infty}$
+é o módulo de cisalhamento em regime de longo prazo, $G_m$ representa
+a contribuição de cada termo da série, $\tau_m$ é o respectivo tempo
+de relaxação e $N$ corresponde ao número de termos utilizados na
+aproximação.
+
+A representação por uma soma de exponenciais permite descrever
+diferentes escalas temporais de relaxação do material. Cada termo
+contribui de maneira distinta para a evolução da resposta mecânica,
+sendo que contribuições associadas a menores tempos de relaxação
+decrescem mais rapidamente.
+
+Para a formulação no domínio da frequência, utiliza-se o módulo
+complexo de cisalhamento, definido por
+
+\begin{equation}
+  G^*(\omega) = G'(\omega) + iG''(\omega),
+  \label{eq:modulo-complexo}
+\end{equation}
+
+em que $\omega$ é a frequência angular, $G'(\omega)$ é o módulo de
+armazenamento, $G''(\omega)$ é o módulo de perda e $i$ representa a
+unidade imaginária. Considerando a convenção harmônica
+$\exp(i\omega t)$, os módulos são calculados por
+
+\begin{equation}
+  G'(\omega) =
+  G_{\infty} +
+  \sum_{m=1}^{N}
+  G_m
+  \frac{(\omega\tau_m)^2}
+  {1+(\omega\tau_m)^2},
+  \label{eq:modulo-armazenamento}
+\end{equation}
+
+\begin{equation}
+  G''(\omega) =
+  \sum_{m=1}^{N}
+  G_m
+  \frac{\omega\tau_m}
+  {1+(\omega\tau_m)^2}.
+  \label{eq:modulo-perda}
+\end{equation}
+
+O módulo de armazenamento está associado à parcela elástica da
+resposta, enquanto o módulo de perda representa a parcela relacionada
+à dissipação de energia durante o carregamento cíclico. Dessa forma,
+a utilização do módulo complexo permite incorporar os efeitos
+viscoelásticos na formulação harmônica, a partir dos parâmetros
+obtidos pela série de Prony.
+
+Os módulos dinâmicos calculados são utilizados na determinação dos
+coeficientes flexurais empregados nas equações governantes do modelo.
+Assim, a dependência da resposta em relação à frequência é incorporada
+à formulação mecânica sem a necessidade de representar diretamente
+todo o histórico temporal nessa etapa da solução.
+
+\subsection{Expansão perturbativa em harmônicos}
+\label{subsec:expansao-perturbativa}
+
+A formulação do problema utiliza uma expansão perturbativa para
+representar a resposta mecânica em diferentes ordens de aproximação.
+Essa abordagem permite decompor a solução em contribuições associadas
+a parâmetros de perturbação, reduzindo a complexidade da resolução
+direta das equações governantes.
+
+De maneira geral, uma variável dependente $u$ pode ser representada
+por uma expansão da forma
+
+\begin{equation}
+  u(s,t) =
+  u_0(s,t) +
+  \varepsilon u_1(s,t) +
+  \varepsilon^2 u_2(s,t) + \cdots,
+  \label{eq:expansao-perturbativa}
+\end{equation}
+
+em que $\varepsilon$ representa um parâmetro de perturbação e os
+termos $u_j$ correspondem às diferentes ordens da aproximação.
+
+No modelo implementado, a formulação também considera o parâmetro
+$\alpha$, de modo que os coeficientes de curvatura e de ângulo são
+organizados conforme as ordens perturbativas associadas a esses
+parâmetros. A dependência temporal periódica é representada por
+componentes harmônicas, permitindo expressar as variáveis como
+combinações de funções senoidais e cossenoidais.
+
+Uma representação geral dessa decomposição é
+
+\begin{equation}
+  u(s,t) =
+  a_0(s) +
+  \sum_{n=1}^{N_h}
+  \left[
+    a_n(s)\cos(n\omega t) +
+    b_n(s)\sin(n\omega t)
+  \right],
+  \label{eq:expansao-harmonica}
+\end{equation}
+
+em que $N_h$ representa o número de harmônicos considerados e
+$a_n(s)$ e $b_n(s)$ são coeficientes dependentes da coordenada
+espacial.
+
+Na implementação, são considerados os três primeiros harmônicos,
+correspondentes às frequências $\omega$, $2\omega$ e $3\omega$.
+A substituição das expansões nas relações constitutivas e nas
+equações governantes permite agrupar os termos de mesma ordem
+perturbativa e mesma frequência, originando um sistema algébrico
+para a determinação dos coeficientes harmônicos.
+
+Essa organização resulta em um sistema composto por 30 coeficientes,
+que representam as contribuições necessárias para reconstruir a
+resposta do sistema. A utilização dessa abordagem reduz o problema
+original a um conjunto finito de equações diferenciais e relações
+algébricas, tornando sua solução computacional mais viável.
+
+A decomposição em harmônicos também permite avaliar separadamente
+as contribuições de cada frequência para a resposta global, além de
+possibilitar a reconstrução da solução em diferentes instantes do
+ciclo de carregamento.
+
+\subsection{Formulação das equações diferenciais ordinárias}
+\label{subsec:formulacao-edo}
+
+Após a determinação das relações entre os coeficientes harmônicos,
+o problema é organizado como um sistema de equações diferenciais
+ordinárias ao longo da coordenada espacial $s$, que representa a
+posição ao longo do comprimento do \textit{stiffener}.
+
+O vetor de estado é constituído pelos coeficientes de curvatura
+$k_i(s)$ e de ângulo $\phi_i(s)$, de modo que o sistema pode ser
+representado genericamente por
+
+\begin{equation}
+  \frac{d\mathbf{y}}{ds}
+  =
+  \mathbf{f}(s,\mathbf{y}),
+  \label{eq:sistema-edo}
+\end{equation}
+
+em que $\mathbf{y}$ reúne as variáveis de estado e
+$\mathbf{f}$ representa as funções obtidas a partir das equações
+governantes.
+
+As equações são construídas a partir dos coeficientes flexurais
+$C_0$, $C_1$ e $C_2$, de suas derivadas e das contribuições
+associadas às forças de cisalhamento. Dessa maneira, as relações
+constitutivas e os esforços atuantes são incorporados ao sistema
+diferencial que descreve a evolução espacial da curvatura e do
+ângulo.
+
+Como as condições do problema são especificadas em diferentes
+extremidades do domínio, a solução do sistema não pode ser obtida
+simplesmente pela definição de todas as condições iniciais em
+$s=0$. Torna-se necessário utilizar um procedimento numérico
+específico para satisfazer simultaneamente as condições de contorno.
+
+\subsection{Método do tiro}
+\label{subsec:metodo-tiro}
+
+O problema formulado corresponde a um problema de valor de contorno,
+no qual são impostas condições em diferentes posições do domínio
+espacial. Para sua resolução, utiliza-se o método do tiro
+(\textit{shooting method}), que transforma o problema de contorno
+em um problema de valor inicial, cuja solução pode ser obtida
+mediante integração numérica das equações diferenciais.
+
+O procedimento consiste em estimar inicialmente os valores das
+variáveis desconhecidas na extremidade $s=0$. A partir dessas
+estimativas, o sistema de equações diferenciais é integrado até
+$s=L$, obtendo-se os valores calculados na extremidade final.
+Em seguida, esses valores são comparados com as condições de
+contorno prescritas, produzindo um vetor de resíduos.
+
+De maneira geral, define-se o vetor de resíduos como
+
+\begin{equation}
+  \mathbf{R}(\mathbf{p}) =
+  \mathbf{y}_{\mathrm{calc}}(L;\mathbf{p}) -
+  \mathbf{y}_{\mathrm{contorno}},
+  \label{eq:residuo-tiro}
+\end{equation}
+
+em que $\mathbf{p}$ representa o conjunto de valores iniciais
+desconhecidos, $\mathbf{y}_{\mathrm{calc}}$ corresponde à solução
+obtida pela integração e $\mathbf{y}_{\mathrm{contorno}}$
+representa os valores exigidos na extremidade final.
+
+O objetivo do método é determinar um conjunto de valores iniciais
+que torne o resíduo suficientemente pequeno, isto é,
+
+\begin{equation}
+  \left\|\mathbf{R}(\mathbf{p})\right\| \leq \mathrm{tol},
+  \label{eq:criterio-tiro}
+\end{equation}
+
+em que $\mathrm{tol}$ representa a tolerância numérica estabelecida
+para a convergência.
+
+A correção das estimativas iniciais é realizada pelo método de
+Newton aplicado ao sistema não linear de resíduos. A atualização
+do vetor de parâmetros é dada por
+
+\begin{equation}
+  \mathbf{p}^{(j+1)}
+  =
+  \mathbf{p}^{(j)}
+  -
+  \mathbf{J}^{-1}
+  \left(\mathbf{p}^{(j)}\right)
+  \mathbf{R}\left(\mathbf{p}^{(j)}\right),
+  \label{eq:newton-sistema}
+\end{equation}
+
+em que $j$ representa a iteração e $\mathbf{J}$ é a matriz
+Jacobiana do vetor de resíduos, definida por
+
+\begin{equation}
+  J_{ij} =
+  \frac{\partial R_i}{\partial p_j}.
+  \label{eq:jacobiana}
+\end{equation}
+
+Como a obtenção analítica das derivadas pode ser complexa, a matriz
+Jacobiana é aproximada numericamente por diferenças finitas. Para
+uma perturbação $\delta_j$ no parâmetro $p_j$, utiliza-se a
+aproximação
+
+\begin{equation}
+  J_{ij}
+  \approx
+  \frac{
+    R_i(\mathbf{p}+\delta_j\mathbf{e}_j)
+    -
+    R_i(\mathbf{p})
+  }{\delta_j},
+  \label{eq:jacobiana-diferencas}
+\end{equation}
+
+em que $\mathbf{e}_j$ é o vetor unitário associado à variável
+perturbada.
+
+Para aumentar a estabilidade do procedimento iterativo, a
+implementação utiliza amortecimento da correção e busca linear.
+Assim, em vez de aplicar integralmente a atualização de Newton,
+pode-se utilizar
+
+\begin{equation}
+  \mathbf{p}^{(j+1)}
+  =
+  \mathbf{p}^{(j)}
+  -
+  \lambda
+  \mathbf{J}^{-1}
+  \mathbf{R}\left(\mathbf{p}^{(j)}\right),
+  \label{eq:newton-amortecido}
+\end{equation}
+
+em que $0 < \lambda \leq 1$ é o fator de amortecimento. Seu valor
+é ajustado de modo a favorecer a redução do resíduo entre
+iterações, evitando correções excessivamente grandes que possam
+comprometer a convergência.
+
+O método do tiro, portanto, permite determinar as condições
+iniciais necessárias para que a solução integrada satisfaça as
+condições de contorno do problema original.
+
+\subsection{Integração das equações diferenciais pelo método de
+Runge-Kutta de quarta ordem}
+\label{subsec:runge-kutta}
+
+A integração espacial do sistema de equações diferenciais é
+realizada pelo método explícito de Runge-Kutta de quarta ordem
+(RK4). Conforme apresentado por Chapra e Canale (2011), os métodos
+de Runge-Kutta utilizam avaliações sucessivas da função
+diferencial dentro de cada intervalo de integração, permitindo
+obter aproximações de ordem superior sem a necessidade de calcular
+derivadas de ordem elevada.
+
+Considerando o problema geral
+
+\begin{equation}
+  \frac{dy}{ds}=f(s,y),
+  \label{eq:edo-escalar-rk}
+\end{equation}
+
+a atualização pelo método RK4 é expressa por
+
+\begin{equation}
+  y_{n+1}
+  =
+  y_n +
+  \frac{h}{6}
+  \left(k_1+2k_2+2k_3+k_4\right),
+  \label{eq:rk4-atualizacao}
+\end{equation}
+
+em que $h$ representa o passo de integração e os coeficientes
+intermediários são definidos por
+
+\begin{align}
+  k_1 &= f(s_n,y_n), \\
+  k_2 &= f\left(s_n+\frac{h}{2},
+                y_n+\frac{h}{2}k_1\right), \\
+  k_3 &= f\left(s_n+\frac{h}{2},
+                y_n+\frac{h}{2}k_2\right), \\
+  k_4 &= f(s_n+h,y_n+hk_3).
+\end{align}
+
+Para sistemas de equações diferenciais, o mesmo procedimento é
+aplicado ao vetor de estado, realizando-se as avaliações de
+$\mathbf{f}$ em cada estágio da integração.
+
+O método utiliza quatro avaliações da função diferencial por
+passo, combinadas por uma média ponderada. Sua precisão global é
+de quarta ordem, desde que a solução apresente regularidade
+suficiente e que o erro de arredondamento não domine o erro de
+discretização.
+
+No presente trabalho, o RK4 é empregado na integração das equações
+governantes ao longo do comprimento do \textit{stiffener}, tanto
+durante as iterações do método do tiro quanto na obtenção da
+solução espacial correspondente aos parâmetros iniciais
+determinados.
+
+\subsection{Localização de raízes pelo método de Newton e pelo
+método de Illinois}
+\label{subsec:busca-raizes}
+
+A determinação de parâmetros que satisfaçam determinadas condições
+de contorno exige, em algumas etapas, a resolução de equações não
+lineares. Esse procedimento consiste em encontrar o valor de uma
+variável $x$ que satisfaça
+
+\begin{equation}
+  f(x)=0.
+  \label{eq:equacao-raiz}
+\end{equation}
+
+Segundo Chapra e Canale (2011), os métodos de localização de raízes
+podem ser divididos, de maneira geral, em métodos que isolam a raiz
+em um intervalo e métodos abertos, que utilizam estimativas
+iniciais para produzir aproximações sucessivas.
+
+No procedimento de solução do problema de contorno, o método de
+Newton é empregado na correção simultânea de múltiplas condições
+iniciais, conforme apresentado anteriormente. Já na formulação
+no domínio do tempo, a condição de contorno final é imposta por
+meio da determinação do momento inicial $M(0)$.
+
+Nesse segundo caso, define-se uma função residual escalar que
+representa a diferença entre o ângulo calculado na extremidade
+final e o ângulo prescrito:
+
+\begin{equation}
+  F(M_0)=\phi(L;M_0)-\phi_L,
+  \label{eq:residuo-momento}
+\end{equation}
+
+em que $M_0$ é o momento inicial desconhecido, $\phi(L;M_0)$ é
+o ângulo calculado na extremidade $s=L$ e $\phi_L$ é o valor
+imposto como condição de contorno.
+
+A solução consiste em encontrar $M_0$ tal que
+
+\begin{equation}
+  F(M_0)=0.
+  \label{eq:condicao-momento}
+\end{equation}
+
+Inicialmente, realiza-se o isolamento de um intervalo
+$[M_a,M_b]$ que contenha uma raiz, buscando-se valores para os
+quais a função residual apresente sinais opostos:
+
+\begin{equation}
+  F(M_a)F(M_b)<0.
+  \label{eq:intervalo-raiz}
+\end{equation}
+
+Após o isolamento do intervalo, aplica-se o método da falsa
+posição modificado, conhecido como método de Illinois. A
+aproximação inicial da raiz é obtida pela interpolação linear
+entre os extremos do intervalo:
+
+\begin{equation}
+  M_r =
+  M_b -
+  \frac{F(M_b)(M_a-M_b)}
+  {F(M_a)-F(M_b)}.
+  \label{eq:falsa-posicao}
+\end{equation}
+
+A cada iteração, avalia-se o sinal de $F(M_r)$ e atualiza-se
+o intervalo que contém a raiz. No método de Illinois, quando
+um dos extremos permanece inalterado em iterações sucessivas,
+o valor da função associado a esse extremo é reduzido pela
+metade para a próxima interpolação. Essa modificação procura
+evitar que um dos extremos permaneça fixo por muitas iterações,
+situação que pode tornar lenta a convergência do método da
+falsa posição convencional.
+
+O procedimento é repetido até que o resíduo ou a largura do
+intervalo satisfaça a tolerância estabelecida. Dessa forma,
+obtém-se o momento inicial que permite satisfazer a condição
+de contorno angular na extremidade final do domínio.
+
+\subsection{Integração no domínio do tempo e variáveis internas
+viscoelásticas}
+\label{subsec:integracao-temporal}
+
+Além da formulação no domínio da frequência, o modelo utiliza
+uma abordagem no domínio do tempo para representar diretamente
+a evolução da resposta viscoelástica. Nessa formulação, o
+comportamento dependente do histórico de deformação é incorporado
+por meio de variáveis internas associadas aos termos da série
+de Prony.
+
+Para cada termo de relaxação, define-se uma variável interna
+$q_m(s,t)$, cuja evolução temporal representa a contribuição
+histórica daquele mecanismo de relaxação para a resposta
+mecânica. Essa representação permite substituir a necessidade
+de armazenar todo o histórico de curvatura por um conjunto
+finito de variáveis de estado.
+
+A atualização das variáveis internas entre dois instantes
+consecutivos é realizada por uma relação recursiva da forma
+
+\begin{equation}
+  q_m^{n+1}(s)
+  =
+  a_m q_m^n(s)
+  +
+  w_{0,m}k^n(s)
+  +
+  w_{1,m}k^{n+1}(s),
+  \label{eq:recursao-viscoelastica}
+\end{equation}
+
+em que $n$ representa o índice do passo temporal, $k^n$ e
+$k^{n+1}$ são os valores da curvatura nos instantes consecutivos,
+e $a_m$, $w_{0,m}$ e $w_{1,m}$ são coeficientes determinados
+pelos parâmetros do respectivo termo de relaxação e pelo
+intervalo de tempo utilizado.
+
+A utilização dessa formulação recursiva permite atualizar a
+contribuição de cada mecanismo de relaxação a partir do estado
+anterior e dos valores de curvatura no intervalo atual. Assim,
+a memória viscoelástica é preservada sem que seja necessário
+armazenar explicitamente todos os valores anteriores da
+curvatura, reduzindo os requisitos de memória computacional.
+
+A integração no domínio do tempo envolve, portanto, a evolução
+conjunta das variáveis mecânicas e das variáveis internas
+viscoelásticas. Em cada passo temporal, a resposta é calculada
+considerando a contribuição acumulada dos mecanismos de
+relaxação, enquanto a condição de contorno é satisfeita pela
+determinação iterativa do momento inicial, conforme descrito
+na Subseção~\ref{subsec:busca-raizes}.
+
+\subsection{Reconstrução da resposta em fase e no domínio do
+tempo}
+\label{subsec:reconstrucao-resposta}
+
+Após a determinação dos coeficientes harmônicos, a resposta
+mecânica é reconstruída por meio da combinação das diferentes
+componentes da expansão perturbativa. Essa etapa permite
+recuperar a dependência temporal das grandezas inicialmente
+representadas por coeficientes associados a cada frequência.
+
+A reconstrução é realizada pela avaliação das componentes
+harmônicas nos instantes ou fases de interesse. De maneira
+geral, a resposta pode ser expressa pela soma
+
+\begin{equation}
+  u(s,t) =
+  a_0(s) +
+  \sum_{n=1}^{N_h}
+  \left[
+    a_n(s)\cos(n\omega t) +
+    b_n(s)\sin(n\omega t)
+  \right],
+  \label{eq:reconstrucao-resposta}
+\end{equation}
+
+com a inclusão dos termos correspondentes às diferentes ordens
+perturbativas consideradas no modelo.
+
+A partir da distribuição espacial do ângulo $\phi(s,t)$, a
+geometria deformada do elemento é determinada pela integração
+das relações cinemáticas
+
+\begin{align}
+  \frac{dx}{ds} &= \cos\phi(s,t), \\
+  \frac{dy}{ds} &= \sin\phi(s,t).
+\end{align}
+
+Consequentemente, as coordenadas da linha deformada podem ser
+obtidas por
+
+\begin{align}
+  x(s,t) &=
+  x(0,t)+
+  \int_0^s \cos\phi(\xi,t)\,d\xi, \\
+  y(s,t) &=
+  y(0,t)+
+  \int_0^s \sin\phi(\xi,t)\,d\xi.
+\end{align}
+
+Essas integrais são avaliadas numericamente a partir da
+discretização espacial utilizada na solução. A reconstrução
+permite obter a geometria deformada e avaliar as grandezas
+mecânicas de interesse, incluindo curvatura, ângulo, tensão
+na região superior do elemento e envelopes de resposta ao
+longo do ciclo de carregamento.
+
+Dessa forma, a combinação entre a expansão perturbativa, a
+integração das equações diferenciais e a reconstrução
+harmônica possibilita representar a resposta do sistema tanto
+em função da posição quanto da fase ou do instante de
+carregamento.
 
 % ----------------------------------------------------------------------
-\chapter{Formatação de Elementos Pós-textuais}
-\label{cha:format-pos-text}
+% Pedro
+\chapter{Metodologia}
+\label{sec:metodologia}
 
+%% Melhorar esse trecho. C: Explicar por cima toda a metodologia, resultados que serao observados, criterios de projeto e analise.
+A presente seção trabalha a metodologia desenvolvida para avaliar o comportamento do conjunto linha flexível-enrijecedor
+sob a ação de um carregamento harmônico aplicado na extremidade livre do conjunto. A metodologia inicia com o desenvolvimento
+matemático do sistema considerando o Diagrama do Corpo Livre (DCL) para obtenção do equacionamento dinâmico, a incorporação da 
+viscoelasticidade a partir do módulo de relaxação obtido pela análise experimental, seguido da implementação do método do tiro
+(\emph{shooting method}) e desenvolvimento de uma solução no domínio da frequência.
 
+% Trecho melhorado
+A metodologia desenvolvida para o desenvolvimento do solver numérico do sistema físico linha flexível-enrijecedor consiste em
+estabelecer premissas, destrinchar os diferentes modelos matemáticos que descrevem o comportamento material e a resposta estrutural 
+dado o carregamento considerado e o desenvolvimento da solução numérica que corresponde à viscoelasticidade linear.
+
+A fim de realizar o estudo de caso, o objetivo inical após o desenvolvimento da metodologia era validar a resolução por meio da comparação
+dos resultados obtidos neste trabalho com os desenvolvidos por \cite{Caire2011} em suas análises experimentais e numéricas. Subsequentemente,
+após essa validação da ferramenta, uma avaliação em diferentes condições buscando uma compreensão mais vasta do comportamento do sistema
+modelado pode ser obtida. Para avaliação de resultados, são estabelecidos critérios visando a aprovação da capacidade estrutural do projeto.
+
+Como discutido anteriormente, o enrijecedor tem como função principal reduzir de forma gradativa a rigidez do sistema ao longo do trecho inicial 
+de sua extensão. Dessa forma, entende-se que a função principal envolve a suavização da curvatura a fim de que o limite de projeto não seja atendido.
+A este limite é associado o valor de menor raio de curvatura -- \emph{Minimum Bending Radius (MBR)} -- definido pela Equação \eqref{eq:mbr}.
+
+% conferir essa equação
+\begin{equation}
+\label{eq:mbr}
+R_\text{min} = \frac{1}{\kappa_\text{max}},
+\end{equation}
+
+onde $R_\text{min}$ é o menor raio de curvatura admissível e $\kappa_\text{max}$ é a curvatura máxima permitida.
+
+Um outro critério de projeto relevante está associado à estrutura do enrijecedor. Como materiais viscoelásticos apresentam um comportamento 
+de natureza não linear, o escoamento como em materiais elásticos não é bem definido e com isso então considera-se um limite de 15% de deformação
+O cálculo para a deformação máxima advém da aplicação da Teoria de Vigas de Euler-Bernoulli, conforme Equação \eqref{eq:deformacao-maxima}.
+
+% Conferir essa equação
+\begin{equation}
+\label{eq:deformacao-maxima}
+\varepsilon_\text{max} = \frac{\kappa_\text{max} h}{2},
+\end{equation}
+
+onde $\varepsilon_\text{max}$ é a deformação máxima, $\kappa_\text{max}$ é a curvatura máxima e $h$ é a altura da seção transversal da viga.
+
+\section{Premissas Adotadas}
+\label{sec:premissas-adotadas}
+
+% Premissas adotadas para o modelo local
+O modelo local busca determinar as curvaturas e deformações do conjunto linha flexível-enrijecedor,
+considerando o comportamento viscoelástico do poliuretano. Para isso, adotam-se simplificações
+que permitem estudar a flexão sem representar todos os detalhes da estrutura real. As premissas
+tomam como base a formulação de \citeonline[seção 3.1, p.~85--87]{Caire2011}, com a delimitação
+adicional de manter constante a temperatura do material.
+
+% Aproximação de Euler-Bernoulli para a flexão do conjunto linha flexível-enrijecedor
+O conjunto é representado pela teoria de vigas de Euler-Bernoulli, desprezando-se a deformação
+por cisalhamento para concentrar a análise na deformação por flexão. Essa aproximação tem
+apoio nas avaliações discutidas no referencial teórico, em~\ref{sub:deflexao-vigas},
+mas deve ser aplicada a geometrias nas quais a contribuição do cisalhamento seja pequena.
+
+% Representação da fixação do conjunto linha flexível-enrijecedor
+Na região de topo, acessórios como o \emph{hang-off} sustentam a linha e transferem seus
+esforços à estrutura da unidade de produção. Quando o conjunto de fixação possui elevada
+rigidez e restringe tanto os deslocamentos quanto as rotações, sua ligação pode ser
+representada por um engaste. Neste trabalho, considera-se essa condição para a linha
+flexível e o enrijecedor, na mesma extremidade de referência. A presença do acessório, por
+si só, não garante essa condição: conexões que permitem rotação ou possuem pontos de fixação
+afastados precisam ser representadas de outra forma.
+
+% Justificando o desprezo do alongamento axial.
+A linha flexível pode se curvar sem apresentar um aumento significativo de comprimento,
+pois possui elevada rigidez axial, ou seja, oferece grande oposição ao alongamento. Por isso, 
+considera-se que o comprimento medido ao longo do eixo do conjunto permanece constante durante
+a flexão. A mesma aproximação é adotada para o enrijecedor, deixando o cálculo de seu 
+alongamento fora do escopo do modelo. Isso não significa retirar a força de tração da análise:
+ela continua atuando e influencia a forma assumida pelo conjunto. Também não impede que, ao 
+se curvar, as fibras de um lado se alonguem e as do lado oposto se encurtem. O que se despreza
+é o aumento do comprimento do eixo, e essa aproximação é adequada quando tal aumento é pequeno
+nas condições estudadas.
+
+% Justificando o desprezo da folga radial.
+Entre a superfície externa da linha flexível e a superfície interna do enrijecedor pode existir
+uma pequena folga. Antes de encostar no enrijecedor, a linha pode se mover dentro desse espaço.
+Para simplificar a análise, despreza-se essa folga e considera-se que os dois componentes
+acompanham a mesma deflexão. Essa aproximação é adequada quando a folga pouco altera a forma
+deformada do conjunto. Não se considera que os materiais estejam colados, e o modelo não
+descreve as pressões de contato nem o desgaste entre suas superfícies.
+
+% Justificando a simetria da seção e a escolha do eixo neutro.
+Materiais poliméricos podem apresentar respostas diferentes quando tracionados e comprimidos.
+Essa diferença é relevante na flexão, pois uma parte da seção trabalha em tração e outra em
+compressão, podendo alterar a posição do eixo neutro e a relação entre momento e curvatura
+\cite[p.~86--87]{Caire2011}. Neste trabalho, essa diferença é desprezada: os mesmos parâmetros
+são utilizados para representar os dois comportamentos. Trata-se de uma hipótese simplificadora
+para estudar os efeitos da viscoelasticidade, e não de uma afirmação de que o poliuretano
+responde igualmente à tração e à compressão. Assim, os resultados não incluem os efeitos
+dessa assimetria.
+
+% Justificando a escolha do carregamento harmônico.
+A força aplicada e o ângulo de topo são representados por funções harmônicas, com valores
+médios, amplitudes, frequência e fase relativa definidos. Isso permite estudar como a rapidez
+com que a carga se repete influencia a resposta do poliuretano e a energia dissipada a cada
+ciclo. É uma condição controlada de análise, que não representa toda a irregularidade do
+carregamento real nem garante, por si só, resultados conservadores. Mesmo com uma entrada
+harmônica, a resposta do conjunto pode não ser uma senoide pura, devido à não linearidade
+geométrica.
+
+% Justificando a condição isotérmica de referência.
+A temperatura também pode alterar a resposta do poliuretano. Além das condições do ambiente,
+o próprio carregamento cíclico pode aquecer o material pela dissipação de energia. Neste
+trabalho, esses efeitos são desprezados e considera-se uma temperatura constante, correspondente
+à utilizada na caracterização do material (24°C). Dessa forma, a análise fica restrita à resposta
+mecânica, sem calcular o aquecimento ou a mudança das propriedades com a temperatura.
+Essa simplificação não significa que os efeitos térmicos sejam irrelevantes em serviço;
+situações com variações importantes de temperatura exigem uma avaliação específica.
+
+Com base nessas considerações, as premissas são sintetizadas a seguir:
+\begin{enumerate}
+  \item O conjunto é representado pela teoria de vigas de Euler-Bernoulli, desprezando-se
+  a deformação por cisalhamento.
+  \item A linha flexível e o enrijecedor são considerados engastados na mesma extremidade
+  de referência.
+  \item O alongamento axial da linha de referência das duas estruturas é desprezado,
+  mantendo-se a força de tração no equilíbrio.
+  \item O espaçamento radial entre a linha flexível e o enrijecedor é desprezado,
+  adotando-se a mesma deflexão para ambos.
+  \item As respostas constitutivas em tração e compressão são consideradas simétricas,
+  preservando-se o comportamento viscoelástico do poliuretano.
+  \item A força aplicada e o ângulo de topo são representados por funções harmônicas.
+  \item Os parâmetros constitutivos correspondem a uma condição de temperatura de referência,
+  sem considerar variações térmicas ou acoplamento termomecânico.
+\end{enumerate}
+
+% Ajustes necessarios para o material
+\section{Caracterização do Material}
+\label{sec:caracterizacao-do-material}
+
+\subsection{Dados Experimentais}
+\label{sec:dados-experimentais}
+
+\subsection{Ajuste dos Termos da Série de Prony}
+\label{sec:ajuste-prony}
+
+% Sistemas de Equações
+\section{Equacionamento do Sistema Linha Flexível-Enrijecedor}
+\label{sec:equacionamento-do-sistema}
+
+\subsection{Caracterização do Sistema}
+\label{sec:caracterizacao-sistema}
+
+\subsection{Sistema de Equações}
+\label{sec:sistema-equacoes}
+
+\subsection{Condições de Contorno}
+\label{sec:condicoes-contorno}
+
+\section{Implementando a Viscoelasticidade no Sistema}
+\label{sec:implementando-viscoelasticidade}
+
+\subsection{Aplicação do Método da Perturbação}
+\label{sec:aplicacao-metodo-perturbacao}
+
+% Desenvolvimento da Solução
+\section{Solução Viscoelástica Linear}
+\label{sec:solucao-viscoelastica-linear}
+
+% Reconstrução das Respostas para o Modelo de Caire
+\section{Reconstrução da Resposta}
+\label{sec:reconstrucao-da-resposta}
+
+\section{Validação da Solução}
+\label{sec:validacao-da-solucao}
+
+% Estudo de Caso: avaliar um enrijecedor da Prysmian como exemplo
+\section{Estudo de Caso}
+\label{sec:estudo-de-caso}
 
 % ----------------------------------------------------------------------
-\chapter{Conclusões}
+\chapter{Resultados e Discussão}
+\label{sec:resultados-e-discussao}
 
-A seguir temos uma enorme quantidade de citações sem contexto somente
-para que elas possam aparecer na seção de referências bibliográficas.
-\cite{abntex2classe}, \cite{abntex2-wiki-como-customizar},
-\cite{abntex2modelo-artigo}, \cite{abntex2modelo-relatorio},
-\cite{abntex2modelo}, \cite{abntex2cite}, \cite{abntex2cite-alf},
-\cite{Ifes2024}, \cite{NBR6024:2012}, \cite{araujo2012},
-\cite{talbot2012}, \cite{NBR14724:2011}, \cite{EIA649B},
-\cite{bates2010}, \cite{memoir}, \cite{masolo2010}, \cite{babel},
-\cite{NBR14724:2005}, \cite{macedo2005}, \cite{guizzardi2005},
-\cite{NBR6028:2003}, \cite{NBR10520:2023}, \cite{NBR14724:2002},
-\cite{NBR14724:2001}, \cite{guarino1995}, \cite{ibge1993},
-\cite{van86}, \cite{dewey1980}, \cite{doxiadis1965}.
+% ----------------------------------------------------------------------
+
+\chapter{Conclusão}
+\label{sec:conclusao}
 
 \section{Análises}
-
-\blindtext[7]
+\label{sec:analises}
 
 \section{Trabalhos Futuros}
-
-\blindtext[7]
-
+\label{sec:trabalhos-futuros}
 
 %%% ====================================================================
 %%% Início da parte pós-textual do documento.
+
 \postextual
 
 
@@ -1053,7 +2242,9 @@ para que elas possam aparecer na seção de referências bibliográficas.
 \bibliography{referencias}
 
 %%% Início dos apêndices ---------------------------------------------
+
 \apendices
+
 %%% A linha abaixo impede que as seções, subseções, etc. dos apêndices e anexos
 %%% sejam mostradas no Sumário.
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
@@ -1061,43 +2252,10 @@ para que elas possam aparecer na seção de referências bibliográficas.
 \partapendices*
 
 % --------------------------------------------------------------------
+
 \chapter{Demonstração do Teorema Loren Ipsum}
 
-\blindtext[7]
-
-
 % --------------------------------------------------------------------
-\chapter{Visão Geral de Indução Estrutural}
-
-\section{Princípio da Boa Ordenação}
-
-\blindtext[3]
-
-\section{Indução em Listas}
-
-\blindtext[2]
-
-\subsection{Estudo de Caso: Tamanho da Lista}
-
-\blindtext[2]
-
-\subsection{Estudo de Caso: Pesquisa em Lista}
-
-\blindtext[2]
-
-\section{Indução em Árvores}
-
-\blindtext[2]
-
-\subsection{Estudo de Caso: Cálculo de Profundidade}
-
-\blindtext[2]
-
-\subsection{Estudo de Caso: Pesquisa em Árvore}
-
-\blindtext[2]
-
-
 %%% Início dos anexos ------------------------------------------------
 \anexos
 
@@ -1107,10 +2265,4 @@ para que elas possam aparecer na seção de referências bibliográficas.
 
 \hspace*{0mm}\fbox{\includegraphics[scale=0.8]{pics/normas-ifes-apendice-d.png}}
 
-
 \end{document}
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% ispell-local-dictionary: "brasileiro"
-%%% End:
