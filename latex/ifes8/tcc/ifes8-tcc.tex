@@ -1,7 +1,7 @@
 %%%
-\documentclass[times,english,brazilian,oneside,section=TITLE]{ifes8}
+% Compile com latexmk -xelatex -synctex=1 ifes8-tcc.tex para usar Arial.
+\documentclass[arial,centeredequations,english,brazilian,oneside,section=TITLE]{ifes8}
 
-\usepackage[utf8]{inputenc}
 \usepackage{lastpage}           % Usado pelo exemplo de ficha catalográfica
 \usepackage[alf,abnt-full-initials=yes]{abntex2cite} % Esta opção é exigida pelas normas do ifes.
 
@@ -11,6 +11,7 @@
 \makeatother
 
 \usepackage{microtype}          % para melhorias de justificação
+\setlength{\emergencystretch}{2em}
 \usepackage{morefloats}         % permite mais floats
 \usepackage{blindtext}          % para gerar texto aleatório (dummy text)
 \usepackage{tikz}
@@ -394,7 +395,7 @@ O arranjo esquemático da Figura~\ref{fig:arranjo-tipico-souza} permite identifi
 do enrijecedor envolvendo a linha flexível e os componentes de sua fixação. O corpo
 polimérico proporciona a transição de rigidez, enquanto os componentes metálicos fazem
 a ligação com a estrutura de suporte. Trata-se de uma representação simplificada,
-reproduzida por \citeonline[p. 31]{Souza2008}, e não de um detalhamento construtivo de
+reproduzida por \citeonline{Souza2008}, e não de um detalhamento construtivo de
 todos os arranjos utilizados em serviço.
 
 % Análise global e local.
@@ -410,7 +411,7 @@ desenvolvimento de uma análise local.
   \caption{Arranjo típico de um enrijecedor à flexão e seus componentes de fixação.}
   \label{fig:arranjo-tipico-souza}
   \includegraphics[width=0.85\textwidth]{pics/souza2008-arranjo-tipico.png}
-  \fonte{Lane et al. (1995), reproduzido em \citeonline[p. 31, fig. 11]{Souza2008}.}
+  \fonte{Lane et al. (1995), reproduzido em \citeonline{Souza2008}.}
 \end{figure}
 
 % % Mais detalhes sobre o poliuretano para entrar no tema de viscoelasticidade.
@@ -453,12 +454,12 @@ e deformações relevantes ao dimensionamento do enrijecedor.
 
 % Idealização do carregamento harmônico simples.
 A representação simplificada das solicitações ambientais também encontra aplicação nas análises globais de carregamento
-extremo. A especificação técnica da \citeonline[apêndice B, seção B.2.1]{Petrobras2024} admite, como alternativa à análise
+extremo. A especificação técnica da \citeonline{Petrobras2024} admite, como alternativa à análise
 com ondas irregulares, o procedimento de máxima resposta com ondas regulares. A partir do espectro de ondas e dos
 operadores de amplitude de resposta (RAOs) da unidade flutuante no ponto de conexão do umbilical, esse procedimento
 estabelece uma representação regular destinada a reproduzir os máximos de movimento angular e de aceleração vertical
 estimados para uma tempestade de três horas. A especificação exige, entretanto, a verificação dos casos mais críticos
-por análises com ondas irregulares \cite[apêndice B, seção B.1]{Petrobras2024}.
+por análises com ondas irregulares \cite{Petrobras2024}.
 
 Essa possibilidade de representação regular oferece contexto para o uso de solicitações periódicas em modelos
 simplificados, mas não implica que os carregamentos locais sejam necessariamente harmônicos. Neste trabalho, o
@@ -540,7 +541,7 @@ A flexão é o modo de solicitação em que um elemento estrutural, ao ser subme
 carregamentos transversais ao seu eixo, desenvolve esforços internos que tendem a
 curvá-lo. Do ponto de vista do projeto mecânico, qualquer peça apoiada e sujeita a
 esforços transversais ao seu comprimento comporta-se como uma viga, de modo que o
-estudo da flexão se confunde com o estudo das vigas \cite[p.~154]{Norton2013}. Como o
+estudo da flexão se confunde com o estudo das vigas \cite{Norton2013}. Como o
 enrijecedor à flexão e a linha flexível por ele envolvida trabalham essencialmente sob
 esse regime, esta seção reúne os conceitos de cargas, esforços internos, tensões e
 deflexões em vigas que fundamentam a formulação desenvolvida nos capítulos seguintes.
@@ -548,7 +549,7 @@ deflexões em vigas que fundamentam a formulação desenvolvida nos capítulos s
 \subsection{Vigas e Tipos de Carregamento}
 \label{sub:vigas-carregamentos}
 
-Segundo \citeonline[p.~111]{Norton2013}, uma viga é qualquer elemento que suporta um
+Segundo \citeonline{Norton2013}, uma viga é qualquer elemento que suporta um
 carregamento transversal ao longo de seu eixo e que também pode suportar carregamentos
 na direção axial. A classificação das vigas é feita em função da forma como são
 vinculadas, conforme ilustrado na Figura~\ref{fig:tipos-vigas}:
@@ -610,7 +611,7 @@ vinculadas, conforme ilustrado na Figura~\ref{fig:tipos-vigas}:
       \node[anchor=east] at (-0.5,0) {(d)};
     \end{scope}
   \end{tikzpicture}
-  \fonte{Adaptado de \citeonline[p.~111]{Norton2013}.}
+  \fonte{Adaptado de \citeonline{Norton2013}.}
 \end{figure}
 
 A viga engastada, em particular, é a idealização adotada neste trabalho para o conjunto
@@ -622,16 +623,17 @@ As cargas aplicadas a uma viga podem ser forças concentradas, forças distribu�
 longo de parte do comprimento ou do comprimento total, e momentos concentrados. Essas
 cargas dão origem tanto a forças cortantes quanto a momentos fletores na viga, de
 modo que a análise dos esforços internos consiste em determinar a magnitude e a
-distribuição desses esforços ao longo do comprimento \cite[p.~111]{Norton2013}. Em
+distribuição desses esforços ao longo do comprimento \cite{Norton2013}. Em
 geral, as vigas são tratadas como sistemas estáticos, ainda que vibrações e acelerações
-possam provocar carregamento dinâmico \cite[p.~111]{Norton2013}.
+possam provocar carregamento dinâmico \cite{Norton2013}.
 
 \subsection{Força Cortante e Momento Fletor}
 \label{sub:cortante-momento}
 
 Seja $q(x)$ a função que descreve o carregamento distribuído ao longo do eixo $x$ da
 viga. A força cortante $V(x)$ e o momento fletor $M(x)$ relacionam-se com $q(x)$ por
-\cite[p.~111]{Norton2013}:
+\cite{Norton2013}:
+
 \begin{equation}
   \label{eq:q-V-M}
   q(x) = \frac{\mathrm{d}V}{\mathrm{d}x} = \frac{\mathrm{d}^2 M}{\mathrm{d}x^2}.
@@ -639,32 +641,34 @@ viga. A força cortante $V(x)$ e o momento fletor $M(x)$ relacionam-se com $q(x)
 
 Integrando-se a Equação~(\ref{eq:q-V-M}) uma vez, obtém-se a força cortante e, uma
 segunda vez, o momento fletor:
+
 \begin{align}
   V(x) &= \int q(x)\,\mathrm{d}x + C_1, \label{eq:V-integral}\\
   M(x) &= \int V(x)\,\mathrm{d}x + C_1 x + C_2, \label{eq:M-integral}
 \end{align}
+
 em que $C_1$ e $C_2$ são constantes de integração, determinadas pelas condições de
-contorno do problema \cite[p.~112, 163]{Norton2013}. Em termos geométricos, a
+contorno do problema \cite{Norton2013}. Em termos geométricos, a
 diferença entre as forças cortantes em dois pontos quaisquer é igual à área sob a curva
 do carregamento distribuído entre eles, e a diferença entre os momentos fletores em dois
-pontos é igual à área sob a curva da força cortante \cite[p.~112]{Norton2013}.
+pontos é igual à área sob a curva da força cortante \cite{Norton2013}.
 
 Quanto à convenção de sinais, adota-se o momento fletor positivo quando ele coloca
 a parte superior da viga em compressão e a parte inferior em tração, e a força
 cortante positiva quando provoca uma rotação horária na seção em que atua
-\cite[p.~112]{Norton2013}. Os valores máximos absolutos
+\cite{Norton2013}. Os valores máximos absolutos
 de $V$ e $M$ são os de maior interesse, pois determinam as tensões críticas na viga.
 Como $V$ é a derivada de $M$, o momento fletor atinge um máximo ou um mínimo nas
-seções em que a força cortante se anula \cite[p.~122]{Norton2013}. Nas vigas
+seções em que a força cortante se anula \cite{Norton2013}. Nas vigas
 engastadas com carga na extremidade livre, a força cortante não se anula ao longo do
 comprimento e o momento máximo ocorre no engaste, que é a seção crítica do projeto.
 
 Para carregamentos formados por parcelas discretas, possivelmente descontínuas ao longo
 do comprimento, é conveniente representar $q(x)$ por funções de singularidade, que
 permitem escrever uma única expressão válida em toda a viga e facilitam a solução
-computacional \cite[p.~112--113]{Norton2013}. Sob pequenas deflexões, vale também a
+computacional \cite{Norton2013}. Sob pequenas deflexões, vale também a
 superposição de efeitos, de modo que casos combinados podem ser resolvidos somando-se
-as soluções de casos individuais \cite[p.~122]{Norton2013}.
+as soluções de casos individuais \cite{Norton2013}.
 
 \subsection{Tensões Normais de Flexão}
 \label{sub:tensoes-flexao}
@@ -673,10 +677,10 @@ Embora raramente uma viga real esteja sujeita à flexão pura, esse caso é o po
 partida para o desenvolvimento da teoria das tensões de flexão. Considere-se a viga
 biapoiada da Figura~\ref{fig:flexao-pura}, com duas cargas idênticas aplicadas
 simetricamente. No trecho entre as cargas a força cortante é nula e o momento
-fletor é constante, caracterizando a flexão pura \cite[p.~155]{Norton2013}.
+fletor é constante, caracterizando a flexão pura \cite{Norton2013}.
 
 A dedução das tensões nesse regime baseia-se nas seguintes hipóteses
-\cite[p.~155--156]{Norton2013}:
+\cite{Norton2013}:
 
 \begin{enumerate}
   \item o segmento analisado está distante das cargas aplicadas e dos vínculos externos;
@@ -730,7 +734,7 @@ premissas deste trabalho (Capítulo~\ref{sec:metodologia}).
       \node[anchor=east] at (-0.6,0) {(c)};
     \end{scope}
   \end{tikzpicture}
-  \fonte{Adaptado de \citeonline[p.~156]{Norton2013}.}
+  \fonte{Adaptado de \citeonline{Norton2013}.}
 \end{figure}
 
 Quando o momento fletor é aplicado, o segmento se curva: as fibras de um dos lados
@@ -738,32 +742,38 @@ encurtam-se e ficam em compressão, as do lado oposto alongam-se e ficam em tra�
 enquanto a linha neutra mantém o comprimento original. Para que as seções
 permaneçam planas, a deformação varia linearmente com a distância à linha neutra, e,
 sob a lei de Hooke, o mesmo ocorre com a tensão normal, que é nula na linha neutra
-\cite[p.~156]{Norton2013}. Essa relação conduz à conhecida fórmula da tensão de
+\cite{Norton2013}. Essa relação conduz à conhecida fórmula da tensão de
 flexão:
+
 \begin{equation}
   \label{eq:sigma-flexao}
   \sigma_x = -\frac{M y}{I},
 \end{equation}
+
 em que $M$ é o momento fletor na seção considerada, $I$ é o momento de inércia da área
 da seção transversal em relação à linha neutra, que passa pelo centroide da seção
 em uma viga reta, e $y$ é a distância da linha neutra ao ponto onde a tensão é
-calculada \cite[p.~156]{Norton2013}. O sinal negativo resulta da convenção de sinais
+calculada \cite{Norton2013}. O sinal negativo resulta da convenção de sinais
 adotada.
 
 A tensão máxima ocorre nas fibras externas, onde $y = c$:
+
 \begin{equation}
   \label{eq:sigma-max}
   \sigma_{max} = \frac{M c}{I},
 \end{equation}
+
 sendo $c$ a distância da linha neutra à fibra externa, tomada como positiva tanto
 na parte superior quanto na inferior. Essas duas distâncias só são iguais em seções
-simétricas em relação à linha neutra \cite[p.~156]{Norton2013}. Uma forma alternativa
+simétricas em relação à linha neutra \cite{Norton2013}. Uma forma alternativa
 frequentemente empregada é
+
 \begin{equation}
   \label{eq:sigma-Z}
   \sigma_{max} = \frac{M}{Z}, \qquad Z = \frac{I}{c},
 \end{equation}
-em que $Z$ é o módulo de resistência da seção \cite[p.~157]{Norton2013}. A
+
+em que $Z$ é o módulo de resistência da seção \cite{Norton2013}. A
 Figura~\ref{fig:distribuicao-tensao} ilustra a distribuição linear da tensão normal ao
 longo da altura da seção.
 
@@ -791,11 +801,11 @@ longo da altura da seção.
     \node[anchor=west] at (7.3,-2.0) {tração};
     \node at (6,2.5) {$\sigma_x$};
   \end{tikzpicture}
-  \fonte{Adaptado de \citeonline[p.~156]{Norton2013}.}
+  \fonte{Adaptado de \citeonline{Norton2013}.}
 \end{figure}
 
 O momento de inércia $I$ depende exclusivamente da geometria da seção. Para um
-retângulo de largura $b$ e altura $h$, $I = b h^3/12$ \cite[p.~161]{Norton2013}; para
+retângulo de largura $b$ e altura $h$, $I = b h^3/12$ \cite{Norton2013}; para
 uma seção circular maciça de diâmetro $d$, $I = \pi d^4/64$, e para uma seção
 anular de diâmetros externo $D$ e interno $d$, $I = \pi (D^4 - d^4)/64$. A dependência
 de $I$ com a quarta potência do diâmetro explica por que pequenas variações de
@@ -805,13 +815,13 @@ projeto de elementos de seção variável como o enrijecedor.
 As Equações~(\ref{eq:sigma-flexao}) a (\ref{eq:sigma-Z}), embora deduzidas para
 flexão pura, também podem ser utilizadas quando há outros carregamentos além do
 momento fletor, desde que a deformação por cisalhamento seja desprezível
-\cite[p.~157]{Norton2013}.
+\cite{Norton2013}.
 
 No caso de vigas curvas, isto é, de elementos com curvatura inicial significativa,
 como ganchos e grampos, a linha neutra se desloca em direção ao centro de curvatura
 e deixa de coincidir com a linha centroidal; a distribuição de tensões passa a ser
 hiperbólica e não mais linear, e as Equações~(\ref{eq:sigma-flexao}) a
-(\ref{eq:sigma-Z}) não se aplicam diretamente \cite[p.~157--158]{Norton2013}.
+(\ref{eq:sigma-Z}) não se aplicam diretamente \cite{Norton2013}.
 Como a hipótese de viga inicialmente reta é adotada neste trabalho, esse caso não é
 desenvolvido aqui.
 
@@ -821,14 +831,17 @@ desenvolvido aqui.
 Na situação mais comum, a viga está submetida simultaneamente a força cortante e a
 momento fletor. Como o momento varia com $x$ quando $V \neq 0$, as tensões normais nas
 duas faces de um elemento da viga são diferentes, e o equilíbrio exige uma tensão de
-cisalhamento compensatória \cite[p.~158--159]{Norton2013}. A tensão de cisalhamento
-a uma distância $y_1$ da linha neutra é dada por \cite[p.~160]{Norton2013}:
+cisalhamento compensatória \cite{Norton2013}. A tensão de cisalhamento
+a uma distância $y_1$ da linha neutra é dada por \cite{Norton2013}:
+
 \begin{equation}
   \label{eq:tau-flexao}
   \tau = \frac{V Q}{I b},
 \end{equation}
+
 em que $b$ é a largura da seção transversal em $y_1$ e $Q$ é o momento estático, em
 relação à linha neutra, da porção da seção situada além de $y_1$:
+
 \begin{equation}
   \label{eq:Q}
   Q = \int_{y_1}^{c} y\,\mathrm{d}A.
@@ -839,7 +852,7 @@ cisalhamento devida à força cortante é nula na superfície e máxima na linha
 ao contrário da tensão normal de flexão, que é nula na linha neutra e máxima na
 superfície. Por isso, a combinação das duas tensões em um elemento qualquer da seção
 raramente origina um estado de tensão pior do que o das fibras externas
-\cite[p.~160]{Norton2013}. A Tabela~\ref{tab:tau-max} apresenta os valores máximos
+\cite{Norton2013}. A Tabela~\ref{tab:tau-max} apresenta os valores máximos
 da tensão de cisalhamento para algumas seções usuais, sendo $A$ a área da seção.
 
 \begin{table}[h]
@@ -858,7 +871,7 @@ da tensão de cisalhamento para algumas seções usuais, sendo $A$ a área da se
       \bottomrule
     \end{tabular}
   \end{center}
-  \fonte{Adaptado de \citeonline[p.~161--162]{Norton2013}.}
+  \fonte{Adaptado de \citeonline{Norton2013}.}
   \nota{Para a seção circular oca, considera-se parede de espessura inferior a,
     aproximadamente, um décimo do raio externo.}
 \end{table}
@@ -867,7 +880,7 @@ A tensão de cisalhamento devida à cortante é pequena em comparação com a te
 normal de flexão quando a viga é longa em relação à sua altura. Como regra prática,
 ela pode ser ignorada se a razão entre o comprimento e a altura da viga for igual
 ou superior a 10; abaixo desse valor, a análise deve considerar ambas as tensões
-\cite[p.~160--161]{Norton2013}.
+\cite{Norton2013}.
 
 \subsection{Deflexão em Vigas}
 \label{sub:deflexao-vigas}
@@ -878,30 +891,33 @@ causada pela deformação por cisalhamento, mas não a força cortante que parti
 Quando essa parcela é relevante, uma teoria que a inclua, como a de \citeonline{Timoshenko1921}, permite
 considerar separadamente a rotação da seção e a inclinação do eixo. A escolha depende da
 geometria e das rigidezes à flexão e ao cisalhamento, não apenas da comparação entre tensões.
-Para o conjunto linha flexível-enrijecedor, \citeonline[p.~85--86]{Caire2011} discute avaliações
+Para o conjunto linha flexível-enrijecedor, \citeonline{Caire2011} discute avaliações
 nas quais a inclusão do cisalhamento teve pouca influência na distribuição de curvatura.
 Além disso, a hipótese de Euler-Bernoulli não deve ser confundida com a aproximação de
 pequenas rotações utilizada na equação de deflexão apresentada a seguir.
 
 Além das tensões, o projetista deve considerar a deflexão, pois, mesmo com tensões
 bem abaixo dos níveis de falha do material, as deflexões elásticas podem causar
-interferências e desalinhamentos em um sistema \cite[p.~162]{Norton2013}. A deflexão
+interferências e desalinhamentos em um sistema \cite{Norton2013}. A deflexão
 por flexão é obtida a partir da equação da viga
-\cite[p.~162]{Norton2013}:
+\cite{Norton2013}:
+
 \begin{equation}
   \label{eq:viga-EI}
   \frac{\mathrm{d}^2 y}{\mathrm{d}x^2} = \frac{M(x)}{E I},
 \end{equation}
+
 em que $y(x)$ é a deflexão, $E$ é o módulo de elasticidade do material e $I$ é o
 momento de inércia da seção. O produto $E I$ é a rigidez à flexão da viga. A
 Equação~(\ref{eq:viga-EI}) é válida somente para pequenas deflexões e não inclui o
 efeito da força cortante, que em vigas longas é normalmente desprezado, a menos que a
 razão entre comprimento e altura seja inferior a, aproximadamente, 10
-\cite[p.~162--163]{Norton2013}.
+\cite{Norton2013}.
 
 Derivando-se a Equação~(\ref{eq:viga-EI}) duas vezes e integrando-se duas vezes,
 obtém-se o conjunto de equações que descreve o comportamento da viga
-\cite[p.~163]{Norton2013}:
+\cite{Norton2013}:
+
 \begin{align}
   \frac{q}{E I} &= \frac{\mathrm{d}^4 y}{\mathrm{d}x^4}, \label{eq:viga-q}\\
   \frac{V}{E I} &= \frac{\mathrm{d}^3 y}{\mathrm{d}x^3}, \label{eq:viga-V}\\
@@ -909,12 +925,13 @@ obtém-se o conjunto de equações que descreve o comportamento da viga
   \theta        &= \frac{\mathrm{d}y}{\mathrm{d}x}, \label{eq:viga-theta}\\
   y             &= f(x), \label{eq:viga-y}
 \end{align}
+
 em que $\theta$ é a rotação da seção. O único parâmetro de material nessas equações é o
-módulo de elasticidade $E$, que define a rigidez do material \cite[p.~163]{Norton2013}.
+módulo de elasticidade $E$, que define a rigidez do material \cite{Norton2013}.
 A determinação da função de deflexão é, portanto, um exercício de integração: a função
 de carregamento $q$ é normalmente conhecida e as constantes de integração são obtidas
 a partir das condições de contorno da configuração particular da viga
-\cite[p.~163]{Norton2013}. Para uma viga engastada em $x = 0$, por exemplo, as
+\cite{Norton2013}. Para uma viga engastada em $x = 0$, por exemplo, as
 condições de contorno são deflexão e rotação nulas no engaste, $y(0) = 0$ e
 $\theta(0) = 0$, e momento fletor e força cortante nulos na extremidade livre.
 
@@ -922,7 +939,7 @@ Quando a seção transversal varia ao longo do comprimento, o produto $E I$ deix
 ser constante e passa a ser uma função $E I(x)$. Nesse caso, é necessário construir
 a função $M/EI$ a partir do diagrama de momento antes de integrar, e a integração
 deve ser feita por trechos para considerar as variações de $I$
-\cite[p.~163]{Norton2013}. Esse é o caso do enrijecedor à flexão, cuja geometria
+\cite{Norton2013}. Esse é o caso do enrijecedor à flexão, cuja geometria
 cônica faz com que $I$ decresça com $x$. Além disso, ao se considerar o
 comportamento viscoelástico do poliuretano, o módulo de elasticidade $E$ deixa de ser
 uma constante e passa a depender do tempo, conforme discutido na
@@ -940,6 +957,543 @@ Seção~\ref{sec:viscoelasticidade} e na Subseção~\ref{sub:rigidez}.
 
 \section{Equações Diferenciais}
 \label{sec:equacoes-diferenciais}
+
+O comportamento mecânico estudado neste trabalho, desde a deflexão de uma viga até o
+equilíbrio do conjunto linha flexível-enrijecedor, é descrito por equações que
+relacionam uma função desconhecida às suas derivadas. Esta seção apresenta, com base em
+\citeonline{Zill2001v1,Zill2001v2}, a terminologia, os problemas de valor inicial e de
+contorno, os resultados de existência e unicidade e a teoria de equações e sistemas
+lineares de primeira ordem. Em seguida, mostra-se como esses conceitos se aplicam ao
+sistema de equações do enrijecedor formulado por \citeonline{Caire2005,Caire2011}. Os
+métodos numéricos empregados na solução são tratados na
+Seção~\ref{sec:metodos-numericos}.
+ 
+\subsection{Terminologia e Classificação}
+\label{sub:edo-classificacao}
+ 
+Uma equação que contém as derivadas ou diferenciais de uma ou mais variáveis
+dependentes em relação a uma ou mais variáveis independentes é denominada equação
+diferencial \cite{Zill2001v1}. Essas equações são classificadas segundo o tipo, a
+ordem e a linearidade. Quanto ao tipo, a equação é ordinária (EDO) quando contém apenas
+derivadas ordinárias em relação a uma única variável independente, e parcial (EDP)
+quando envolve derivadas parciais em relação a duas ou mais variáveis independentes
+\cite{Zill2001v1}. No regime harmônico permanente adotado neste trabalho, a
+dependência temporal é representada por funções harmônicas conhecidas
+(Subseção~\ref{sub:edo-enrijecedor}), de modo que a única variável independente das
+incógnitas é o comprimento de arco ao longo do eixo do conjunto e o problema se reduz a
+EDOs.
+ 
+A ordem da equação é a da derivada de maior ordem que nela aparece
+\cite{Zill2001v1}. Uma EDO de ordem $n$ pode ser escrita, em forma geral, como
+
+\begin{equation}
+  \label{eq:edo-geral}
+  F\!\left(x,\, y,\, y',\, \ldots,\, y^{(n)}\right) = 0,
+\end{equation}
+
+em que $y(x)$ é a variável dependente e $y^{(n)}$ é a derivada de ordem $n$ em relação a
+$x$ \cite{Zill2001v1}. A equação é linear quando pode ser escrita na forma
+
+\begin{equation}
+  \label{eq:edo-linear-n}
+  a_n(x)\,y^{(n)} + a_{n-1}(x)\,y^{(n-1)} + \cdots + a_1(x)\,y' + a_0(x)\,y = g(x),
+\end{equation}
+
+isto é, quando a variável dependente e todas as suas derivadas aparecem no primeiro grau
+e cada coeficiente depende apenas da variável independente. Uma equação que não é linear
+é denominada não linear \cite{Zill2001v1}. A equação da viga,
+Equação~(\ref{eq:viga-q}), é um exemplo de EDO linear de quarta ordem: para $EI$
+constante, tem-se $a_4 = EI$, os demais coeficientes nulos e $g(x) = q(x)$.
+ 
+Uma solução de uma EDO em um intervalo $I$ é uma função com pelo menos $n$ derivadas
+que, substituída na equação, a reduz a uma identidade em todo o intervalo
+\cite{Zill2001v1}. Em geral, uma equação diferencial admite infinitas soluções:
+a resolução de uma equação de ordem $n$ conduz a uma família a $n$ parâmetros, e a
+escolha de valores para os parâmetros fornece soluções particulares
+\cite{Zill2001v1}. Quando toda solução no intervalo pode ser obtida dessa
+família, ela é denominada solução geral, designação que, na prática, é aplicada apenas
+às equações lineares \cite{Zill2001v1}. As equações não lineares, com exceção de
+algumas de primeira ordem, são em geral difíceis ou impossíveis de resolver em termos
+de funções elementares \cite{Zill2001v1}, o que justifica o recurso a métodos
+numéricos quando a equação do problema é não linear.
+ 
+\subsection{Problemas de Valor Inicial e de Valor de Contorno}
+\label{sub:pvi-pvc}
+ 
+Dada uma equação de primeira ordem, o problema de encontrar a solução que satisfaz uma
+condição especificada em um ponto $x_0$,
+
+\begin{equation}
+  \label{eq:pvi-1}
+  \frac{\mathrm{d}y}{\mathrm{d}x} = f(x, y), \qquad y(x_0) = y_0,
+\end{equation}
+
+é denominado problema de valor inicial (PVI) \cite{Zill2001v1}. A questão
+fundamental é saber se existe solução e se ela é única. Segundo o teorema de Picard, se
+$f(x, y)$ e $\partial f/\partial y$ são contínuas em uma região retangular $R$ do
+plano $xy$ que contém o ponto $(x_0, y_0)$ em seu interior, então existe um intervalo
+centrado em $x_0$ no qual o PVI (\ref{eq:pvi-1}) possui uma única solução
+\cite{Zill2001v1}. Essas condições são suficientes, mas não necessárias, e a
+existência da solução não implica que ela possa ser escrita em termos de funções
+elementares; nesses casos, aproximações podem ser obtidas por métodos numéricos
+\cite{Zill2001v1}.
+ 
+Para uma EDO linear de ordem $n$, o PVI consiste em resolver a
+Equação~(\ref{eq:edo-linear-n}) sujeita a $n$ condições prescritas em um mesmo ponto
+$x_0$:
+
+\begin{equation}
+  \label{eq:pvi-n}
+  y(x_0) = y_0, \quad y'(x_0) = y_1, \quad \ldots, \quad y^{(n-1)}(x_0) = y_{n-1},
+\end{equation}
+
+em que $y_0, y_1, \ldots, y_{n-1}$ são constantes \cite{Zill2001v1}. Se os
+coeficientes $a_i(x)$ e a função $g(x)$ são contínuos em um intervalo $I$ e
+$a_n(x) \neq 0$ em $I$, existe uma única solução do PVI em $I$
+\cite{Zill2001v1}. Tanto a continuidade quanto a condição $a_n(x) \neq 0$ são
+importantes: se $a_n(x)$ se anula em algum ponto do intervalo, a solução do PVI pode
+não ser única ou nem mesmo existir \cite{Zill2001v1}.
+ 
+Um problema distinto surge quando as condições são especificadas em pontos diferentes.
+Para uma equação linear de segunda ordem, por exemplo, resolver
+
+\begin{equation}
+  \label{eq:pvc}
+  a_2(x)\,y'' + a_1(x)\,y' + a_0(x)\,y = g(x), \qquad y(a) = y_0, \quad y(b) = y_1,
+\end{equation}
+
+é um problema de valor de contorno (PVC), e as condições $y(a) = y_0$ e $y(b) = y_1$
+são denominadas condições de contorno \cite{Zill2001v1}. Outras condições são
+possíveis, como as impostas às derivadas $y'(a)$ e $y'(b)$, e todas são casos
+particulares das condições gerais $\alpha_1 y(a) + \beta_1 y'(a) = \gamma_1$ e
+$\alpha_2 y(b) + \beta_2 y'(b) = \gamma_2$ \cite{Zill2001v1}. Diferentemente
+do PVI, mesmo quando as hipóteses do teorema de existência e unicidade para equações
+lineares são satisfeitas, um PVC pode ter várias soluções, uma única solução ou nenhuma
+\cite{Zill2001v1}.
+ 
+O cálculo da deflexão de vigas, visto na Subseção~\ref{sub:deflexao-vigas}, é um
+problema desse tipo: a equação de quarta ordem exige quatro condições, impostas nas duas
+extremidades da viga, como deslocamento e rotação nulos no engaste e momento fletor e
+força cortante nulos na extremidade livre. Do mesmo modo, o sistema de equações do
+enrijecedor, apresentado na Subseção~\ref{sub:edo-enrijecedor}, é um PVC, pois suas
+condições são impostas nas extremidades $s = 0$ e $s = L$.
+ 
+\subsection{Equações Lineares de Primeira Ordem}
+\label{sub:edo-linear-1}
+ 
+Para $n = 1$, a Equação~(\ref{eq:edo-linear-n}) torna-se uma equação linear de primeira
+ordem \cite{Zill2001v1}, que, dividida pelo coeficiente $a_1(x)$, assume a forma
+
+\begin{equation}
+  \label{eq:linear-1}
+  \frac{\mathrm{d}y}{\mathrm{d}x} + P(x)\,y = f(x),
+\end{equation}
+
+cuja solução é procurada em um intervalo $I$ no qual $P(x)$ e $f(x)$ são contínuas.
+Equações desse tipo admitem sempre um fator de integração,
+
+\begin{equation}
+  \label{eq:fator-integracao}
+  \mu(x) = e^{\int P(x)\,\mathrm{d}x},
+\end{equation}
+
+que, ao multiplicar a Equação~(\ref{eq:linear-1}), transforma o primeiro membro na
+derivada do produto $\mu(x)\,y$. Integrando-se ambos os membros, obtém-se
+\cite{Zill2001v1}
+
+\begin{equation}
+  \label{eq:solucao-linear-1}
+  y(x) = e^{-\int P(x)\,\mathrm{d}x} \int e^{\int P(x)\,\mathrm{d}x}\, f(x)\,\mathrm{d}x
+  \;+\; c\,e^{-\int P(x)\,\mathrm{d}x},
+\end{equation}
+
+em que $c$ é uma constante arbitrária. Como $P(x)$ e $f(x)$ são contínuas, essa família
+contém todas as soluções da equação no intervalo, o PVI correspondente tem solução única
+e não existem soluções singulares \cite{Zill2001v1}. Por isso a
+Equação~(\ref{eq:solucao-linear-1}) é a solução geral da equação. Essa é a estrutura que
+as equações de curvatura do enrijecedor assumem, com $P$ determinado pela variação da
+rigidez ao longo do comprimento (Subseção~\ref{sub:edo-enrijecedor}).
+ 
+\subsection{Sistemas de Equações Lineares de Primeira Ordem}
+\label{sub:sistemas-lineares}
+ 
+Uma equação de ordem superior pode ser reescrita como um sistema de equações de primeira
+ordem, adotando-se como novas variáveis a função e suas derivadas até a ordem $n - 1$
+\cite{Zill2001v2}. A deflexão da viga é um exemplo direto: as
+Equações~(\ref{eq:viga-q}) a (\ref{eq:viga-theta}) já definem as variáveis $y$,
+$\theta = y'$, $M/EI = y''$ e $V/EI = y'''$ e, para $EI$ constante,
+
+\begin{equation}
+  \label{eq:viga-sistema}
+  \frac{\mathrm{d}}{\mathrm{d}x}
+  \begin{bmatrix} y \\ \theta \\ M/EI \\ V/EI \end{bmatrix}
+  =
+  \begin{bmatrix}
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1 \\
+    0 & 0 & 0 & 0
+  \end{bmatrix}
+  \begin{bmatrix} y \\ \theta \\ M/EI \\ V/EI \end{bmatrix}
+  +
+  \begin{bmatrix} 0 \\ 0 \\ 0 \\ q/EI \end{bmatrix}.
+\end{equation}
+
+Essa redução é o que permite aplicar a problemas de ordem superior os algoritmos
+numéricos, que são estabelecidos em sua maioria para equações de primeira ordem
+\cite{Zill2001v2}.
+ 
+Um sistema linear de primeira ordem com $n$ variáveis dependentes pode ser escrito em
+forma matricial \cite{Zill2001v2}, aqui adaptada à variável independente $x$:
+
+\begin{equation}
+  \label{eq:sistema-nh}
+  \frac{\mathrm{d}\mathbf{X}}{\mathrm{d}x} = \mathbf{A}(x)\,\mathbf{X} + \mathbf{F}(x),
+\end{equation}
+
+em que $\mathbf{X}$ é a matriz coluna das funções incógnitas, $\mathbf{A}(x)$ é a matriz
+$n \times n$ dos coeficientes e $\mathbf{F}(x)$ é a matriz coluna dos termos não
+homogêneos. O sistema é homogêneo quando $\mathbf{F} = \mathbf{0}$:
+
+\begin{equation}
+  \label{eq:sistema-h}
+  \frac{\mathrm{d}\mathbf{X}}{\mathrm{d}x} = \mathbf{A}(x)\,\mathbf{X}.
+\end{equation}
+
+O PVI consiste em resolver a Equação~(\ref{eq:sistema-nh}) sujeita a
+$\mathbf{X}(x_0) = \mathbf{X}_0$; se os elementos de $\mathbf{A}(x)$ e $\mathbf{F}(x)$
+são contínuos em um intervalo $I$ que contém $x_0$, existe uma única solução do PVI em
+$I$ \cite{Zill2001v2}. A Tabela~\ref{tab:existencia-unicidade} reúne os três
+resultados de existência e unicidade apresentados nesta seção. Todos se referem a
+problemas de valor inicial: para um PVC, como o do enrijecedor, eles não garantem, por
+si sós, a existência ou a unicidade da solução.
+ 
+\begin{table}[h]
+  \caption{Condições suficientes para existência e unicidade de solução de problemas de
+    valor inicial.}
+  \label{tab:existencia-unicidade}
+  \begin{center}
+    \begin{tabular}{p{4.2cm}p{6.2cm}p{3.6cm}}
+      \toprule
+      Problema & Hipóteses & Conclusão \\
+      \midrule
+      PVI de primeira ordem, Equação~(\ref{eq:pvi-1})
+        & $f$ e $\partial f/\partial y$ contínuas em um retângulo $R$ que contém
+          $(x_0, y_0)$ em seu interior
+        & Solução única em um intervalo centrado em $x_0$ \\[1ex]
+      PVI linear de ordem $n$, Equações~(\ref{eq:edo-linear-n}) e (\ref{eq:pvi-n})
+        & $a_i(x)$ e $g(x)$ contínuas em $I$, com $a_n(x) \neq 0$ em $I$
+        & Solução única em $I$ \\[1ex]
+      PVI para sistema linear, Equação~(\ref{eq:sistema-nh})
+        & Elementos de $\mathbf{A}(x)$ e $\mathbf{F}(x)$ contínuos em $I \ni x_0$
+        & Solução única em $I$ \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  \fonte{Adaptado de \citeonline{Zill2001v1} e \citeonline{Zill2001v2}.}
+\end{table}
+ 
+Para o sistema homogêneo, vale o princípio da superposição: toda combinação linear de
+vetores solução é também solução \cite{Zill2001v2}. Um conjunto de $n$ vetores
+solução linearmente independentes é denominado conjunto fundamental, e sempre existe um
+em um intervalo em que $\mathbf{A}(x)$ é contínua; a solução geral é a combinação linear
+$\mathbf{X}_c = c_1\mathbf{X}_1 + c_2\mathbf{X}_2 + \cdots + c_n\mathbf{X}_n$, em que os
+$c_i$ são constantes arbitrárias \cite{Zill2001v2}. A solução geral do sistema
+não homogêneo é $\mathbf{X} = \mathbf{X}_c + \mathbf{X}_p$, sendo $\mathbf{X}_p$ qualquer
+solução particular da Equação~(\ref{eq:sistema-nh}) \cite{Zill2001v2}.
+ 
+Reunindo-se os vetores de um conjunto fundamental como colunas, obtém-se uma matriz
+fundamental $\boldsymbol{\Phi}(x)$ \cite{Zill2001v2}, que satisfaz
+
+\begin{equation}
+  \label{eq:matriz-fundamental}
+  \frac{\mathrm{d}\boldsymbol{\Phi}}{\mathrm{d}x} = \mathbf{A}(x)\,\boldsymbol{\Phi},
+  \qquad \mathbf{X}_c = \boldsymbol{\Phi}(x)\,\mathbf{C},
+\end{equation}
+
+em que $\mathbf{C}$ é a matriz coluna das constantes. Substituindo-se $\mathbf{C}$ por
+uma matriz coluna de funções $\mathbf{U}(x)$, o método de variação dos parâmetros fornece
+a solução particular $\mathbf{X}_p = \boldsymbol{\Phi}\int \boldsymbol{\Phi}^{-1}
+\mathbf{F}\,\mathrm{d}x$ e, portanto, a solução geral \cite{Zill2001v2}
+
+\begin{equation}
+  \label{eq:var-parametros}
+  \mathbf{X}(x) = \boldsymbol{\Phi}(x)\,\mathbf{C}
+  + \boldsymbol{\Phi}(x) \int \boldsymbol{\Phi}^{-1}(x)\,\mathbf{F}(x)\,\mathrm{d}x.
+\end{equation}
+
+Os métodos baseados em autovalores e autovetores apresentados por
+\citeonline{Zill2001v2} aplicam-se a matrizes $\mathbf{A}$ de coeficientes
+constantes. Quando os elementos de $\mathbf{A}$ variam com a variável independente, como
+ocorre no enrijecedor, em geral não se dispõe de uma matriz fundamental em forma
+fechada, o que é um motivo adicional para o uso de métodos numéricos.
+ 
+\subsection{Aplicação ao Sistema Linha Flexível-Enrijecedor}
+\label{sub:edo-enrijecedor}
+ 
+O conjunto linha flexível-enrijecedor submetido à força de topo $F$ é representado por
+uma viga esbelta engastada que sofre grandes deslocamentos, trabalha em flexão e possui
+seção variável ao longo do comprimento, em razão do formato cônico do enrijecedor
+\cite{Caire2005}. Seja $s$ o comprimento de arco medido a partir da extremidade
+engastada, com $0 \le s \le L$. As coordenadas cartesianas $x(s)$ e $y(s)$ do eixo
+deformado e o ângulo de inclinação $\phi(s)$ da tangente em relação ao eixo $x$ se
+relacionam com a curvatura $k(s)$ por \cite{Caire2005}
+
+\begin{align}
+  \frac{\mathrm{d}x}{\mathrm{d}s} &= \cos\phi(s), \label{eq:geo-x}\\
+  \frac{\mathrm{d}y}{\mathrm{d}s} &= \sin\phi(s), \label{eq:geo-y}\\
+  \frac{\mathrm{d}\phi}{\mathrm{d}s} &= k(s), \label{eq:geo-phi}
+\end{align}
+
+em que, nesta subseção, $x$ e $y$ designam as coordenadas do eixo deformado
+(Figura~\ref{fig:esquema-enrijecedor}), e não a variável independente e a deflexão das
+subseções anteriores.
+ 
+\begin{figure}[h]
+  \centering
+  \caption{Esquema do sistema linha flexível-enrijecedor sob a força de topo $F$: o eixo
+    deformado é descrito pelo comprimento de arco $s$, pelo ângulo de inclinação $\phi(s)$
+    e pela curvatura $k = \mathrm{d}\phi/\mathrm{d}s$.}
+  \label{fig:esquema-enrijecedor}
+  \begin{tikzpicture}[x=1cm,y=1cm,line cap=round,>=stealth]
+    % engaste em s = 0
+    \draw[thick] (0,-0.9) -- (0,0.9);
+    \foreach \y in {-0.8,-0.6,-0.4,-0.2,0,0.2,0.4,0.6,0.8}{\draw (0,\y) -- (-0.25,\y-0.25);}
+    \node[anchor=south west] at (0.1,0.2) {$s=0$};
+    % eixo deformado
+    \draw[very thick] (0,0) .. controls (3,0) and (5,0.5) .. (6.5,2.5);
+    % ponto genérico: tangente, referência horizontal e angulo phi(s)
+    \fill (3.8125,0.5) circle (0.05);
+    \draw[thin] (2.9635,0.2) -- (5.228,1.0);
+    \draw[dashed] (3.8125,0.5) -- (5.6,0.5);
+    \draw (4.8125,0.5) arc (0:19.4:1.0);
+    \node[anchor=west] at (5.7,0.5) {$\phi(s)$};
+    % extremidade livre: força e angulo phi_L
+    \fill (6.5,2.5) circle (0.05);
+    \draw[->,very thick] (6.5,2.5) -- (7.4,3.7);
+    \node[anchor=west] at (7.4,3.8) {$F$};
+    \draw[dashed] (6.5,2.5) -- (8.3,2.5);
+    \draw (7.5,2.5) arc (0:53.13:1.0);
+    \node[anchor=west] at (7.7,2.85) {$\phi_L$};
+    \node[anchor=east] at (6.4,2.8) {$s=L$};
+    % comprimento de arco
+    \draw[->] (1.0,-0.6) -- (2.6,-0.6);
+    \node at (1.8,-0.9) {$s$};
+    % eixos
+    \draw[->] (-1.6,-1.8) -- (-0.6,-1.8) node[right] {$x$};
+    \draw[->] (-1.6,-1.8) -- (-1.6,-0.8) node[above] {$y$};
+  \end{tikzpicture}
+  \fonte{Adaptado de \citeonline{Caire2005}.}
+\end{figure}
+ 
+Pelo equilíbrio, o momento fletor $M(s)$ e a força cortante $V(s)$ se relacionam por
+$\mathrm{d}M/\mathrm{d}s = V$ \cite{Caire2011} e, pela teoria de Euler-Bernoulli
+com material linear elástico, $M = EI(s)\,k$, em que a rigidez à flexão do conjunto é a
+soma das parcelas da linha e do enrijecedor, $EI(s) = EI_{\mathrm{linha}} +
+EI_{BS}(s)$ \cite{Caire2005}. Para a força de topo atuando na direção da tangente
+à extremidade, caso que corresponde a $\alpha = 0$ na notação de \citeonline{Caire2005},
+tem-se $V(s) = -F\sin\!\big(\phi_L - \phi(s)\big)$ e a derivação de $M = EI(s)\,k$ em
+relação a $s$ conduz a \cite{Caire2005}
+
+\begin{equation}
+  \label{eq:dk-ds-estatica}
+  \frac{\mathrm{d}k}{\mathrm{d}s}
+  = -\frac{1}{EI(s)}\left[\frac{\mathrm{d}EI(s)}{\mathrm{d}s}\,k(s)
+  + F\sin\!\big(\phi_L - \phi(s)\big)\right],
+\end{equation}
+
+sujeita às condições de contorno \cite{Caire2005}
+
+\begin{equation}
+  \label{eq:cc-estatica}
+  x(0) = y(0) = \phi(0) = 0, \qquad \phi(L) = \phi_L.
+\end{equation}
+
+As Equações~(\ref{eq:geo-x}) a (\ref{eq:geo-phi}) e (\ref{eq:dk-ds-estatica}) formam um
+sistema de quatro EDOs não lineares de primeira ordem nas incógnitas $x$, $y$, $\phi$ e
+$k$, com quatro condições impostas em $s = 0$ e $s = L$, isto é, um PVC
+\cite{Caire2005}. A não linearidade provém dos termos $\cos\phi$, $\sin\phi$ e
+$\sin(\phi_L - \phi)$, razão pela qual o princípio da superposição e a solução geral
+das subseções anteriores não se aplicam ao sistema completo. A
+Equação~(\ref{eq:dk-ds-estatica}), porém, é linear em $k$ e tem a forma da
+Equação~(\ref{eq:linear-1}), com $P(s) = EI'(s)/EI(s)$. Como $\int P\,\mathrm{d}s =
+\ln EI(s)$, o fator de integração da Equação~(\ref{eq:fator-integracao}) é o próprio
+$EI(s)$, e a equação equivale a $\mathrm{d}(EI\,k)/\mathrm{d}s = V$, ou seja, a
+$\mathrm{d}M/\mathrm{d}s = V$, relação de equilíbrio da qual se partiu. Como $V$ depende
+de $\phi$, que por sua vez depende de $k$ pela Equação~(\ref{eq:geo-phi}), essa
+integração não fornece a solução em forma fechada.
+ 
+No caso viscoelástico com carregamento harmônico, \citeonline{Caire2011}
+escreve a força e o ângulo de topo como $F(t) = F_0 + \varepsilon F_0 \sin\omega t$ e
+$\phi_L(t) = \phi_{0L} + \alpha\,\phi_{0L}\sin(\omega t + \gamma)$, em que $F_0$ e
+$\phi_{0L}$ são os valores médios, $\varepsilon$ e $\alpha$ são pequenos parâmetros de
+perturbação, $\omega$ é a frequência e $\gamma$ é a diferença de fase. Cada grandeza
+$\chi(s,t)$, com $\chi$ representando $\phi$, $k$ ou $V$, é expandida em uma série de
+perturbação até a terceira ordem em $\varepsilon$ e $\alpha$ \cite{Caire2011}:
+
+\begin{equation}
+  \label{eq:base-perturbativa}
+  \chi(s,t) = \sum_{i=0}^{29} \chi_i(s)\,\Psi_i(\varepsilon, \alpha, \omega t),
+\end{equation}
+
+em que as trinta parcelas $\Psi_i$ são produtos de potências de $\varepsilon$ e $\alpha$
+por $\sin(n\omega t)$ e $\cos(n\omega t)$, com $n = 1, 2, 3$. Por exemplo,
+$\Psi_0 = 1$, $\Psi_1 = \varepsilon\sin\omega t$ e $\Psi_2 = \varepsilon\cos\omega t$.
+Assim, a dependência temporal fica concentrada nas funções $\Psi_i$, conhecidas, e as
+incógnitas passam a ser as funções $\chi_i(s)$, que dependem somente de $s$.
+ 
+A relação entre momento fletor e curvatura de cada coeficiente é escrita em forma
+matricial como $\mathbf{M} = \mathbf{EI}\,\mathbf{k}$, com $\mathbf{EI}$ uma matriz
+diagonal em blocos, formada por blocos escalares $\mathbf{EI}_0 = [C_0]$ e por blocos
+$2 \times 2$ do tipo
+
+\begin{equation}
+  \label{eq:bloco-EI}
+  \mathbf{EI}_n =
+  \begin{bmatrix}
+    C_1(s, n\omega) & -C_2(s, n\omega) \\
+    C_2(s, n\omega) & C_1(s, n\omega)
+  \end{bmatrix},
+\end{equation}
+
+associados à frequência $n\omega$ \cite{Caire2011}. Os coeficientes são
+
+\begin{align}
+  C_0(s) &= EI_{\mathrm{pipe}} + G(\infty)\,I_{BS}(s), \label{eq:C0}\\
+  C_1(s, n\omega) &= EI_{\mathrm{pipe}} + G'(n\omega)\,I_{BS}(s), \label{eq:C1}\\
+  C_2(s, n\omega) &= G''(n\omega)\,I_{BS}(s), \label{eq:C2}
+\end{align}
+
+em que $EI_{\mathrm{pipe}}$ é a rigidez à flexão da linha, $I_{BS}(s)$ é o segundo
+momento de área do enrijecedor, $G(\infty)$ é o módulo de relaxação para tempo infinito
+e $G'$ e $G''$ são os módulos de armazenamento e de perda, definidos na
+Seção~\ref{sec:viscoelasticidade} \cite{Caire2011}.
+ 
+Combinando-se $\mathrm{d}\mathbf{M}/\mathrm{d}s = \mathbf{V}$ com $\mathbf{M} =
+\mathbf{EI}\,\mathbf{k}$, obtém-se para cada bloco
+\cite{Caire2011}
+
+\begin{equation}
+  \label{eq:dk-ds-matricial}
+  \frac{\mathrm{d}\mathbf{k}}{\mathrm{d}s}
+  = -\,\mathbf{EI}^{-1}\frac{\mathrm{d}\mathbf{EI}}{\mathrm{d}s}\,\mathbf{k}
+  + \mathbf{EI}^{-1}\mathbf{V},
+\end{equation}
+
+que explicitada resulta, para os coeficientes $i \in \{0, 5, 8, 11\}$ e para cada par
+$(i, i+1)$ associado à frequência $n\omega$, em \cite{Caire2011}
+
+\begin{align}
+  \frac{\mathrm{d}k_i}{\mathrm{d}s} &= -E_0(s)\,k_i(s) + D_0(s)\,V_i(s),
+    \label{eq:bloco-escalar}\\
+  \frac{\mathrm{d}}{\mathrm{d}s}
+  \begin{bmatrix} k_i \\ k_{i+1} \end{bmatrix}
+  &= -\begin{bmatrix} E_1 & -E_2 \\ E_2 & E_1 \end{bmatrix}
+  \begin{bmatrix} k_i \\ k_{i+1} \end{bmatrix}
+  + \begin{bmatrix} D_1 & -D_2 \\ D_2 & D_1 \end{bmatrix}
+  \begin{bmatrix} V_i \\ V_{i+1} \end{bmatrix},
+    \label{eq:bloco-par}
+\end{align}
+
+com $E_j = E_j(s, n\omega)$ e $D_j = D_j(s, n\omega)$, dados por
+
+\begin{align}
+  D_0 &= \frac{1}{C_0}, \quad
+  D_1 = \frac{C_1}{C_1^2 + C_2^2}, \quad
+  D_2 = -\frac{C_2}{C_1^2 + C_2^2}, \label{eq:coef-D}\\
+  E_0 &= \frac{C_{0,s}}{C_0}, \quad
+  E_1 = \frac{C_1 C_{1,s} + C_2 C_{2,s}}{C_1^2 + C_2^2}, \quad
+  E_2 = \frac{C_1 C_{2,s} - C_2 C_{1,s}}{C_1^2 + C_2^2}, \label{eq:coef-E}
+\end{align}
+
+em que $C_{j,s} = \mathrm{d}C_j/\mathrm{d}s$ \cite{Caire2011}. A cada coeficiente
+$k_i$ corresponde ainda a equação geométrica
+
+\begin{equation}
+  \label{eq:geo-phi-i}
+  \frac{\mathrm{d}\phi_i}{\mathrm{d}s} = k_i(s), \qquad i = 0, \ldots, 29,
+\end{equation}
+
+e a força cortante é dada por \cite{Caire2011}
+
+\begin{equation}
+  \label{eq:Vi}
+  V_i(s) = F_0\left[A_i(s)\sin\theta_0(s) + B_i(s)\cos\theta_0(s)\right],
+  \qquad \theta_0(s) = \phi_{0L} - \phi_0(s),
+\end{equation}
+
+em que $A_i(s)$ e $B_i(s)$ são funções polinomiais de $\phi_j(s)$ e de funções
+trigonométricas de $\gamma$, obtidas do desenvolvimento do seno da variação angular até a
+terceira ordem \cite{Caire2011}. Para $i = 0$, tem-se $A_0 = -1$ e $B_0 = 0$,
+de modo que $V_0 = -F_0\sin(\phi_{0L} - \phi_0)$, e a Equação~(\ref{eq:bloco-escalar})
+reproduz a Equação~(\ref{eq:dk-ds-estatica}) com $C_0$ no papel de $EI$.
+ 
+As Equações~(\ref{eq:bloco-escalar}), (\ref{eq:bloco-par}) e (\ref{eq:geo-phi-i}) formam
+um sistema de sessenta EDOs não lineares de primeira ordem, trinta para as curvaturas
+$k_i$ e trinta para os ângulos $\phi_i$ \cite{Caire2011}, sujeitas às condições de
+contorno
+
+\begin{align}
+  \phi_i(0) &= 0, \qquad 0 \le i \le 29, \label{eq:cc-0}\\
+  \phi_0(L) &= \phi_{0L}, \quad \phi_3(L) = \phi_{0L}\cos\gamma, \quad
+  \phi_4(L) = \phi_{0L}\sin\gamma, \label{eq:cc-L1}\\
+  \phi_i(L) &= 0, \qquad i = 1,\, 2 \ \text{e}\ 5 \le i \le 29, \label{eq:cc-L2}
+\end{align}
+
+impostas em $s = 0$ e $s = L$ \cite{Caire2011}. Trata-se, portanto, de um PVC,
+como no caso estático. A Tabela~\ref{tab:blocos} organiza as trinta equações de curvatura
+em blocos, segundo a frequência dos termos a que se referem.
+ 
+\begin{table}[h]
+  \caption{Blocos de equações de curvatura do sistema harmônico, agrupados pela
+    frequência dos termos.}
+  \label{tab:blocos}
+  \begin{center}
+    \begin{tabular}{llp{6.2cm}c}
+      \toprule
+      Frequência & Tipo de bloco & Índices $i$ & Equações \\
+      \midrule
+      Constante & Escalar, Eq.~(\ref{eq:bloco-escalar}) & $0$, $5$, $8$, $11$ & 4 \\
+      $\omega$ & Par, Eq.~(\ref{eq:bloco-par})
+        & $(1,2)$, $(3,4)$, $(14,15)$, $(18,19)$, $(22,23)$, $(26,27)$ & 12 \\
+      $2\omega$ & Par, Eq.~(\ref{eq:bloco-par})
+        & $(6,7)$, $(9,10)$, $(12,13)$ & 6 \\
+      $3\omega$ & Par, Eq.~(\ref{eq:bloco-par})
+        & $(16,17)$, $(20,21)$, $(24,25)$, $(28,29)$ & 8 \\
+      \midrule
+      \multicolumn{3}{l}{Total} & 30 \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  \fonte{Elaborada pelos autores com base em \citeonline{Caire2011}.}
+\end{table}
+ 
+Cada bloco da Tabela~\ref{tab:blocos} é um sistema linear de primeira ordem com
+coeficientes variáveis, na forma da Equação~(\ref{eq:sistema-nh}), com
+$\mathbf{X} = \mathbf{k}$, $\mathbf{A} = -\mathbf{EI}^{-1}\,\mathrm{d}\mathbf{EI}/
+\mathrm{d}s$ e $\mathbf{F} = \mathbf{EI}^{-1}\mathbf{V}$. Nesse caso, a matriz fundamental
+é conhecida: $\boldsymbol{\Phi} = \mathbf{EI}^{-1}$, pois $\mathrm{d}\boldsymbol{\Phi}/
+\mathrm{d}s = -\mathbf{EI}^{-1}\,(\mathrm{d}\mathbf{EI}/\mathrm{d}s)\,\mathbf{EI}^{-1}
+= \mathbf{A}\boldsymbol{\Phi}$. Substituindo-se na Equação~(\ref{eq:var-parametros}),
+
+\begin{equation}
+  \label{eq:k-variacao-parametros}
+  \mathbf{k}(s) = \mathbf{EI}^{-1}(s)\left[\mathbf{C}
+  + \int \mathbf{V}(s)\,\mathrm{d}s\right],
+\end{equation}
+
+isto é, $\mathbf{EI}\,\mathbf{k} = \mathbf{C} + \int \mathbf{V}\,\mathrm{d}s$, o que
+equivale a $\mathrm{d}\mathbf{M}/\mathrm{d}s = \mathbf{V}$. A
+Equação~(\ref{eq:k-variacao-parametros}) é, porém, apenas formal: como $\mathbf{V}$
+depende dos ângulos $\phi_j$ pela Equação~(\ref{eq:Vi}) e estes dependem das curvaturas
+pela Equação~(\ref{eq:geo-phi-i}), a expressão é implícita, e a solução do sistema
+completo exige métodos numéricos. \citeonline{Caire2011} indica como escolhas
+naturais o método das diferenças finitas e o método do tiro, que transforma o PVC em um
+PVI equivalente por um processo iterativo; esses métodos são apresentados na
+Seção~\ref{sec:metodos-numericos}. Uma vez obtidas as funções $k_i(s)$ e $\phi_i(s)$, a
+curvatura e o ângulo em qualquer instante são recuperados pela
+Equação~(\ref{eq:base-perturbativa}), e as coordenadas $x(s,t)$ e $y(s,t)$ resultam da
+integração das Equações~(\ref{eq:geo-x}) e (\ref{eq:geo-y}) \cite{Caire2011}.
 
 % ---------------------------------------------------------------------
 
@@ -1618,7 +2172,7 @@ O raio mínimo de curvatura permitido para a linha, denominado \emph{Minimum Ben
 \end{equation}
 O critério é atendido quando o maior valor absoluto da curvatura calculada ao longo do
 comprimento e do ciclo não ultrapassa $\kappa_\text{adm}$. Para o caso de referência,
-adota-se $\text{MBR}=2{,}0\,\mathrm{m}$, conforme \citeonline[seção 4.1, p.~114]{Caire2011}.
+adota-se $\text{MBR}=2{,}0\,\mathrm{m}$, conforme \citeonline{Caire2011}.
 
 Para o enrijecedor, avalia-se a deformação por flexão na fibra externa de cada seção.
 Considerando a seção circular, a simetria entre tração e compressão e o alongamento axial
@@ -1633,7 +2187,7 @@ absoluto desse produto apenas no trecho ocupado pelo poliuretano. Como o diâmet
 a posição de maior deformação não precisa coincidir com a de maior curvatura.
 
 Adota-se o limite de deformação de 15\% utilizado no caso de referência de
-\citeonline[seção 4.1, p.~114]{Caire2011}. Esse valor é um critério do caso estudado, e não
+\citeonline{Caire2011}. Esse valor é um critério do caso estudado, e não
 uma propriedade universal de materiais viscoelásticos. A verificação desse limite não
 substitui uma avaliação de vida à fadiga, de contato ou de outros modos de falha que não
 são calculados pelo modelo.
@@ -1645,7 +2199,7 @@ são calculados pelo modelo.
 O modelo local busca determinar as curvaturas e deformações do conjunto linha flexível-enrijecedor,
 considerando o comportamento viscoelástico do poliuretano. Para isso, adotam-se simplificações
 que permitem estudar a flexão sem representar todos os detalhes da estrutura real. As premissas
-tomam como base a formulação de \citeonline[seção 3.1, p.~85--87]{Caire2011}, com a delimitação
+tomam como base a formulação de \citeonline{Caire2011}, com a delimitação
 adicional de manter constante a temperatura do material.
 
 % Aproximação de Euler-Bernoulli para a flexão do conjunto linha flexível-enrijecedor
@@ -1686,7 +2240,7 @@ descreve as pressões de contato nem o desgaste entre suas superfícies.
 Materiais poliméricos podem apresentar respostas diferentes quando tracionados e comprimidos.
 Essa diferença é relevante na flexão, pois uma parte da seção trabalha em tração e outra em
 compressão, podendo alterar a posição do eixo neutro e a relação entre momento e curvatura
-\cite[p.~86--87]{Caire2011}. Neste trabalho, essa diferença é desprezada: os mesmos parâmetros
+\cite{Caire2011}. Neste trabalho, essa diferença é desprezada: os mesmos parâmetros
 são utilizados para representar os dois comportamentos. Trata-se de uma hipótese simplificadora
 para estudar os efeitos da viscoelasticidade, e não de uma afirmação de que o poliuretano
 responde igualmente à tração e à compressão. Assim, os resultados não incluem os efeitos
@@ -1753,7 +2307,7 @@ parâmetros constitutivos também constitui a base da caracterização discutida
 
 Neste trabalho, não foi realizada uma campanha experimental própria. Os dados de entrada foram
 obtidos por digitalização dos gráficos dos ensaios de relaxação publicados por
-\citeonline[seção 2.3.2]{Caire2011}. Na campanha descrita na tese, foram preparados 50 corpos de
+\citeonline{Caire2011}. Na campanha descrita na tese, foram preparados 50 corpos de
 prova de poliuretano extraídos de um enrijecedor real, destinados aos ensaios de tração e
 relaxação. Os ensaios de relaxação considerados nesta identificação correspondem a seis níveis
 de deformação: 2,5\%, 5\%, 7,5\%, 10\%, 20\% e 30\%, mantidos por aproximadamente quatro horas,
@@ -1985,7 +2539,7 @@ iguala ao interno, encerrando a contribuição do poliuretano. Definindo
 $L_e=L_{\mathrm{cil}}+L_{\mathrm{con}}$, obtém-se o comprimento ocupado pelo enrijecedor.
 
 A Figura~\ref{fig:geometria-souza} apresenta um esquema com os comprimentos e diâmetros
-principais, reproduzido de \citeonline[p. 43]{Souza2008}. Na notação da figura,
+principais, reproduzido de \citeonline{Souza2008}. Na notação da figura,
 $L_1$, $L_2$ e $L_{\mathrm{BS}}$ correspondem, respectivamente, a
 $L_{\mathrm{cil}}$, $L_{\mathrm{con}}$ e $L_e$, enquanto $D_1$ corresponde a $D_b$.
 O símbolo $d_1$ indica o diâmetro externo da linha, não o diâmetro interno $D_i$ do furo
@@ -1997,7 +2551,7 @@ no cálculo é definido pela Equação~\eqref{eq:perfil-enrijecedor-metodologia}
   \caption{Geometria simplificada do conjunto linha flexível-enrijecedor e suas dimensões principais.}
   \label{fig:geometria-souza}
   \includegraphics[width=0.9\textwidth]{pics/souza2008-geometria.png}
-  \fonte{\citeonline[p. 43, fig. 22]{Souza2008}.}
+  \fonte{\citeonline{Souza2008}.}
 \end{figure}
 
 Com a notação deste trabalho, o diâmetro externo do perfil é escrito como:
@@ -2077,7 +2631,7 @@ diferenciais que serão discutidos a seguir.
 
 A forma deformada do conjunto pode ser descrita a partir de pequenos trechos de seu
 eixo. A Figura~\ref{fig:elemento-infinitesimal-caire}, reproduzida de
-\citeonline[seção 3.2]{Caire2011}, apresenta um elemento de comprimento $\mathrm{d}s$,
+\citeonline{Caire2011}, apresenta um elemento de comprimento $\mathrm{d}s$,
 suas projeções $\mathrm{d}x$ e $\mathrm{d}y$ e os esforços internos atuantes nas
 seções. O eixo $X$ aponta para baixo, a partir do engaste, e o eixo $Y$ para a
 esquerda, conforme a convenção da figura. O ângulo $\phi(s,t)$ é medido entre a
@@ -2088,7 +2642,7 @@ tangente à linha e o eixo $X$.
   \caption{Elemento infinitesimal do conjunto, projeções geométricas e esforços internos.}
   \label{fig:elemento-infinitesimal-caire}
   \includegraphics[width=0.55\textwidth]{pics/caire2011-elemento-infinitesimal.png}
-  \fonte{\citeonline[p. 87, fig. 3.2]{Caire2011}.}
+  \fonte{\citeonline{Caire2011}.}
 \end{figure}
 
 Para um instante fixo, as projeções do elemento são
@@ -2129,14 +2683,14 @@ equilíbrio do conjunto: a linha é engastada em $s=0$, recebe a força $F$ na e
 $s=L$ e apresenta rigidez flexional variável ao longo do trecho envolvido pelo
 enrijecedor. O detalhe de um elemento da linha indica os esforços internos que
 participam do equilíbrio. Essa representação, originalmente atribuída a Boef e Out
-(1990), foi reproduzida por \citeonline[p. 22]{Souza2008}.
+(1990), foi reproduzida por \citeonline{Souza2008}.
 
 \begin{figure}[!htbp]
   \centering
   \caption{Diagrama de forças e equilíbrio de um elemento do conjunto linha flexível-enrijecedor.}
   \label{fig:dcl-souza}
   \includegraphics[width=0.65\textwidth]{pics/souza2008-dcl.png}
-  \fonte{Boef e Out (1990), reproduzido em \citeonline[p. 22, fig. 8]{Souza2008}.}
+  \fonte{Boef e Out (1990), reproduzido em \citeonline{Souza2008}.}
 \end{figure}
 
 Mantém-se na figura a notação da fonte original. O ângulo da linha, indicado por
@@ -2161,7 +2715,7 @@ força e uma seção genérica é:
 
 Projetando a força nas direções tangente e normal à seção, obtêm-se os esforços
 de tração $T$ e cortante $V$. Com a convenção de sinais adotada por
-\citeonline[seção 3.3]{Caire2011}, escreve-se:
+\citeonline{Caire2011}, escreve-se:
 \begin{align}
   T(s,t)&=F(t)\cos\theta(s,t),
     \label{eq:tracao-equilibrio}\\
@@ -2786,7 +3340,7 @@ O estudo de caso compara três geometrias de enrijecedores submetidas às mesmas
 condições de material, linha flexível e carregamento. Além do caso de referência
 de \citeonline{Caire2011}, são selecionadas duas geometrias atribuídas a Boef
 e Out (1990) e a Lane et al. (1995), reunidas na revisão de
-\citeonline[p. 28]{Souza2008}. O objetivo é avaliar como a mudança das dimensões
+\citeonline{Souza2008}. O objetivo é avaliar como a mudança das dimensões
 do enrijecedor altera a curvatura da linha, a deformação do poliuretano e o volume
 de material necessário.
 
@@ -2860,7 +3414,7 @@ $G$ representa o diâmetro externo da linha, não seu diâmetro interno.
   \caption{Notação das dimensões dos conjuntos linha flexível-enrijecedor reunidos por Souza.}
   \label{fig:dimensoes-comparacao-souza}
   \includegraphics[width=0.95\textwidth]{pics/souza2008-dimensoes-comparacao.png}
-  \fonte{\citeonline[p. 28, esquema associado à tab. 1]{Souza2008}.}
+  \fonte{\citeonline{Souza2008}.}
 \end{figure}
 
 A Tabela~\ref{tab:geometrias-originais-estudo} reproduz somente as duas
@@ -2883,7 +3437,7 @@ portanto, não se trata de variar uma única dimensão isoladamente.
     \hline
   \end{tabular}
   \fonte{Dados de Boef e Out (1990) e Lane et al. (1995), reunidos em
-  \citeonline[p. 28, tab. 1]{Souza2008}.}
+  \citeonline{Souza2008}.}
 \end{table}
 
 Na tabela original, Souza informa que o trecho cilíndrico de Lane et al.

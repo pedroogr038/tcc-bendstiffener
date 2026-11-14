@@ -25,19 +25,22 @@
 \ProvidesClass{ifes8}[2026/08/18 v9.0.2 Classe de trabalhos academicos do Ifes (Normas 2024)]
 
 \RequirePackage{ifthen}
+\RequirePackage{iftex}
 
-%%% As opções de estilo de fontes são `arial' e `times'. Na verdade
-%%% estas opções carregam as fontes Helvetica e Latin Modern, que são
-%%% superiores tipograficamente às fontes Arial e Times New Roman,
-%%% respectivamente.
+%%% A opção `arial' usa Arial com XeLaTeX/LuaLaTeX e Helvetica com pdfLaTeX.
+%%% A opção `times' usa Latin Modern.
 \newboolean{IFEStimes}
 \setboolean{IFEStimes}{true}
+
+\newboolean{IFEScenteredequations}
+\setboolean{IFEScenteredequations}{false}
 
 \newboolean{IFESrevista}
 \setboolean{IFESrevista}{false}
 
 \DeclareOption{times}{\setboolean{IFEStimes}{true}}
 \DeclareOption{arial}{\setboolean{IFEStimes}{false}}
+\DeclareOption{centeredequations}{\setboolean{IFEScenteredequations}{true}}
 \DeclareOption{revista}{\setboolean{IFESrevista}{true}}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{abntex2}}
@@ -47,7 +50,11 @@
 \RequirePackage{hyperref}
 \RequirePackage{enumitem}
 \RequirePackage{ragged2e}
-\RequirePackage[fleqn]{amsmath}
+\ifthenelse{\boolean{IFEScenteredequations}}{%
+  \RequirePackage{amsmath}
+}{%
+  \RequirePackage[fleqn]{amsmath}
+}
 \RequirePackage{caption}
 
 %%% Configuração das margens do documento.
@@ -132,24 +139,34 @@
 \setlist{parsep=12pt,leftmargin=1.2em}
 
 %%% Pelas normas do Ifes, as equações devem ser alinhadas à esquerda
-\setlength{\mathindent}{0pt}
+\ifthenelse{\boolean{IFEScenteredequations}}{}{%
+  \setlength{\mathindent}{0pt}
+}
 
 %%% Configura a fonte do documento.
 %%% No modo revista usa-se mathptmx (Times New Roman).
-%%% No modo TCC usa-se Latin Modern (times) ou Helvética (arial).
-\RequirePackage[T1]{fontenc}
+%%% No modo TCC, Arial requer XeLaTeX ou LuaLaTeX.
+\ifPDFTeX
+  \RequirePackage[T1]{fontenc}
+\fi
 \ifthenelse{\boolean{IFESrevista}}{%
   \RequirePackage{mathptmx}
 }{%
   \ifthenelse{\boolean{IFEStimes}}{%
     \RequirePackage{lmodern}
   }{%
-    \RequirePackage{helvet}
-    \IfFileExists{sfmath.sty}{%
-      \RequirePackage[helvet]{sfmath}%
-    }{%
-      % Fallback seguro caso sfmath não esteja instalado no Linux
-    }
+    \ifPDFTeX
+      \RequirePackage{helvet}
+      \IfFileExists{sfmath.sty}{%
+        \RequirePackage[helvet]{sfmath}%
+      }{%
+        % Fallback seguro caso sfmath não esteja instalado no Linux
+      }
+    \else
+      \RequirePackage{fontspec}
+      \setmainfont{Arial}
+      \setsansfont{Arial}
+    \fi
     \renewcommand{\familydefault}{\sfdefault}
   }
 }
